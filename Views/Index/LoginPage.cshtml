@@ -1,0 +1,151 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "LoginPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{ 
+@*<input type="hidden" value="@HttpContext.Current.Session["id"].ToString();" name="hdd" />*@
+    <div id="SectionLogin">
+        <!--About Us Page Code Start-->
+        <section id="content">
+            <div class="content-wrap" id="identification_detail_3">
+                <div class="banner_block">
+                    <div id="voir" class="banner2" style="padding-left: 150px;">
+                        <div style="position: absolute;top: 12px;left: 360px;">
+                        <h4 style="font-size: 33px; font-weight: normal; line-height: 40px; margin: 0 auto; padding: 7px 0; width: 120%;margin-left:-55px;letter-spacing: 2px;">Identifiez vous ou .....bah inscrivez vous</h4>
+<h4 style="font-family:'lato';font-size:26px;">(et commencer à buller....mais vraiment!)</h4>
+                            </div>
+                    </div>
+                </div>
+                <!--Nakache Block-->
+                <div id="nakache" class="payment_block payment_block_2" style="height: 350px;">
+                    <center><label id="Logmsg" style="color: red; width: 600px;font-size:16px;">@ViewBag.Message</label>
+            <table class="pos">
+                <tr>
+                    <td width="100px">
+                        <label style="color:black;font-size:24px;width:250px;">Nom d'utilisateur <font color="red" size="4"><b>*</b></font></label></td>
+                    <td width="200px">@Html.TextBoxFor(M => M.objLoginMaster.UserID, new { @class = "txt", name = "uid", @onblur = "RemoveClass(this);", @style = "width:180px;background-color: #fff;border: 0 none;box-shadow: 3px 2px 2px #a7a9ac;height: 50px;width: 220px;margin: 12px 0 30px;padding: 3px;font-weight: bold;position: absolute;top:1px;" })
+                    </td>
+                </tr>
+                <tr>
+                    <td width="200px">
+                        <label  style="color:black;font-size:24px;width:250px;">Mot de passe<font color="red" size="4"><b>*</b></font></label></td>
+                    <td width="200px">@Html.TextBoxFor(M => M.objLoginMaster.Password, new { name = "pwd", @type = "password", @onblur = "RemoveClass(this);", @style = "width:180px;background-color: #fff;border: 0 none;box-shadow: 3px 2px 2px #a7a9ac;height: 50px;width: 220px;margin: 12px 0 30px;padding: 3px;font-weight: bold;position: absolute;top:72px;" })  </td>
+                </tr>
+            </table></center>
+                    <div id="vo" class="votre_wrap txt_center">
+                        <label href="#" style="color: black; position: absolute; top: 160px; left: 31px; font-size: 16pt; width: 200px">
+                            <input type="checkbox" id="chkremember" style="color: white; position: absolute; top: 15px; left: -9px; font-size: 16pt; width: 15px; height: 15px;" />
+                            Se souvenir de moi
+                        </label>
+                        <sapn id="link">@Html.ActionLink("Mot de passe oublié", "/ForgotPassword", "Index")</sapn>
+                        @*<div class="btn">*@
+                            <input class="btn" type="submit" value="" onclick="return Login();" style="height:46px;width:118px;border: 0px solid rgba(0, 0, 0, 0.7);border-radius: 0px;box-shadow: 0px 0px 0px rgba(128, 130, 133, 0.5);" />
+                        @*</div>*@
+                        <div class="btn2" onclick="Registration();" style="height:46px;width:207px;border: 0px solid rgba(0, 0, 0, 0.7);border-radius: 0px;box-shadow: 0px 0px 0px rgba(128, 130, 133, 0.5);">@*@Html.ActionLink(" ", "/Reg_Page", "Index")*@
+                            @*<input id="logbtn" type="submit" value="" onclick="return Login();" />*@
+                        </div>
+                    </div>
+                </div>
+
+                <!--Votre Block-->
+                @*<div id="votre" class="bottom_block">
+                    <div  class="votre_wrap txt_center">
+                        
+                        <div class="button">
+                            <input type="submit" value="S'inscrire" onclick="return Login();" />
+                        </div>
+                        <sapn id="link1">@Html.ActionLink("Pas encore inscrit?", "/Reg_Page", "index")</sapn>
+                        <a href="#" style="color: white; position: absolute; top: 50px; right: 480px; font-size: 16pt;"><u>signer</u> </a>
+                    </div>
+                </div>*@
+            </div>
+        </section>
+        <!--About Us Page Code End-->
+        <input id="chkrem" type="hidden" value="" name="chkrem">
+    </div>
+}
+<script type="text/javascript">
+    function Login() {
+        debugger;
+        if (document.getElementById('chkremember').checked) {
+            $('#chkrem').val(1);
+        }
+        if ($("#objLoginMaster_UserID").val().length < 3 || $("#objLoginMaster_Password").val().length < 1) {
+            if ($("#objLoginMaster_UserID").val().length < 3) {
+                $("#objLoginMaster_UserID").addClass("error");
+
+            }
+            if ($("#objLoginMaster_Password").val().length < 1) {
+                $("#objLoginMaster_Password").addClass("error");
+
+            }
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>
+<script type="text/javascript">
+    function Registration() {
+        var model = @Html.Raw(@ViewBag.Qid)
+            //alert(model);
+        //window.location.href = "http://localhost:33285/index/Reg_Page?id=" + model;
+        window.location.href = "http://test.chacunsabulle.com/index/Reg_Page?id=" + model;
+        //window.location.href = "http://www.chacunsabulle.com/index/Reg_Page?id=" + model;
+    }
+</script>
+
+<style type="text/css">
+    #link a {
+        color: black;
+        position: absolute;
+        top: 182px;
+        right: -178px;
+        font-size: 16pt;
+    }
+
+    #link1 a {
+        color: white;
+        position: absolute;
+        top: 50px;
+        left: 430px;
+        font-size: 16pt;
+    }
+
+    .pos {
+        width: 200px;
+        position: absolute;
+        left: 2px;
+    }
+
+    .btn {
+        background-image: url("../Images/next.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+	cursor:pointer;
+        font-size: 16px;
+        position: absolute;
+        top: 220px;
+        left:200px;
+    }
+    .btn2 {
+        background-image: url("../Images/INSCRIVEZ-VOUS.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    height: 57px;
+    width: 116px;
+	cursor:pointer;
+        font-size: 16px;
+        position: absolute;
+        top: 100px;
+        left:800px;
+    }
+</style>

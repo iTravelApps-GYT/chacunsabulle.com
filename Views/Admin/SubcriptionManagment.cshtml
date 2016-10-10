@@ -1,0 +1,149 @@
+﻿@model Commic.Models.Commic
+
+@{
+    ViewBag.Title = "SubcriptionManagment";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CHACUN SA BULLE</title>
+@*<link type="text/css" href="~/CSS/styles.css" rel="stylesheet">*@
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <style>
+        .Editor1,.Editor2,.Editor3
+        {
+            width:600px;
+            height:70px;
+        }
+          #result
+{
+	font-size: 24px;
+	color:white;
+}
+    </style>
+</head>
+
+<body style="color:white;">
+<!--Header Code Start-->
+@*<header id="header"> 
+<div class="header-wrap">
+	<span class="fleft logo"><a href="#"><img src="Images/logo.png" alt="CHACUN SA BULLE" /></a></span>
+    <div class="main-menu">
+    	<nav>
+        	<ul>
+            	<li><a class="home_icon" href="#"></a></li>
+              	<li><a href="#">S’abonner</a></li>
+ 				<li><a href="#">Offrir</a></li>
+                <li><a href="#">Comment ça marche ?</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a class="user_icon" href="#">Connexion</a></li>
+           </ul>
+        </nav>
+    </div>
+</div>
+</header>*@
+<!--Header Code End-->
+    <h2><hr color="green"/><center><font color="White" face="Castellar">Master Panel</font></center></h2><hr color="green"/>
+    @using (Html.BeginForm("SubcriptionManagment", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    { 
+        <center><table width="80%" border="1" height="300px">
+            <tr>
+                <td >Formule Heading
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.FormuleHeading, new { @maxlength="100", @style="width:200px;" })     
+                </td>
+                <td >Formule Description
+                </td>
+                <td colspan="3">@Html.TextBoxFor(M => M.objSubMasterclass.FormuleDesc, new { @maxlength="500", @style="width:500px;" })     
+                </td>
+            </tr>
+            <tr>
+                <td >Duree/Duration Heading
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.DureeHeading, new { @maxlength="100", @style="width:200px;" })     
+                </td>
+                <td >Duree/Duration Description
+                </td>
+                <td colspan="3">@Html.TextBoxFor(M => M.objSubMasterclass.DureeDesc, new { @maxlength="500", @style="width:500px;" })     
+                </td>
+            </tr>
+            <tr>
+                <td >Delivery Heading
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.DeliveryHeading, new { @maxlength="100", @style="width:200px;" })     
+                </td>
+                <td >Delivery Description
+                </td>
+                <td colspan="3">@Html.TextBoxFor(M => M.objSubMasterclass.DeliveryDesc, new { @maxlength="500", @style="width:500px;" })     
+                </td>
+            </tr>
+            <tr>
+                <td >1st Subscription Name
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.FirstSubsName, new { @maxlength="50", @style="width:200px;" })     
+                </td>
+                <td >1st Subscription Price
+                </td>
+                <td >@Html.TextBoxFor(M => M.objSubMasterclass.FirstSubsPrice, new { @maxlength="50", @style="width:150px;" })     
+                </td>
+                <td >1st Subscription Unit
+                </td>
+                <td >@Html.TextBoxFor(M => M.objSubMasterclass.FirstSubsUnit, new { @maxlength="50", @style="width:150px;" })     
+                </td>
+            </tr>
+            <tr>
+                <td >2nd Subscription Name
+                </td>
+                <td >@Html.TextBoxFor(M => M.objSubMasterclass.SecondSubsName, new { @maxlength="50", @style="width:200px;" })     
+                </td>
+                <td >2nd Subscription Price
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.SecondSubsPrice, new { @maxlength="50", @style="width:150px;" })     
+                </td>
+                <td >2nd Subscription Unit
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.SecondSubsUnit, new { @maxlength="50", @style="width:150px;" })     
+                </td>
+            </tr>
+            <tr>
+                <td >3rd Subscription Name
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.ThirdSubsName, new { @maxlength="50", @style="width:200px;" })     
+                </td>
+                <td >3rd Subscription Price
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.ThirdSubsPrice, new { @maxlength="50", @style="width:150px;" })     
+                </td>
+                <td >3rd Subscription Unit
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.ThirdSubsUnit, new { @maxlength="50", @style="width:150px;" })     
+                </td>
+            </tr>
+            <tr>
+                <td >4th Subscription Name
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.FourthSubsName, new { @maxlength="50", @style="width:200px;" })     
+                </td>
+                <td >4th Subscription Price
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.FourthSubsPrice, new { @maxlength="50", @style="width:150px;" })     
+                </td>
+                <td >4th Subscription Unit
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubMasterclass.FourthSubsUnit, new { @maxlength="50", @style="width:150px;" })     
+                </td>
+
+            </tr>
+            <tr><td>Footer Desciption</td><td colspan="6">@Html.TextBoxFor(M => M.objSubMasterclass.FooterDescription, new { @maxlength="500", @style="width:800px;" })</td></tr>
+            <tr><td colspan="6" align="center"><label id="result">@ViewBag.Message</label></td></tr>
+            <tr><td colspan="6" align="center"><input type="submit" name="submit" value="Update" style="background-image:url(../Images/green_btn);width:200px;height:40px; " /></td></tr>
+            </table></center>
+    }
+
+</body>
+</html>
+
+
+

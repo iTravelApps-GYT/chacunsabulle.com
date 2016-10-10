@@ -1,0 +1,259 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "Home_JE_Mabonne_formunate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Home_JE_Mabonne_formunate", "Index", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "defaultForm" }))
+{ 
+    <!--About Us Page Code Start-->
+    <section id="content">
+        @{
+    string pageid = Request.QueryString["id"];
+    if (pageid == "1")
+    { 
+        <script type="text/javascript" >
+            $(function () {
+                var $radios = $('input:radio[name=g2]');
+                if ($radios.is(':checked') === false) {
+                    $radios.filter('[id=1]').prop('checked', true);
+                    $radios.filter('[id=1]').parent().addClass("selectbox");
+                    $("#hdd").val("1");
+                    @*document.getElementById('nameTarget').innerHTML = @Html.Raw(Model.objSubMasterclass.FirstSubsPrice)*@
+                }
+            });
+        </script>
+        var totalprice = @Html.Raw(Model.objSubMasterclass.FirstSubsPrice);
+            
+        }
+    else if(pageid == "2")
+    {
+     <script type="text/javascript" >
+         $(function () {
+             var $radios = $('input:radio[name=g2]');
+             if ($radios.is(':checked') === false) {
+                 $radios.filter('[id=2]').prop('checked', true);
+                 $("#2").parent().addClass("selectbox");
+                 $("#hdd").val("2");
+                 @*document.getElementById('nameTarget').innerHTML = @Html.Raw(Model.objSubMasterclass.SecondSubsPrice);*@
+             }
+         });
+        </script>
+        var totalprice = @Html.Raw(Model.objSubMasterclass.SecondSubsPrice);
+            
+    }
+    else if (pageid == "3")
+    {
+         <script type="text/javascript">
+             
+             $(function () {
+                 var $radios = $('input:radio[name=g2]');
+                 if ($radios.is(':checked') === false) {
+                     $radios.filter('[id=3]').prop('checked', true);
+                     $radios.filter('[id=3]').parent().addClass("selectbox");
+                     $("#hdd").val("3");
+                     @*document.getElementById('nameTarget').innerHTML = @Html.Raw(Model.objSubMasterclass.ThirdSubsPrice)*@
+                 }
+             });
+         </script>
+        var totalprice = @Html.Raw(Model.objSubMasterclass.ThirdSubsPrice);
+    }
+    else if (pageid == "4")
+    {
+         <script type="text/javascript" >
+            
+             $(function () {
+                 var $radios = $('input:radio[name=g2]');
+                 if ($radios.is(':checked') === false) {
+                     $radios.filter('[id=4]').prop('checked', true);
+                     $("#4").parent().addClass("selectbox");
+                     $("#hdd").val("4");
+                     @*$("#hdd").val(@Html.Raw(Model.objSubMasterclass.FourthSubsPrice));*@
+                     @*document.getElementById('nameTarget').innerHTML = @Html.Raw(Model.objSubMasterclass.FourthSubsPrice)*@
+                     //document.getElementById('nameTarget').innerHTML = document.getElementById('name').value;
+                     
+                 }
+             });
+        </script>
+        
+        
+    }
+      <script type="text/javascript" >
+
+          $(function () {
+              var $radios = $('input:radio[name=g3]');
+              if ($radios.is(':checked') === false) {
+                  $radios.filter('[id=g31]').prop('checked', true);
+                  $("#g31").parent().addClass("selectbox");
+                 }
+          });
+          $(function () {
+              var $radios = $('input:radio[name=g4]');
+              if ($radios.is(':checked') === false) {
+                  $radios.filter('[id=g41]').prop('checked', true);
+                  $("#g41").parent().addClass("selectbox");
+              }
+          });
+        </script>
+        
+        }
+
+        <div class="content-wrap mabonne_formunate" id="identification_detail_3">
+            <!--Nakache Block-->
+            <div id="nakache" class="payment_block">
+                <div class="fleft">
+                    <div class="block_image">
+                        <img src="../Images/mabonne1.png" alt="" />
+                        <div>
+                            <h4>@Html.Raw(Model.objSubMasterclass.FormuleHeading)</h4>
+                            <p style="padding: 10px;">@Html.Raw(Model.objSubMasterclass.FormuleDesc)</p>
+                        </div>
+                    </div>
+                    <div class="select_box111">
+                        <label>@Html.Raw(Model.objSubMasterclass.FirstSubsName)
+                            @Html.Raw(Model.objSubMasterclass.FirstSubsPrice)@Html.Raw(Model.objSubMasterclass.FirstSubsUnit)</label>
+                        <input type="radio" data-Price="(@Html.Raw(Model.objSubMasterclass.FirstSubsPrice)" id="1" value="Male" name="g2" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g2');" />
+                        
+                    </div>
+                    <div>
+                        <label>@Html.Raw(Model.objSubMasterclass.SecondSubsName)
+                            @Html.Raw(Model.objSubMasterclass.SecondSubsPrice)@Html.Raw(Model.objSubMasterclass.SecondSubsUnit)</label>
+                        @* <input type="checkbox" value="" name="g2"/>*@
+                        <input type="radio" data-Price="(@Html.Raw(Model.objSubMasterclass.SecondSubsPrice)" id="2" value="" name="g2" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g2');" />
+                    </div>
+                    <div>
+                        <label>@Html.Raw(Model.objSubMasterclass.ThirdSubsName)
+                            @Html.Raw(Model.objSubMasterclass.ThirdSubsPrice)@Html.Raw(Model.objSubMasterclass.ThirdSubsUnit)</label>
+                        @*<input type="checkbox" value="" name="g2"/>*@
+                        <input type="radio" data-Price="(@Html.Raw(Model.objSubMasterclass.ThirdSubsPrice)" id="3" value="" name="g2" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g2');" />
+                    </div>
+                    <div>
+                        <label>@Html.Raw(Model.objSubMasterclass.FourthSubsName)
+                            @Html.Raw(Model.objSubMasterclass.FourthSubsPrice)@Html.Raw(Model.objSubMasterclass.FourthSubsUnit)</label>
+                        @*<input type="checkbox" value="" name="g2"/>*@
+                        <input type="radio" data-Price="(@Html.Raw(Model.objSubMasterclass.FourthSubsPrice)" id="4" value="" name="g2" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g2');"/>
+                    </div>
+                </div>
+                
+                <div class="fleft">
+                    <div class="border fleft"></div>
+                    <div class="block_image">
+                        <img src="../Images/mabonne2.png" alt="" />
+                        <div>
+                            <h4>@Html.Raw(Model.objSubMasterclass.DureeHeading)</h4>
+                            <p style="padding: 10px;">@Html.Raw(Model.objSubMasterclass.DureeDesc)</p>
+                        </div>
+                    </div>
+                    @foreach (Commic.Models.SubscriptionTimeDuration obj in Model.objSubsTimeListM)
+                    {
+                        <div class="select_box111">
+                            <label>@Html.Raw(obj.SubsTimeDuration)<br />@Html.Raw(obj.SubsTimePrice)</label>
+                            <input type="radio" id="@Html.Raw("g3"+obj.id)" data-Price="(@Html.Raw(obj.SubsTimePrice)" value="" data-Dureeprice="@Html.Raw(obj.SubsTimePrice)" name="g3" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g3');"/>
+                        </div>
+                    }
+                    @*<div>
+                    <label>7 ans</label>
+                     <input type="radio" value="" name="g3" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g3');"/>
+                </div>
+                <div>
+                    <label>8 ans</label>
+                    
+                     <input type="radio" value="" name="g3" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g3');"/>
+                </div>
+                <div>
+                    <label>8 ans</label>
+                     <input type="radio" value="" name="g3" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g3');"/>
+                </div>*@
+                </div>
+
+                <div class="fleft">
+                    <div class="border fleft"></div>
+                    <div class="block_image">
+                        <img src="../Images/mabonne3.png" alt="" />
+                        <div>
+                            <h4>@Html.Raw(Model.objSubMasterclass.DeliveryHeading)</h4>
+                            <p style="padding: 10px;">@Html.Raw(Model.objSubMasterclass.DeliveryDesc)</p>
+                        </div>
+                    </div>
+                    @foreach (Commic.Models.SubscriptionDeliveryTypes obj in Model.objSubsDeliveryListM)
+                    {
+                        <div class="select_box111" id="Del">
+                            <label>@Html.Raw(obj.DeliveryType)<br />@Html.Raw(obj.DeliveryPrice)</label>
+                            <input type="radio" id="@Html.Raw("g4"+obj.id)" value="" data-Price="@Html.Raw(obj.DeliveryPrice)" name="g4" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g4');"/>
+                        </div>
+                    }
+                    @*<div>
+                    <label>9 ans</label>
+                     <input type="radio" value="" name="g4" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g4');"/>
+                </div>
+                <div>
+                    <label>10 ans</label>
+                     <input type="radio" value="" name="g4" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('g4');"/>
+                </div>*@
+                </div>
+            </div>
+            
+
+            
+            <!--Votre Block-->
+            <div id="votre" class="bottom_block">
+                <div class="votre_wrap txt_center">
+                    <h3>En choisissant le prélèvement mensuel vous pouvez suspendre votre 
+abonnement à tout moment. Le prélèvement automatique 
+est réalisé le 1er de chaque mois.</h3>
+                    <h3>Total Amount is =<span id="nameTarget"></span></h3>
+                    <div class="button pink_btn fleft">
+                        <label>Total de l'abonnement:</label><input type="submit" value="Sum" onclick="checkboxes();" /></div>
+                    <div class="button green_btn">
+                        <input type="submit" value="ETAPE SUIVANTE" onclick="checkboxes();" /></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About Us Page Code End-->
+    <input type="hidden" id="hdd" name="hdd" value="0" />
+    <input id="price" type="hidden" value="" name="price">
+}
+<style type="text/css">
+    .selectbox
+    {
+        background-color: #3c414d !important;
+        color: #fff !important;
+    }
+</style>
+<script>
+    var el = 0;
+    function Radiobtn(obj) {
+        //alert(obj);
+
+        $("#1").checked = true;
+        //if (obj.type == "radio" && obj.checked == true)
+        //    {
+        //        alert(obj.checked == true);
+        //        $(obj).parent().addClass("selectbox");
+        //    }
+
+        var inputElems = document.getElementsByName(obj)
+        
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+                el= parseInt(el+$(inputElems[i]).attr("data-Price"));
+                //alert(el);
+                //document.getElementById('nameTarget').innerHTML = $(inputElems[i]).attr("data-Price").val;
+                @*document.getElementById('nameTarget').innerHTML = Integer.parseInt(document.getElementById('nameTarget').innerHTML)+@Html.Raw(Model.objSubMasterclass.FourthSubsPrice);*@
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    //$(function () {
+    //    var $radios = $('input:radio[name=g2]');
+    //    if ($radios.is(':checked') === false) {
+    //        $radios.filter('[id=2]').prop('checked', true);
+    //    }
+    //});
+</script>

@@ -1,0 +1,120 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "RagistrationPage";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("RagistrationPage", "Index", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    { 
+<div id="Section2" >
+    <!--About Us Page Code Start-->
+    <section id="content">
+        <div class="content-wrap" id="identification_detail_2">
+        <div class="banner_block">
+            <div id="voir" class="banner2" style="padding-left :150px;width:98.5%;height:50px;padding-top:60px;">
+            	<h4 style="font-size: 33px;font-weight: normal;line-height: 40px;margin: -8px auto;padding: 0px 0px;width: 66%;letter-spacing: 2px;">S'IL VOUS PLAIT IDENTIFIEZ-VOUS OU INSCRIVEZ-VOUS</h4>
+            </div>
+        </div>
+        <!--Nakache Block-->
+       <div id="nakache" class="payment_block" style="margin-top:-106px;padding-left: 276px;">
+        	<div class="fleft" style="box-sizing: border-box;display: inline-block;padding: 110px 32px;/* position: relative; */margin: 0px;height: 100%;width:500px;margin-left:-200px;">
+            	<div>
+                    <label>Prénom <font color="red" size="4"><b>*</b></font></label>
+                    @Html.TextBoxFor(M => M.objRegistrationMaster.FirstName, new {name = "lstName", @onblur = "RemoveClass(this);" })
+                </div>
+                <div>
+                    <label>Email <font color="red" size="4"><b>*</b></font></label>
+                    @Html.TextBoxFor(M => M.objRegistrationMaster.EmailID, new { @id = "email", name = "email", @onblur = "RemoveClass(this);" })
+                </div>
+                <div>
+                    <label>Mot de passe <font color="red" size="4"><b>*</b></font></label>
+                    @Html.TextBoxFor(M => M.objRegistrationMaster.Password, new { @id = "pass", @type="password", name = "pass", @onblur = "RemoveClass(this);" })
+                </div>
+                
+            </div>
+            
+            <div class="fleft" style="padding: 110px 128px;">
+            	<div class="border fleft"></div>
+            	<div>
+                    <label>Nom <font color="red" size="4"><b>*</b></font></label>
+                    @Html.TextBoxFor(M => M.objRegistrationMaster.LastName, new { @id = "LastName", name = "lastName", @onblur = "RemoveClass(this);" })
+                </div>
+                <div>
+                    @*<label>Confirmez l'email <font color="red" size="4"><b>*</b></font></label>*@
+                     <label>Telephone<font color="red" size="4"><b>*</b></font></label>
+                    <input type="text" id="remail" name="remail" onblur="RemoveClass(this);"/>
+                </div>
+                <div>
+                    <label>Confirmer le mot de passe <font color="red" size="4"><b>*</b></font></label>
+                    <input type="password" id="repass" name="repass" onblur="RemoveClass(this);" />
+                </div>
+                
+            </div>
+           </div>
+            
+        
+        <!--Votre Block-->
+        <div id="votre" class="bottom_block">
+        	<div class="votre_wrap txt_center" >
+                <label id="regmsg" style="color: red; width: 1000px;">@ViewBag.Message</label>
+               <div class="button"><input type="submit" value="S'inscrire" onclick="return Validation();" name="btnsave"/></div>
+          </div>
+        </div>
+    </div>
+    </section>
+    <!--About Us Page Code End-->
+</div>
+    }
+
+<script>
+    function Validation() {
+        //alert("hello");
+        if (($("#objRegistrationMaster_FirstName").val().length < 3) || ($("#LastName").val().length < 1) || ($("#email").val().length < 1) || ($("#pass").val().length < 1) || ($("#remail").val().length < 1) || ($("#repass").val().length < 1)) {
+            if ($("#objRegistrationMaster_FirstName").val().length < 3) {
+                $("#objRegistrationMaster_FirstName").addClass("error");
+
+            }
+            if ($("#LastName").val().length < 1) {
+                $("#LastName").addClass("error");
+
+            }
+            if ($("#pass").val().length < 1) {
+                $("#pass").addClass("error");
+
+            }
+            if ($("#email").val().length < 1) {
+                $("#email").addClass("error");
+
+            }
+            if ($("#remail").val().length < 1) {
+                $("#remail").addClass("error");
+
+            }
+            if ($("#repass").val().length < 1) {
+                $("#repass").addClass("error");
+
+            }
+            return false;
+        }
+        else {
+            if (($("#email").val() != $("#remail").val())) {
+                $("#email").addClass("error");
+                $("#remail").addClass("error");
+                return false;
+            }
+            else {
+                $("#email").removeClass("error");
+                $("#remail").removeClass("error");
+            }
+            if (($("#pass").val() != $("#repass").val()))
+            {
+                $("#pass").addClass("error");
+                $("#repass").addClass("error"); return false;
+            }
+            else {
+                $("#pass").removeClass("error");
+                $("#repass").removeClass("error");
+                return true;
+            }
+        }
+    }
+</script>

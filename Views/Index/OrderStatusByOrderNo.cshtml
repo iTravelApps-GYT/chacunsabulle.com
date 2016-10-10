@@ -1,0 +1,53 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "OrderStatusByOrderNo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ @using (Html.BeginForm("OrderStatusByOrderNo", "Index", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "defaultForm" }))
+    { 
+<!--About Us Page Code Start-->
+<section id="content">
+    <div class="content-wrap">
+    	<div id="slideshow" class="top_header">
+        	<div class="top_header_wrap">
+                <h2 class="fleft" style="width:600px;">Order Status</h2>
+                @*<p class="fright"><a href="#"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></a></p>*@
+            </div>
+        </div>
+        <!--Nakache Block-->
+         <div id="nakache" class="payment_block" style="height:700px;">
+			<h2 style="margin-top:0;position:absolute;left:30px;">Order Details</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:110px;">Formule:</span> <label id="for" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:260px;top:115px;">@Html.Raw(Model.objOrderStatusM.SubscriptionName)</label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:110px;">Durée:</span> <label id="duree" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:598px;top:115px;">@Html.Raw(Model.objOrderStatusM.DurationType)</label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:750px;top:110px;">Livraison:</span> <label id="Liv" style="font-size:20px;width:362px;display:inline;color: #8b8b8b;position:absolute;left:860px;top:115px;">@Html.Raw(Model.objOrderStatusM.DelevaryType)</label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:150px;">Adult Univers:</span> <label id="uni" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:260px;top:154px;">@Html.Raw(Model.objOrderStatusM.AdultComicCategory)</label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:150px;">Adult Genre:</span> <label id="gen" style="font-size:20px;width:500px;display:inline;color: #8b8b8b;position:absolute;left:598px;top:154px;">@Html.Raw(Model.objOrderStatusM.AdultComicNames)</label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:200px;">kid Univers:</span> <label id="kiduni" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:260px;top:204px;">@Html.Raw(Model.objOrderStatusM.KidComicCategory)</label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:200px;">kid Genre:</span> <label id="kidgen" style="font-size:20px;width:500px;display:inline;color: #8b8b8b;position:absolute;left:598px;top:204px;">@Html.Raw(Model.objOrderStatusM.KidComicNames)</label>
+             <h2 style="margin-top:0;position:absolute;left:30px;top:240px;">Details De Livraison</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:290px;">Prénom:</span><label id="Prenom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:294px;">@Html.Raw(Model.objOrderStatusM.FirstName)</label><br /><br />         
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:290px;">Nom:</span><label id="nom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:518px;top:294px;">@Html.Raw(Model.objOrderStatusM.Name)</label><br /><br />
+             <span style="font-size:24px;display:inline;width:300px;position:absolute;left:100px;top:334px">Adresse de livraison:</span><label id="Address" style="font-size:20px;width:600px;display:inline;color: #8b8b8b;position:absolute;left:333px;top:338px;">@Html.Raw(Model.objOrderStatusM.Address +" , " +  Model.objOrderStatusM.City +" , "+ Model.objOrderStatusM.PostalCode)</label><br /><br />
+             <h2 style="margin-top:0;position:absolute;left:30px;top:382px;">Details de La Facturation</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:430px;">Prénom:</span><label id="Prenom1" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:434px;">@Html.Raw(Model.objOrderStatusM.BillingFirstName)</label><br /><br />         
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:430px;">Nom:</span><label id="nom1" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:516px;top:434px;">@Html.Raw(Model.objOrderStatusM.BillingName)</label><br /><br />
+             <span style="font-size:24px;display:inline;width:300px;position:absolute;left:100px;top:476px;"> Adresse de facturation:</span><label id="billAddress" style="font-size:20px;width:600px;display:inline;color: #8b8b8b;position:absolute;left:354px;top:480px;">@Html.Raw(Model.objOrderStatusM.BillingAddress + " , " +Model.objOrderStatusM.BillingCity + " , " +Model.objOrderStatusM.BillingPostalCode)</label><br /><br />
+             <h2 style="margin-top:0;position:absolute;left:30px;top:520px;">Message de cadeau:</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:590px;">Prénom:</span><label id="votreprenom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:593px;">@Html.Raw(Model.objOrderStatusM.OfferFirstName)</label><br /><br />         
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:590px;">Nom:</span><label id="votrenom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:516px;top:594px;">@Html.Raw(Model.objOrderStatusM.OfferName)</label><br /><br />
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:750px;top:590px;"><b>Email id:</b></span><label id="votreemail" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:861px;top:593px;">@Html.Raw(Model.objOrderStatusM.OfferEmail)</label><br /> <br />
+             <span style="font-size:24px;display:inline;width:300px;position:absolute;left:100px;top:645px;"><b>Votre message:</b></span><label id="votremsg" style="font-size:20px;width:400px;display:inline;color: #8b8b8b;position:absolute;left:289px;top:649px;">@Html.Raw(Model.objOrderStatusM.OfferMsg)</label> <br /><br />
+        </div>
+        <!--Votre Block-->
+        <div id="votre" class="bottom_block">
+        	<div class="votre_wrap txt_center">
+            	<input type="checkbox" value="" />
+               <label>J'accepte les conditions générales de ventes.</label>
+                <div class="button"><input type="submit" value="PAYER (TOTAL AMOUNT)" onclick="return Validate();"/></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--About Us Page Code End-->
+     }
+   

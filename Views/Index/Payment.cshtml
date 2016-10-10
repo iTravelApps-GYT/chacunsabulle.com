@@ -1,0 +1,151 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "Payment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ @using (Html.BeginForm("Payment", "Index", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "defaultForm" }))
+    { 
+<!--About Us Page Code Start-->
+<section id="content">
+    <div class="content-wrap">
+    	<div id="slideshow" class="top_header">
+        	<div class="top_header_wrap">
+                <h2 class="fleft" style="width:600px;">  4   ENVOYER L'ABONNEMENT</h2>
+                <p class="fright"><a href="#"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></a></p>
+            </div>
+        </div>
+        <div class="banner_block">
+        	<div id="uneequipe" class="banner1">
+            	<div class="uneequipe_wrap">
+                	<h2 class="txt_center">RECAPITULATIF</h2>
+                </div>
+            </div>
+            <div id="voir" class="banner2">
+            	<div class="voir_wrap">
+                	<p>Dernière étape avant d’entrer dans la communauté des abonnés de Chacun sa Bulle : 
+vérifiez que les informations ci-dessous correspondent bien à vos souhaits </p>
+<p>et à vos choix précédents.</p>
+<h3>Détail de votre abonnement :</h3>
+                     <div class="button"><input type="submit" value="Formule" /></div>
+                  <div class="button"><input type="submit" value="Durée" /></div>
+                  <div class="button"><input type="submit" value="Livraison" /></div>
+                </div>
+            </div>
+        </div>
+        <!--Nakache Block-->
+         <div id="nakache" class="payment_block" style="height:700px;">
+			<h2 style="margin-top:0;position:absolute;left:30px;">5 Order Details</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:110px;">Formule:</span> <label id="for" style="font-size:20px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:115px;">Bhupendra</label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:110px;">Durée:</span> <label id="duree" style="font-size:20px;display:inline;color: #8b8b8b;position:absolute;left:530px;top:115px;">Kumar</label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:750px;top:110px;">Livraison:</span> <label id="Liv" style="font-size:20px;display:inline;color: #8b8b8b;position:absolute;left:860px;top:115px;">dghhfh</label>
+             <h2 style="margin-top:0;position:absolute;left:30px;top:180px;">Details De Livraison</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:250px;">Prénom:</span><label id="Prenom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:255px;">ghhfghfghfghfghfgh</label><br /><br />         
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:600px;top:250px;">Nom:</span><label id="nom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:700px;top:255px;">fghfghhfhghfhg</label><br /><br />
+             <span style="font-size:24px;display:inline;width:300px;position:absolute;left:100px;top:320px">Adresse de livraison:</span><label id="Address" style="font-size:20px;width:600px;display:inline;color: #8b8b8b;position:absolute;left:350px;top:325px;">gfhfghfghfghfghfgh dghhfghfgh, hfghfghfhfh, hdhghdgh dghdgd</label><br /><br />
+             <h2 style="margin-top:0;position:absolute;left:30px;top:380px;">5 PAIEMENT</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:450px;">Prénom:</span><label id="Prenom1" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:455px;">fghfghfghfghfgh</label><br /><br />         
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:600px;top:450px;">Nom:</span><label id="nom1" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:700px;top:455px;">ghnfghgfhfghfgh</label><br /><br />
+             <span style="font-size:24px;display:inline;width:300px;position:absolute;left:100px;top:530px;"> Adresse de facturation:</span><label id="billAddress" style="font-size:20px;width:600px;display:inline;color: #8b8b8b;position:absolute;left:350px;top:535px;">fghhghfghfgh fgdgfdgfdg , gsgfgs , afafafaf af afaf</label><br /><br />
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:630px;"><b>Email id:</b></span><label id="showemail" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:635px;">fsfdfsdf</label><br /> <br />
+             <span style="font-size:24px;display:inline;width:300px;position:absolute;left:600px;top:630px;"><b>Votre message:</b></span><label id="votermsg" style="font-size:20px;width:400px;display:inline;color: #8b8b8b;position:absolute;left:800px;top:635px;">dfsdfsdfsd fsdfsdfsd sfd</label> <br /><br />
+        </div>
+        <div id="nakache" class="payment_block">
+			<h2 style="margin-top:0;">5 PAIEMENT</h2>
+            <p>Choisissez votre mode de paiement et complétez les informations nécessaires pour payer et valider votre abonnement.</p>
+            
+            <div>
+            	<div class="fleft">
+                     
+                    <label>Total de l'abonnement</label>
+                    @Html.TextBoxFor(M => M.objpayment.TotalSubscriber, new { @id = "TotalSubscriber" ,@onblur="RemoveClass(this);"}) 
+                    <div class="payment_options">
+                    	<p>Choisissez votre carte de paiement :</p>
+                        <div>
+                        <img src="../Images/american.png" />
+                        <img src="~/Images/verifiedbyvisa.jpg" width="150" height="70" style=" background-color: transparent;" />
+                        <img src="~/Images/mastercard_securecode.jpg" height="70"/>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fright">
+                	<div>
+                        <label>Numéro</label>
+                        @Html.TextBoxFor(M => M.objpayment.CardNumber, new { @id = "Number" ,@onblur="RemoveClass(this);"})
+                    </div>
+                    <div>
+                        <label>Titulaire</label>
+                        @Html.TextBoxFor(M => M.objpayment.CardHolder, new { @id = "Holder",@onblur="RemoveClass(this);"})
+                        @*<input type="text" class="form-control" name="username"
+                                   data-fv-trigger="blur"
+                                   data-fv-message="The username is not valid"
+                                   required data-fv-notempty-message="The username is required and cannot be empty"
+                                   pattern="[a-zA-Z0-9_\.]+" data-fv-regexp-message="The username can only consist of alphabetical, number, dot and underscore"
+                                   minlength="5" maxlength="30" data-fv-stringlength-message="The username must have at least 5 characters" />
+                        <input type="email" class="form-control" name="phoneno" required data-fv-emailaddress-message="The input is not a valid email address" />*@
+                    </div>
+                    <div>
+                        <label>Expiration</label>
+                        
+                        @Html.TextBoxFor(M => M.objpayment.ExpDate, new { @id = "ExpDate" ,@onblur="RemoveClass(this);"})
+                        @*<input class="form-control" name="email" type="email" required data-fv-emailaddress-message="The input is not a valid email address" />*@
+                        <div>
+                        <select class="fleft"><option>Mois</option> </select>
+                        <select class="fright"><option>Année</option></select>
+                        </div>
+                    </div>
+                    <div>
+                        <label>Code de sécurité</label>
+                        @Html.TextBoxFor(M => M.objpayment.SecurityCode, new { @id = "SecurityCode",@onblur="RemoveClass(this);" })
+                    </div>
+                </div>
+                      
+            </div>
+             
+        </div>
+        <!--Votre Block-->
+        <div id="votre" class="bottom_block">
+        	<div class="votre_wrap txt_center">
+            	<input type="checkbox" value="" />
+               <label>J'accepte les conditions générales de ventes.</label>
+                <div class="button"><input type="submit" value="PAYER (TOTAL AMOUNT)" onclick="return Validate();"/></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--About Us Page Code End-->
+     }
+    <script>
+        function RemoveClass(obj)
+        {
+            $(obj).removeClass("error");
+        }
+
+        function Validate() {
+            if ($("#TotalSubscriber").val().length < 1 || $("#Number").val().length < 1 || $("#Holder").val().length < 1 || $("#ExpDate").val().length < 1 || $("#SecurityCode").val().length < 1) {
+                if ($("#TotalSubscriber").val().length < 1) {
+                    $("#TotalSubscriber").addClass("error");
+                }
+                if ($("#Number").val().length < 1) {
+                    $("#Number").addClass("error");
+                }
+                if ($("#Holder").val().length < 1) {
+                    $("#Holder").addClass("error");
+                }
+                if ($("#ExpDate").val().length < 1) {
+                    $("#ExpDate").addClass("error");
+                }
+                if ($("#SecurityCode").val().length < 1) {
+                    $("#SecurityCode").addClass("error");
+                }
+                // document.getElementById("txtRecap").className = "error";
+                //document.getElementById("txtRecap").style.borderColor = 'red!important';
+                //document.getElementById("txtRecap").style.border = 'solid';
+                return false;
+            }
+            else {
+                return true;
+
+            }
+        }
+        </script>

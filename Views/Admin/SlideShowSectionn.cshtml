@@ -1,0 +1,211 @@
+﻿@model Commic.Models.Commic
+
+@{
+    Layout = "SlideShowSectionn";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CHACUN SA BULLE</title>
+@*<link type="text/css" href="~/CSS/styles.css" rel="stylesheet">*@
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <style>
+        .Editor1
+        {
+            width:600px;
+            height:70px;
+        }
+        .Editor2, .Editor3
+        {
+            width:500px;
+        }
+    </style>
+</head>
+
+<body>
+<!--Header Code Start-->
+@*<header id="header"> 
+<div class="header-wrap">
+	<span class="fleft logo"><a href="#"><img src="Images/logo.png" alt="CHACUN SA BULLE" /></a></span>
+    <div class="main-menu">
+    	<nav>
+        	<ul>
+            	<li><a class="home_icon" href="#"></a></li>
+              	<li><a href="#">S’abonner</a></li>
+ 				<li><a href="#">Offrir</a></li>
+                <li><a href="#">Comment ça marche ?</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a class="user_icon" href="#">Connexion</a></li>
+           </ul>
+        </nav>
+    </div>
+</div>
+</header>*@
+<!--Header Code End-->
+    <h2>SlideShow Section of Main Page</h2>
+    @using (Html.BeginForm("SlideShowSectionn", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    { 
+        <center><table width="50%" >
+            <tr>
+                <td width="200px">Upload Main Image</td><td><input id="upload1" name="upload1" type="file" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Main Heading</strong>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">@Html.TextAreaFor(M => M.objSlide.Heading1, new { @class = "Editor1" })     
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><strong>Defination Line 1</strong></td></tr><tr><td colspan="2">@Html.TextBoxFor(M => M.objSlide.DescLine1, new { @class = "Editor2" })  
+                </td>
+            </tr>
+             <tr>
+                <td colspan="2"><strong>Defination Line 2</strong></td></tr><tr><td colspan="2">@Html.TextBoxFor(M => M.objSlide.DescLine2, new { @class = "Editor2" })  
+                </td>
+            </tr>
+             <tr>
+                <td colspan="2"><strong>Defination Line 3</strong></td></tr><tr><td colspan="2">@Html.TextBoxFor(M => M.objSlide.DescLine3, new { @class = "Editor2" })  
+                </td>
+            </tr>
+             <tr>
+                <td colspan="2"><strong>Defination Line 4</strong></td></tr><tr><td colspan="2">@Html.TextBoxFor(M => M.objSlide.DescLine4, new { @class = "Editor2" })  
+                </td>
+            </tr>
+             <tr>
+                <td colspan="2"><strong>Caption For Botton 1</strong></td></tr><tr><td colspan="2">@Html.TextBoxFor(M => M.objSlide.Btn1Caption, new { @class = "Editor2" })  
+                </td>
+            </tr>
+             <tr>
+                <td colspan="2"><strong>Caption For Botton 2</strong></td></tr><tr><td colspan="2">@Html.TextBoxFor(M => M.objSlide.BTn2Caption, new { @class = "Editor2" })  
+                </td>
+            </tr>
+            <tr><td colspan="2" align="center"><label id="result">@ViewBag.Message</label></td></tr>
+            <tr>
+                <td colspan="2">
+                    <br />
+                    <input id="Submit1" type="submit" value="Save SlideShow data" />
+                </td>
+            </tr>
+        </table>
+                    @*<div id="divSlideShow">
+        <table width="100%" id="tblData" border="1">
+            <tr>
+                <th>S.No.</th>
+                <th>Image</th>
+                <th>Heading</th>
+                <th>Description Line1</th>
+                <th>Description Line2</th>
+                <th>Description Line3</th>
+                <th>Description Line4</th>
+                <th>Caption of 1 Botton </th>
+                <th>Caption of 2 Botton</th>
+                <th>Action</th>
+            </tr>
+            @foreach (Commic.Models.SlideShowSection obj in Model.objSlideListM)
+            { 
+                <tr>
+                    <td>
+                        <input type="hidden" value='@obj.id' data-heading='@obj.Heading1' data-descline1='@obj.DescLine1' data-descline2='@obj.DescLine2' data-descline3='@obj.DescLine3' data-descline4='@obj.DescLine4' data-btncap1='@obj.Btn1Caption' data-btncap2='@obj.BTn2Caption'/>
+                       <a href="#" onclick="FillEdit('@obj.id'); return false;"> @obj.id</a>
+                    </td>
+                    <td>
+                       <span><img src="@Url.Content("~/Uploads/"+obj.MainImageUrl)" alt="" width="100" heigth="100" /></span>
+                    </td>
+                    <td>
+                       <span>@obj.Heading1</span>
+                    </td>
+                    <td>
+                       <span>@obj.DescLine1</span>
+                    </td>
+                    <td>
+                       <span>@obj.DescLine2</span>
+                    </td>
+                    <td>
+                       <span>@obj.DescLine3</span>
+                    </td>
+                    <td>
+                       <span>@obj.DescLine4</span>
+                    </td>
+                    <td>
+                       <span>@obj.Btn1Caption</span>
+                    </td>
+                    <td>
+                       <span>@obj.BTn2Caption</span>
+                    </td>
+                    <td>
+                       <span><a href="#" onclick="Delete(@obj.id); return false;">Delete</a></span>
+                    </td>
+                </tr>
+            }
+        </table>
+            </div>*@
+        </center>
+        <input type="hidden" id="hdd" name="hdd" value="0" />
+    }
+    <script type="text/javascript" >
+        function Delete(obj)
+        {
+
+            alert(obj);
+            $.ajax({
+
+                type: "post",
+                url: "/Admin/DeletersSlideShow",
+                data: { "id": obj },
+                success: (function (data) {
+                    $("#divSlideShow").html(data)
+                }),
+                fail: (function (data) {
+                })
+            });
+        }
+    </script>
+   @* <script type="text/javascript">
+        function Deleterecord(obj) {
+            alert(obj);
+            $.ajax({
+                type: "post",
+                url: "/Admin/DeleterSlideShow",
+                data: { "id": obj },
+
+                success: (function (data) {
+
+                    $("#divSlideShow").html(data);
+                }),
+                fail: (function (data) {
+                })
+            });
+        }
+    </script>*@
+
+    <script type="text/javascript">
+        function FillEdit(obj) {
+            
+            $("#hdd").val(obj);
+            alert(obj);
+            var $ele = $("#tblData tr td input[value=" + obj + "]");
+            if ($ele != null) {
+                $('#objSlide_Heading1').val($ele.attr("data-heading"));
+                $('#objSlide_DescLine1').val($ele.attr("data-descline1"));
+                $('#objSlide_DescLine2').val($ele.attr("data-descline2"));
+                $('#objSlide_DescLine3').val($ele.attr("data-descline3"));
+                $('#objSlide_DescLine4').val($ele.attr("data-descline4"));
+                $('#objSlide.Btn1Caption').val($ele.attr("data-btncap1"));
+                $('#objSlide.BTn2Caption').val($ele.attr("data-btncap2"));
+            }
+
+        }
+    </script>
+     
+
+</body>
+</html>
+
+
+

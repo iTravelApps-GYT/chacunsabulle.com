@@ -1,0 +1,89 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "Vouchar_Activation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ @using (Html.BeginForm("Vouchar_Activation", "Index", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+ {   
+    <div id="SectionLogin">
+        <!--About Us Page Code Start-->
+<section id="content">
+    <div class="content-wrap" id="identification_detail_3">
+        <div class="banner_block">
+            <div id="voir" class="banner2" style="padding-left :150px;">
+            	<h4 style="font-size: 33px;font-weight: normal;line-height: 37px;margin: -10px auto;padding: 0px 0px;width: 66%;margin-left: 276px;letter-spacing: 2px;">VOUS AVEZ RECU UN CADEAU</h4>
+                <h4 style="font-size: 20px;font-weight: normal;line-height: 21px;margin: 8px auto;padding: 0px 0px;width: 100%;margin-left: -51px;letter-spacing: 0px;font-family: 'lato';margin-top: 17px;text-align: center;">Toute l'équipe vous souhaite la bienvenue ! Vous êtes sur le point d'entrée dans la Grande Famille du chacunsabulle.com L'Aventure commence ici en entrant votre code d'activation</h4>
+            </div>
+        </div>
+            
+            <!--Nakache Block-->
+        <div id="nakache" class="payment_block payment_block_2"  style="height:170px;">
+            <center><label  style="color: red; width: 500px;"><span id="sucmsg" style="font-size:17px;">@ViewBag.Message</span></label>
+            <table style="margin-top: -21px;">
+                <tr>
+                    <td width="100px">
+                        <label style="color:black;font-size:24px;width:300px">votre code d'activation<font color="red" size="4"><b>*</b></font></label></td>
+                    <td width="200px">@Html.TextBoxFor(M => M.objActiveVouchar.VoucharCode, new { @id = "Vcode", name = "VoucherCode", @onblur = "RemoveClass(this);", @onkeypress=" $('#sucmsg').hide();", @style="width:180px;background-color: #fff;border: 0 none;box-shadow: 3px 2px 2px #a7a9ac;height: 50px;width: 285px;margin: 30px 0 30px;padding: 5px;font-weight: bold;/* position: absolute; *//* top:45px; */" })
+                    </td>
+                </tr>
+               
+            </table><label  style="width: 700px;margin-top: -40px;"><span id="sucmsg" style="font-size: 17px;color: black;">Pensez à bien saisir la totalité de votre code (lettres chiffres et tirets). </span></label></center>
+        </div>
+          @* <div id="nakache" class="payment_block payment_block_2" style="height:280px;">
+                <center><label id="sucmsg" style="color: red; width: 200px;">@ViewBag.Message</label>
+                    <table style="position: absolute;top: 100px;left: 100px;">
+                <tr style="margin-top:50px;">
+                <td width="200px"><label style="color:black;font-size:24px;width:100px">Email<font color="red" size="4"><b>*</b></font></label></td>
+                    <td width="200px">@Html.TextBoxFor(M => M.objActiveVouchar.VoucharCode, new { @id = "Vcode", name = "VoucherCode", @onblur = "RemoveClass(this);", @style = "width:180px;background-color: #fff;border: 0 none;box-shadow: 3px 2px 2px #a7a9ac;height: 50px;width: 285px;margin: 12px 0 30px;padding: 3px;font-weight: bold;position: absolute;top:45px;" })
+                    </td>
+                </tr>
+                </table></center>
+                
+            </div>*@
+            
+            <!--Votre Block-->
+        <div id="votre" class="bottom_block">
+        	<div  class="votre_wrap txt_center" >
+                @*<label href="#" style="color:white;position:absolute;top:-50px;left:300px;font-size:16pt;"><input type="checkbox" style="color:white;position:absolute;top:9px;left:-19px;font-size:16pt;width:15px;height:15px;"/>souviens-toi de moi</label> <a href="#" style="color:white;position:absolute;top:-50px;right:300px;font-size:16pt;">Mot de passe oublié</a>*@
+               <input class="btn" type="submit" value="" onclick="return Validation();" style="height:46px;width:118px;border: 0px solid rgba(0, 0, 0, 0.7);border-radius: 0px;box-shadow: 0px 0px 0px rgba(128, 130, 133, 0.5);"/>
+                @*<a href="#" style="color:white;position:absolute;top:50px;left:430px;font-size:16pt;">Pas encore inscrit?</a> <a href="#" style="color:white;position:absolute;top:50px;right:480px;font-size:16pt;"><u>signer</u> </a>*@
+          </div>
+        </div>
+    </div>
+</section>
+<!--About Us Page Code End-->
+       
+    </div>
+ }
+<script>
+    $("#Vcode").val('');
+</script>
+<script>
+    function Validation() {
+        //alert("hello");
+            if ($("#Vcode").val().length < 1) {
+                $("#Vcode").addClass("error");
+                return false;
+            }
+            
+        else {
+            
+                return true;
+            }
+    }
+</script>
+<style>
+    .btn {
+        background-image: url("../Images/next.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+	cursor:pointer;
+        font-size: 16px;
+        position: absolute;
+        top: 0px;
+        left:565px;
+        background-color: transparent;
+    }
+</style>

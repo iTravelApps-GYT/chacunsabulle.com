@@ -1,0 +1,60 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "LoginPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ @using (Html.BeginForm())
+    { 
+    <div id="SectionLogin">
+      
+                @*<a href="#" onclick="$('#SectionLogin').hide(); return false;" style="float:right;font-size:x-small;color:black;">X</a>*@
+        @*@Html.HiddenFor(M => M.objLoginMaster.querystring)*@
+        @*<input type="hidden" value="@Request.QueryString["id"]" id="pageid" name="pageid" />*@
+                <div class="top_header_wrap">
+                    <h3><center>Registration OR Login First</center></h3>
+                </div>
+            
+            <!--Nakache Block-->
+            <div id="nakache" class="payment_block" style="height:250px;width:400px;background-color:black">
+                <label id="Logmsg" style="color:red;width:200px;">@ViewBag.Message</label>
+                <table>
+                    <tr>
+                <td width="100px"><label>UserID</label></td>
+                <td width="200px"> @Html.TextBoxFor(M => M.objLoginMaster.UserID, new {name = "uid", @onblur = "RemoveClass(this);", @style="width:180px"})
+                    </td>
+                </tr>
+                <tr>
+                <td width="200px"><label>Password</label></td>
+                <td width="200px"> @Html.TextBoxFor(M => M.objLoginMaster.Password, new {name = "pwd",@type="password", @onblur = "RemoveClass(this);", @style="width:180px"})  </td>
+                </tr>
+                    <tr><td colspan="2" align="center">
+                        @Html.ActionLink("Signup", "/RagistrationPage", "Index", new { id = Model.objLoginMaster.querystring }, new { @name = "abc" })@*<input type="submit" name="btnsave" onclick="window.location = 'Index/RagistrationPage'" value="Signup" style="height:20px;width:100px;">                        *@
+                        <input type="submit" name="btnsave" value="Login" onclick="return Login();" style="height:20px;width:100px;">
+                        </td></tr>
+                    <tr><td colspan="2"></td></tr>
+                </table>
+                <label id="msg" style="color:red;width:200px;"></label>
+            </div>
+        <input type="hidden" id="hdd" name="hdd" value="0" />
+</div>
+ }
+<script type="text/javascript">
+    function Login() {
+        debugger;
+        if ($("#objLoginMaster_UserID").val().length < 3 || $("#objLoginMaster_Password").val().length < 1) {
+            if ($("#objLoginMaster_UserID").val().length < 3) {
+                $("#objLoginMaster_UserID").addClass("error");
+
+            }
+            if ($("#objLoginMaster_Password").val().length < 1) {
+                $("#objLoginMaster_Password").addClass("error");
+
+            }
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    </script>

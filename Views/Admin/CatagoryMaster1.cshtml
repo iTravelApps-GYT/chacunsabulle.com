@@ -1,0 +1,81 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "CatagoryMaster";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CHACUN SA BULLE</title>
+@*<link type="text/css" href="~/CSS/styles.css" rel="stylesheet">*@
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <style>
+        .Editor1,.Editor2,.Editor3
+        {
+            width:600px;
+            height:70px;
+        }
+          #result
+{
+	font-size: 24px;
+	color:white;
+}
+        #tblData1
+        {
+            color:white;
+        }
+    </style>
+</head>
+<body style="color:white;">
+    <hr color="green"/><center><font color="White" face="Castellar" size="6">Master Panel</font></center><hr color="green"/>
+    @using (Html.BeginForm("ComicMaster", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    { 
+        <center><table width="50%" border="1" height="200px">
+            <tr>
+                <td >Enter Catagory Name
+                </td>
+                <td>@Html.TextBoxFor(M => M.objSubTimeclass.SubsTimeDuration, new { @maxlength="300", @style="width:300px;" })     
+                </td>
+            </tr>
+            <tr><td colspan="6" align="center"><label id="result">@ViewBag.Message</label></td></tr>
+            <tr><td colspan="6" align="center"><input type="submit" name="submit" value="Update" style="background-image:url(../Images/green_btn);width:200px;height:30px; " /></td></tr>
+            </table></center>
+        <div id="divgrid"><center><h3>Sub's Duration Table</h3>
+        <table width="70%" id="tblData" border="1">
+            <tr>
+                
+                <th>S.No.</th>
+                <th>Catagory Name</th>
+                <th colspan="2">Action</th>
+
+            </tr>
+               @foreach (Commic.Models.SubscriptionTimeDuration obj in Model.objSubsTimeListM)
+                {
+                <tr>
+                    <td width="50" align="center">
+                        <input type="hidden" value='@obj.id' data-Duration='@obj.SubsTimeDuration ' data-Price='@obj.SubsTimePrice' />
+                       <a href="#" onclick="FillEdit(@obj.id); return false;"> @obj.id</a>
+                    </td>
+                    <td width="200" align="center">
+                       <span>@Html.Raw(@obj.SubsTimeDuration)</span>
+                    </td>
+                    <td width="50" align="center">
+                       <span><a href="#" onclick="FillEdit(@obj.id); return false;">Edit</a></span>
+                    </td>
+                    <td width="50" align="center">
+                       <span><a href="#" onclick="Deleterecord(@obj.id); return false;">Delete</a></span>
+                    </td>
+                </tr>
+               }
+        </table></center></div>
+    }
+   <script type="text/javascript">
+       $price = str_replace(",", ".", $price);
+       $('#objSubTimeclass_SubsTimeDuration').val('');
+       $('#objSubTimeclass_SubsTimePrice').val('');
+       $('#objSubDeliveryclass_DeliveryType').val('');
+       $('#objSubDeliveryclass_DeliveryPrice').val('');
+    </script>
+</body>
+</html>

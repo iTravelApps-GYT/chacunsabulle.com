@@ -1,0 +1,237 @@
+﻿@model Commic.Models.Commic
+
+@{
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CHACUN SA BULLE</title>
+<link type="text/css" href="~/CSSfiles/stylessec.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<!--Header Code Start-->
+<header id="header"> 
+<div class="header-wrap">
+	<span class="fleft logo"><a href="#"><img src="../Images/logo.png" alt="CHACUN SA BULLE" /></a></span>
+    <div class="main-menu">
+    	<nav>
+        	<ul>
+                <li><a class="home_icon" href="#"></a></li>
+                <li><a href="#">S’abonner</a></li>
+                <li><a href="#">Offrir</a></li>
+                <li><a href="#">Comment ça marche ?</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a class="user_icon" href="#">Connexion</a></li>
+          </ul>
+        </nav>
+    </div>
+</div>
+</header>
+<!--Header Code End-->
+     @using (Html.BeginForm("FormuleBSM", "Index", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    { 
+<!--About Us Page Code Start-->
+<section id="content">
+    <div class="content-wrap" id="identification_detail_3">
+    	<div id="slideshow" class="top_header">
+        	<div class="top_header_wrap">
+                <h2 class="fleft" style="width:600px;">1-3 FORMULE, DUREE, LIVRAISON</h2>
+                <p class="fright"><a href="#"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></a></p>
+            </div>
+        </div>
+        <!--Banner1-->
+        <div class="banner_block">
+            <div id="voir" class="banner2">
+            	<h3>4 PRECISION SUR L'ENFANT....</h3>
+            </div>
+        </div>
+        <!--Nakache Block-->
+        <div id="nakache" class="payment_block payment_block_2 nakache_block_2 ">
+        	<div class="fleft">
+             	<div class="heading txt_center">
+                    <strong><center>Univers<center> </strong>
+					<p>Choisissez votre univers préféré</p><p><center>(2 choix max)</center></p>
+                </div>           	
+            	<div>
+                    <label>Franco Belge</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Manga</label>
+                    <input type="checkbox" value="" />
+                </div>
+				<div>
+                    <label>Manga</label>
+                    <input type="checkbox" value="" />
+                </div>
+				<div>
+                    <label>Manga</label>
+                    <input type="checkbox" value="" />
+                </div>
+            </div>
+            
+            <div class="fleft genre">
+            	<div class="border fleft"></div>
+                <div class="heading txt_center">
+                    <strong><center>Genre<center></strong>
+					<p>Choisissez vos histoires préférées</p><p><center>(4 choix mini)</center></p>
+                </div> 
+            	<div>
+                    <label>Aventure</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Heroic Fantasy</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Aviation</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Histoire</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Classique / Patrimoine</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Humour</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Esotérique</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Primées (Angoulême...)</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Equitation</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Sport</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Fantastique</label>
+                    <input type="checkbox" value="" />
+                </div>
+				<div>
+                    <label>Sport</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Fantastique</label>
+                    <input type="checkbox" value="" />
+                </div>
+				<div>
+                    <label>Sport</label>
+                    <input type="checkbox" value="" />
+                </div>
+                <div>
+                    <label>Fantastique</label>
+                    <input type="checkbox" value="" />
+                </div>
+
+            </div>
+            
+            <div class="fright">
+            	<div class="border fleft"></div>
+                <div class="heading txt_center">
+                    <strong>Prix</strong>
+					<p>En fonction des univers</p><p><center>Séléctionnés</center></p>
+                </div> 
+            	<div>
+                    <label>Recap</label>
+                    <input type="text" value="" />
+                </div>
+                <div>
+                    <label>Recap</label>
+                    <input type="text" value="" />
+                </div>
+                <div>
+                    <label>Recap</label>
+                    <input type="text" value="" />
+                </div>
+                <div>
+                    <label>Recap</label>
+                    <input type="text" value="" />
+                </div>
+				<div>
+                    <label>Recap</label>
+                    <input type="text" value="" />
+                </div>
+				<div>
+                    <label>Recap</label>
+                    <input type="text" value="" />
+                </div>
+            </div>
+        </div>
+        
+        <!--Votre Block-->
+        <div id="votre" class="bottom_block">
+        	<div class="votre_wrap txt_center">
+               <div class="button"><a href="#">ETAPE SUIVANTE</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--About Us Page Code End-->
+     }
+<!--Footer Code Start-->
+<footer id="footer">
+	<div class="footer-wrap">
+    	<div class="footerlinks">
+            <div class="footer_block">
+                <ul>
+                    <li class="footer_block_head">Comment ça marche ?</li>
+                    <li><a target="" href="#">Découvrez chaque mois</a></li>
+                    <li><a target="" href="#">notre sélection de 2 BD livrées chez vous,</a></li>
+                    <li><a target="" href="#">plus de nombreuses surprises.</a></li>
+                </ul>
+            </div>
+            <div class="footer_block">
+                <ul>
+                    <li class="footer_block_head">NOS OFFRES</li>
+                    <li><a target="" href="#">S’abonner</a></li>
+                    <li><a target="" href="#">Offrir</a></li>
+                    <li><a target="" href="#">J’ai réçu un cadeau</a></li>
+                </ul>
+            </div>
+            <div class="footer_block">
+                <ul>
+                    <li class="footer_block_head">BESOIN D’AIDE</li>
+                    <li><a class="phone_icon" target="" href="#">01 42 38 24 62</a></li>
+                    <li><a class="mail_icon" target="" href="#">mayday@chacunsabulle.com</a></li>
+                </ul>
+            </div>
+            <div class="footer_block">
+                <ul>
+                    <li class="footer_block_head">SUIVEZ-NOUS</li>
+                    <li class="social_share_icons">
+                        <a class="twitter_icon" target="" href="#"></a>
+                    </li>
+                    <li class="social_share_icons">
+                        <a class="instagram_icon" target="" href="#"></a>
+                    </li>
+                    <li class="social_share_icons">
+                        <a class="facebook_icon" target="" href="#"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--Footer Code End-->
+</body>
+</html>
+

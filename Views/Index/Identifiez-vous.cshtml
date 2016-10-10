@@ -1,0 +1,101 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "Identifiez-vous";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Payment", "Index", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "defaultForm" }))
+{ 
+    <!--About Us Page Code Start-->
+    <section id="content">
+        <div class="content-wrap" id="identification_detail_2">
+            <div id="slideshow" class="top_header">
+                <div class="top_header_wrap">
+                    <h2 class="fleft" style="width:600px;">5 PRECISION SUR SES GOÛTS	</h2>
+                    <p class="fright"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></p>
+                </div>
+            </div>
+            <div class="banner_block">
+                <div id="uneequipe" class="banner1">
+                    <div class="uneequipe_wrap">
+                        <h2 class="txt_center">ENVOYER  L'ABONNEMENT</h2>
+                    </div>
+                </div>
+                <div id="voir" class="banner2">
+                    <div class="voir_wrap">
+                        Renseignez l’adresse à laquelle vous souhaitez
+recevoir vos  BD chaque mois
+                    </div>
+                </div>
+            </div>
+            <!--Nakache Block-->
+            <div id="nakache" class="payment_block">
+                <div class="fleft">
+                    <div class="col-sm-4">
+                        <label>Prénom</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.LastName, new { @id = "LastName", @onblur = "RemoveClass(this);" })
+                    </div>
+                    <div>
+                        <label>Nom</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.FirstName, new { @id = "Firstname", @onblur = "RemoveClass(this);", @onkeypress = "return checkNum();" })
+                    </div>
+                    <div>
+                        <label>Société  Facultatif</label><label></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.OptionalSociety, new { @id = "Security", @onblur = "RemoveClass(this);" })
+                    </div>
+
+                </div>
+
+                <div class="fleft">
+                    <div class="border fleft"></div>
+                    <div>
+                        <label>Adresse</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Address, new { @id = "Add", @onblur = "RemoveClass(this);" })
+                    </div>
+                    <div>
+                        <label style="width:300px;">Complément Facultatif</label><label></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.OptionalSupplement, new { @id = "comFac", @onblur = "RemoveClass(this);" })
+
+                    </div>
+                    <div>
+                        <label>Code Postal</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.PostalCode, new { @id = "PostCode", @onblur = "RemoveClass(this);", @onkeypress = "return IsNumeric(event);" })
+                        <span id="error" style="color: Red; display: none"></span>
+                    </div>
+
+                </div>
+
+                <div class="fleft">
+                    <div class="border fleft"></div>
+                    <div>
+                        <label>Ville</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Village, new { @id = "Ville", @onblur = "RemoveClass(this);" })
+
+                    </div>
+                    <div>
+                        <label>Pays</label><label></label>
+                        <select class="fleft">
+                            <option>France</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Téléphone</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Telephone, new { @id = "Telephone", @onblur = "RemoveClass(this);", @onkeypress = "return IsNumeric(event);" })
+                        @*<span id="error1" style="color: Red; display: none"></span>*@
+                    </div>
+                </div>
+            </div>
+            <!--Votre Block-->
+            <div id="votre" class="bottom_block">
+                <div class="votre_wrap txt_center">
+                    <input type="checkbox" value="" />
+                    <label>Utiliser cette adresse pour la facturation</label>
+                    <div class="button">
+                        <input type="submit" class="btn btn-primary" name="signup" value="ETAPE SUIVANTE" onclick="return Validate();" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About Us Page Code End-->
+}
+

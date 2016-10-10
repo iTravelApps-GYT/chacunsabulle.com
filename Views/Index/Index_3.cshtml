@@ -1,0 +1,194 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Index", "Index", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "defaultForm" }))
+{ 
+<!--About Us Page Code Start-->
+
+<section id="content">
+    <div class="content-wrap">
+    	<div id="slideshow">
+        	<div class="slideshow_wrap">
+            	<div class="slideshow_image"></div>
+                <div class="slideshow_content_wrap txt_center">
+                    <div class="slideshow_content">
+                        <h2>Recevez et/ou offrez le meilleur de la BD chez vous ou chez vos procheS <br />chaque mois</h2>
+                        <p>en bénéficiant des conseils et coups de coeur de notre expert</p>
+                        <strong>Jean-Pierre Nakache</strong>
+                        <p>mais aussi de ceux de tous les libraires CanalBD</p>
+                        <span>(au travers de la sélection du Prix des Libraires de Bande Dessinée)</span>
+                        <div class="slideshow_buttons">
+                            <div class="button"><input type="submit" value="commencer à buller"></div>
+                            <div class="button"><input type="submit" value="faites buller vos proches"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nakache_wrap">
+        	<div id="uneequipe">
+            	<div class="uneequipe_wrap">
+                	<h2 class="txt_center">Une équipe<br>de spécialistes<br>à votre service</h2>
+                </div>
+            </div>
+            <div id="voir">
+            	<div class="voir_wrap">
+                	<p>Chacun sa bulle, c’est une équipe qui a envie d’apporter chez vous <br>
+ou chez vos proches une sélection nouvelle de BD qui devrait vous décoiffer, <br>
+vous faire rire, vous faire voyager, vous faire réfléchir, vous faire rêver...</p> <br>
+<p><strong>Alors, prêt à vous donner rendez-vous une fois par mois<br>
+pour nourrir votre bulle ?</strong></p><br>
+                    <div class="button"><input type="submit" value="voir les formules" /></div>
+                </div>
+            </div>
+        </div>
+        <!--Nakache Block-->
+        <div id="nakache">
+            <div class="nakache_wrap">
+            	<div class="nakache_blocks">
+       				<div class="bleonore">
+                    	<div class="bleonore_ribn"></div>
+                        <div class="txt_center">
+                        	<h4>toujours en éveil<br>et à l’écoute.</h4>
+                            <p>Elle est formée à à l’Institut National de Formation<br>
+  de la Librairie. Elle a le don de toujours trouver<br>
+    les bons titres qui sauront donner le goût de<br>
+        la lecture aux plus jeunes…<span style="height: 1px; float: right; width: 62px;"></span><br>
+           mais pas que.<span style="height: 1px; float: right; width: 110px;"></span></p>
+                        </div>
+                    </div>
+                    <div class="jean_perre">
+                    	<div class="jean_perre_ribn"></div>
+                        <div class="txt_center">
+                        	<h4>Jean-Pierre,<br>ou l’expertise et l’éclectisme.</h4>
+                            <p>Il a son magasin de BD Bulles en tête dans<br>
+le quartier des Batignolles, à Paris.<br><br>
+
+Il est aussi administrateur actif du seul vrai réseau<br>
+d’indépendants de librairies spécialisées en Bd (Canal BD),<br>
+membre pendant 3 ans du comité de sélection du<br>
+Festival d’Angoulême, éditeur d’albums de luxe,<br>
+organisateur de rencontres hebdomadaires<br>
+avec les auteurs.</p>
+                        </div>
+                    </div>
+                    <div class="vincent">
+                    	<div class="vincent_ribn"></div>
+                        <div class="txt_center">
+                        	<h4><span style="height: 1px; width: 50px; float: left;"></span>le manga sous<br><span style="height: 1px; width: 50px; float: left;"></span>toutes ses formes</h4>
+                            <p><span style="height: 1px; float: left; width: 59px;"></span>Il est passionné de culture japonaise.<br>
+            <span style="height: 1px; float: left; width: 38px;"></span>Avec plus de 2 voyages par an au pays<br>
+  <span style="height: 1px; float: left; width: 8px;"></span>du soleil levant depuis plus de 10 ans,<br> 
+<span style="height: 1px; float: left;"></span>il saura vous dénicher les futurs<br>
+ <span style="height: 1px; float: left;"></span>incontournables<br>
+ <span style="height: 1px; float: left;"></span>mangas !</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nakache_footer"></div>
+            </div>
+        </div>
+        <!--Votre Block-->
+        <div id="votre">
+        	<div class="votre_wrap">
+                <h2 class="txt_center">Votre abonnement à chacun sa bulle C’est chaque mois :</h2>
+                <div class="txt_center votre_desc">
+                    <p><strong>Au moins 2 BD sélectionnées pour vous  +  Une fiche sur l’auteur et le dessinateur  + Un ex-libris</strong></p>
+                    <p>Plus des surprises pouvant aller jusqu’à des albums dédicacés, des invitations premium pour rencontrer les auteurs et les dessinateurs.</p>
+                </div>
+                <div class="txt_center">
+                    <div class="votre_block">
+                    	<div>
+                            <div class="votre_image txt_center"></div>
+                            <h3>prêt à buller</h3>
+                            <div class="votre_price"><span class="txt_blue">34,90&euro;</span> par mois</div>
+                            <div>
+                                <p class="txt_blue"><strong>Vous aimez la nouveauté</strong></p>
+                                <p class="votre_block_desc">Signez pour les 2 BD incontournables du mois sélectionnées par notre expert.</p>
+                            </div>
+                            <div class="button"><input type="submit" id="b1" data-body='PAB' value="je m’abonne" onclick="Subscrib('b1'); return false;"/></div>
+                            <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                        </div>
+                    </div>
+                    <div class="votre_block">
+                    	<div>
+                            <div class="votre_image bulle_image txt_center"></div>
+                            <h3>bulle sur mesure</h3>
+                            <div class="votre_price">à partir de <span class="txt_green">17,90&euro;</span></div>
+                            <div>
+                            <p class="txt_green"><strong>Vous savez ce que vous rechercher</strong></p>
+                            <p class="votre_block_desc">Optez pour un choix de 2 BD qui sauront répondre à vos envies grâce aux conseils de notre équipe.</p>
+                            </div>
+                            <div class="button green_btn"><input type="submit" id="b2" data-body='BSM' value="je m’abonne" onclick="Subscrib('b2'); return false;" /></div>
+                            <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                        </div>
+                    </div>
+                    <div class="votre_block">
+                    	<div>
+                            <div class="votre_image mini_image txt_center"></div>
+                            <h3>mini<br>bulle</h3>
+                            <div class="votre_price">à partir de <span class="txt_orange">17,90&euro;</span></div>
+                            <div>
+                            <p class="txt_orange"><strong>Pour stimuler l’imagination</strong></p>
+                            <p class="votre_block_desc">Offrez chaque mois 2 BD enfant sélectionnées par notre équipe.</p>
+                            </div>
+                            <div class="button orange_btn"><input type="submit" id="b3" data-body='mini' value="je m’abonne" onclick="Subscrib('b3'); return false;"/></div>
+                            <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                        </div>
+                    </div>
+                    <div class="votre_block">
+                    	<div>
+                            <div class="votre_image minimax_image txt_center"></div>
+                            <h3>mini & maxi bulle</h3>
+                            <div class="votre_price">à partir de <span class="txt_pink">17,90&euro;</span></div>
+                            <div>
+                            <p class="txt_pink"><strong>Vous voulez tout partager avec vos enfants</strong></p>
+                            <p class="votre_block_desc">Recevez chaque mois une BD sélectionnée pour vous et une pour votre  enfant.</p>
+                            </div>
+                            <div class="button pink_btn"><a href="#">je m’abonne</a>
+                                @*<input type="submit" id="b4" data-body='mini&maxi' value="je m’abonne" onclick="Subscrib('b4'); return false;" />*@
+
+                            </div>
+                            <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--About Us Page Code End-->
+    <input type="hidden" id="hdd" name="hdd" value="0" />
+}
+<script type="text/javascript">
+    //function FillEdit(obj) {
+    //    //alert(obj);
+    //    $("#hdd").val(obj);
+    //    $("#upload1").removeClass("error");
+    //    var $ele = $("#tblData tr td input[value=" + obj + "]");
+    //    if ($ele != null) {
+    //        $('#objThink_SectionTitle').val($ele.attr("data-title"));
+    //        $('#objThink_DDlValue').val($ele.attr("data-ddl"));
+    //        $('#objThink_SectionBody').val($ele.attr("data-body"));
+    //    }
+
+    //}
+</script>
+<script type="text/javascript">
+    function Subscrib(obj) {
+        var status = confirm('Are you sure You Want To Subscrib....?');
+        if (status) {
+            $.ajax({
+                type: "post",
+                url: "/Index/Index",
+                data: { "id": obj },
+                success: (function (data) {
+                }),
+                fail: (function (data) {
+                })
+            });
+        }
+    }
+    </script>

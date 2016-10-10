@@ -1,0 +1,182 @@
+﻿@model Commic.Models.Commic
+
+@{
+    ViewBag.Title = "MasterPage3Section";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CHACUN SA BULLE</title>
+@*<link type="text/css" href="~/CSS/styles.css" rel="stylesheet">*@
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <style>
+        .Editor1,.Editor2,.Editor3
+        {
+            width:600px;
+            height:80px;
+        }
+        body
+        {
+            color:white;
+        }
+    </style>
+   @* <link type="text/css" rel="stylesheet" href="~/CSSfiless/demo.css">*@
+@*<link type="text/css" rel="stylesheet" href="~/CSSfiles/jquery-te-1.4.0.css">
+<script type="text/javascript" src="~/js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="~/js/jquery-te-1.4.0.min.js" charset="utf-8"></script>
+</head>*@
+
+<body>
+<!--Header Code Start-->
+@*<header id="header"> 
+<div class="header-wrap">
+	<span class="fleft logo"><a href="#"><img src="Images/logo.png" alt="CHACUN SA BULLE" /></a></span>
+    <div class="main-menu">
+    	<nav>
+        	<ul>
+            	<li><a class="home_icon" href="#"></a></li>
+              	<li><a href="#">S’abonner</a></li>
+ 				<li><a href="#">Offrir</a></li>
+                <li><a href="#">Comment ça marche ?</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a class="user_icon" href="#">Connexion</a></li>
+           </ul>
+        </nav>
+    </div>
+</div>
+</header>*@
+<!--Header Code End-->
+    <center><hr color="green"/><font size="6">Section 3 of Main Page</font><hr color="green"/></center>
+    @using (Html.BeginForm("MasterPage3Section", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    { 
+        <center><table width="80%" border="1">
+            <tr>
+                <td width="232px"><strong>Eleonore Heading</strong>
+                </td>
+               
+                 <td>@Html.TextBoxFor(M => M.objMasterpage.Sec3Head1, new { @Style = "Width:500px" })     
+                </td>
+            </tr>
+            <tr>
+                <td width="200px" colspan="2" align="center"><strong>Eleonore Description</strong></td> </tr><tr><td colspan="2" align="center">@Html.TextAreaFor(M => M.objMasterpage.Sec3Desc1, new { @class = "Editor1" })  
+                </td>
+           </tr>
+            <tr>
+                <td width="200px"><strong>Jean-Pierre Heading</strong>
+                </td>
+                 <td>@Html.TextBoxFor(M => M.objMasterpage.Sec3Head2, new { @Style = "Width:500px" })     
+                </td>
+            </tr>
+            <tr>
+                <td width="200px" colspan="2" align="center"><strong>Jean-Pierre Description</strong></td> </tr><tr><td colspan="2" align="center">@Html.TextAreaFor(M => M.objMasterpage.Sec3Desc2, new { @class = "Editor2" })  
+                </td>
+           </tr>
+            <tr>
+                <td width="200px"><strong>Vincent Heading</strong>
+                </td>
+                 <td>@Html.TextBoxFor(M => M.objMasterpage.Sec3Head3, new { @Style = "Width:500px" })     
+                </td>
+            </tr>
+            <tr>
+                <td width="200px" colspan="2" align="center"><strong>Vincent Description</strong></td> </tr><tr><td colspan="2" align="center">@Html.TextAreaFor(M => M.objMasterpage.Sec3Desc3, new { @class = "Editor3" })  
+                </td>
+           </tr>
+            <tr>
+                <td width="200px"><strong>Sec4 Heading</strong>
+                </td>
+                 <td>@Html.TextBoxFor(M => M.objMasterpage.Sec4Head, new { @Style = "Width:500px" })     
+                </td>
+            </tr>
+            <tr>
+                <td width="200px"><strong>Sec4 Description</strong>
+                </td>
+                 <td>@Html.TextAreaFor(M => M.objMasterpage.Sec4Desc, new { @Style = "Width:500px" })     
+                </td>
+            </tr>
+            <tr>
+                <td width="200px"><strong>Sec4 Para</strong>
+                </td>
+                 <td>@Html.TextAreaFor(M => M.objMasterpage.Sec4Para, new { @Style = "Width:500px" })     
+                </td>
+            </tr>
+            <tr><td colspan="2" align="center"><label id="result1">@ViewBag.Message</label></td></tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <tr><td colspan="6" align="center"><input type="submit" name="submit" value="Update" style="background-image:url(../Images/green_btn);width:200px;height:40px; " /></td></tr>
+                </td>
+            </tr>
+        </table></center>
+        <br />
+        <div id="divMasterPageSec3grid"><center><h3>Section 3's Table</h3>
+        <table width="80%" id="tblData" border="1" >
+            <tr>
+                <th width="30px">ID</th>
+                <th width="50px">Eleonore Heading</th>
+                <th width="100px">Eleonore Description</th>
+                <th width="50px">Jean-Pierre Heading</th>
+                <th width="100px">Jean-Pierre Description</th>
+                <th width="50px">Vincent Heading</th>
+                <th width="100px">Vincent Description</th>
+                <th width="50px">Sec4 Heading</th>
+                <th width="100px">Sec4 Description</th>
+                <th width="100px">Sec4 Para</th>
+            </tr>
+            <tr>
+                <td style="color:white;">
+                <input type="hidden" value="@Html.Raw(Model.objMasterpage.id )" data-Head1="@Html.Raw(Model.objMasterpage.Sec3Head1 )" data-Desc1="@Html.Raw(Model.objMasterpage.Sec3Desc1 )" data-Head2="@Html.Raw(Model.objMasterpage.Sec3Head2 )" data-Desc2="@Html.Raw(Model.objMasterpage.Sec3Desc2 )" data-Head3="@Html.Raw(Model.objMasterpage.Sec3Head3 )" data-Desc3="@Html.Raw(Model.objMasterpage.Sec3Desc3 )" data-sec4Head="@Html.Raw(Model.objMasterpage.Sec4Head )" data-sec4Desc="@Html.Raw(Model.objMasterpage.Sec4Desc )" data-sec4para="@Html.Raw(Model.objMasterpage.Sec4Para )"/>
+                <a href="#" onclick="FillEdit(@Html.Raw(Model.objMasterpage.id)); return false;">Edit</a></td>
+                <td>@Html.Raw(Model.objMasterpage.Sec3Head1 )</td>
+                <td>@Html.Raw(Model.objMasterpage.Sec3Desc1 )</td>
+                <td>@Html.Raw(Model.objMasterpage.Sec3Head2)</td>
+                <td>@Html.Raw(Model.objMasterpage.Sec3Desc2 )</td>
+                 <td>@Html.Raw(Model.objMasterpage.Sec3Head3)</td>
+                <td>@Html.Raw(Model.objMasterpage.Sec3Desc3 )</td>
+                <td>@Html.Raw(Model.objMasterpage.Sec4Head )</td>
+                 <td>@Html.Raw(Model.objMasterpage.Sec4Desc )</td>
+                <td>@Html.Raw(Model.objMasterpage.Sec4Para )</td>
+            </tr>
+        </table>  </center></div>
+    }
+     <script>
+         $('.Editor1').jqte();
+         $('.Editor2').jqte();
+         $('.Editor3').jqte();
+</script>
+    <script type="text/javascript">
+        $(objMasterpage_Sec3Head1 ).val('');
+        $(objMasterpage_Sec3Desc1 ).val('');
+        $(objMasterpage_Sec3Head2 ).val('');
+        $(objMasterpage_Sec3Desc2 ).val('');
+        $(objMasterpage_Sec3Head3 ).val('');
+        $(objMasterpage_Sec3Desc3 ).val('');
+        $(objMasterpage_Sec4Head ).val('');
+        $(objMasterpage_Sec4Desc ).val('');
+        $(objMasterpage_Sec4Para ).val('');
+    </script>
+    <script type="text/javascript">
+
+        function FillEdit(obj) {
+            // debugger;
+            $("#hdd").val(obj);
+            var $ele = $("#tblData tr td input[value=" + obj + "]");
+            if ($ele != null) {
+                $('#objMasterpage_Sec3Head1').val($ele.attr("data-Head1"));
+                $('#objMasterpage_Sec3Desc1').val($ele.attr("data-Desc1"));
+                $('#objMasterpage_Sec3Head2').val($ele.attr("data-Head2"));
+                $('#objMasterpage_Sec3Desc2').val($ele.attr("data-Desc2"));
+                $('#objMasterpage_Sec3Head3').val($ele.attr("data-Head3"));
+                $('#objMasterpage_Sec3Desc3').val($ele.attr("data-Desc3"));
+                $('#objMasterpage_Sec4Head').val($ele.attr("data-sec4Head"));
+                $('#objMasterpage_Sec4Desc').val($ele.attr("data-sec4Desc"));
+                $('#objMasterpage_Sec4Para').val($ele.attr("data-sec4para"));
+            }
+
+        }
+    </script>
+</body>
+</html>
+
+

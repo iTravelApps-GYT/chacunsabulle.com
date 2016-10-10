@@ -1,0 +1,277 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- it works the same with all jquery version from 1.x to 2.x -->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <!-- use jssor.slider.mini.js (40KB) instead for release -->
+    <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
+    <script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+    <script>
+
+        jQuery(document).ready(function ($) {
+
+            var _SlideshowTransitions = [
+            //Fade
+            { $Duration: 1200, $Opacity: 2 }
+            ];
+
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 3000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: true                                    //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                },
+
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 10,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 10,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(parentWidth, 1180));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+<!--About Us Page Code Start-->
+<section id="content">
+    <div class="content-wrap">
+        @foreach (Commic.Models.SlideShowSection obj in Model.objSlideListM)
+        {
+    	<div id="slideshow" id="@Html.Raw("Slide" + obj.id)" @*style="display:none"*@>
+        	<div class="slideshow_wrap">
+            	<div class="slideshow_image"><img src="~/Images/slideshow_image.png" alt="slideshow image" /></div>
+                <div class="slideshow_content_wrap txt_center"> 
+                    <div class="slideshow_content" id="slideShowImages">
+                        <h2>@Html.Raw(obj.Heading1)</h2>
+                        <p>@Html.Raw(obj.DescLine1)</p>
+                        <strong>@Html.Raw(obj.DescLine2)</strong>
+                        <p>@Html.Raw(obj.DescLine3)</p>
+                        <span>@Html.Raw(obj.DescLine4)</span>
+                        <div class="slideshow_buttons">
+                            <div class="button" id="slideShowButton"><a href="#">@Html.Raw(obj.Btn1Caption)</a></div>
+                            <div class="button"><a href="#">@Html.Raw(obj.BTn2Caption)</a></div>
+                        </div>
+                   
+                    </div>
+                </div> 
+            </div>
+        </div>
+        }
+        <div class="nakache_wrap">
+        	<div id="uneequipe">
+            	<div class="uneequipe_wrap">
+                	<h2 class="txt_center">@Html.Raw(Model.objMasterpage.Sec2Heading1)</h2>
+                </div>
+            </div>
+            <div id="voir">
+            	<div class="voir_wrap">
+                	<p>@Html.Raw(Model.objMasterpage.Sec2Def)</p> <br>
+<p><strong>@Html.Raw(Model.objMasterpage.Sec2Discription)</strong></p><br>
+                    <div class="button"><a href="#">@Html.Raw(Model.objMasterpage.Sec2BtnCaption)</a></div>
+                </div>
+            </div>
+        </div>
+        <!--Nakache Block-->
+        <div id="nakache">
+            <div class="nakache_wrap">
+            	<div class="nakache_blocks">
+       				<div class="bleonore">
+                    	<div class="bleonore_ribn"></div>
+                        <div class="txt_center">
+                        	<h4>@Html.Raw(Model.objMasterpage.Sec3Head1)</h4>
+                            <p>@Html.Raw(Model.objMasterpage.Sec3Desc1)</p>
+                        </div>
+                    </div>
+                    <div class="jean_perre">
+                    	<div class="jean_perre_ribn"></div>
+                        <div class="txt_center">
+                        	<h4>@Html.Raw(Model.objMasterpage.Sec3Head2)</h4>
+                            <p>@Html.Raw(Model.objMasterpage.Sec3Desc2)</p>
+                        </div>
+                    </div>
+                    <div class="vincent">
+                    	<div class="vincent_ribn"></div>
+                        <div class="txt_center">
+                        	<h4 style="margin-right:-56px;">@Html.Raw(Model.objMasterpage.Sec3Head3)</h4>
+                            <div style="margin-right:-42px;">@Html.Raw(Model.objMasterpage.Sec3Desc3)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nakache_footer"></div>
+            </div>
+        </div>
+        <!--Votre Block-->
+        <div id="votre">
+        	<div class="votre_wrap">
+                <h2 class="txt_center">@Html.Raw(Model.objMasterpage.Sec4Head)</h2>
+                <div class="txt_center votre_desc">
+                    <p><strong>@Html.Raw(Model.objMasterpage.Sec4Desc)</strong></p>
+                    <p>@Html.Raw(Model.objMasterpage.Sec4Para)</p>
+                </div>
+                <div class="txt_center">
+                    @foreach (Commic.Models.MasterPageSec4BTN obj in Model.objMasterPageSec4BTNListM)
+                    {
+                        if (obj.id == 1)
+                        {
+                        <div class="votre_block">
+                    	<div>
+                            <div class="votre_image txt_center"></div>
+                            <h3>@Html.Raw(obj.SubsHeading)</h3>
+                            <div class="votre_price"><span class="txt_blue">@Html.Raw(obj.SubsPrice)&euro;</span> @Html.Raw(obj.SubsUnit)</div>
+                            <div>
+                                <p class="txt_blue"><strong>@Html.Raw(obj.SubssubHeading)</strong></p>
+                                <p class="votre_block_desc">@Html.Raw(obj.SubsDescription)</p>
+                            </div>
+                            <div class="button"><a href="~/Index/PertABuller?id=1">@Html.Raw(obj.SubsbtnCaption)</a></div>
+                            <div class="votre_footer">@Html.Raw(obj.SubsFooter)</div>
+                        </div>
+                    </div>
+                        }
+                        else if (obj.id == 2)
+                        { 
+                        <div class="votre_block">
+                    	<div>
+                            <div class="votre_image bulle_image txt_center"></div>
+                            <h3>@Html.Raw(obj.SubsHeading)</h3>
+                            <div class="votre_price">@Html.Raw(obj.SubsUnit) <span class="txt_green">@Html.Raw(obj.SubsPrice)&euro;</span></div>
+                            <div>
+                                <p class="txt_green"><strong>@Html.Raw(obj.SubssubHeading)</strong></p>
+                                <p class="votre_block_desc">@Html.Raw(obj.SubsDescription)</p>
+                            </div>
+                            <div class="button green_btn"><a href="~/Index/FormuleBSMCommon?id=2">@Html.Raw(obj.SubsbtnCaption)</a></div>
+                            <div class="votre_footer">@Html.Raw(obj.SubsFooter)</div>
+                        </div>
+                    </div>
+                        }
+                        else if (obj.id == 3)
+                        { 
+                        <div class="votre_block">
+                    	<div>
+                            <div class="votre_image mini_image txt_center"></div>
+                            <h3>@Html.Raw(obj.SubsHeading)</h3>
+                            <div class="votre_price">@Html.Raw(obj.SubsUnit) <span class="txt_orange">@Html.Raw(obj.SubsPrice)&euro;</span></div>
+                            <div>
+                                <p class="txt_orange"><strong>@Html.Raw(obj.SubssubHeading)</strong></p>
+                                <p class="votre_block_desc">@Html.Raw(obj.SubsDescription)</p>
+                            </div>
+                            <div class="button orange_btn"><a href="~/Index/FormuleMBCommon?id=3">@Html.Raw(obj.SubsbtnCaption)</a></div>
+                            <div class="votre_footer">@Html.Raw(obj.SubsFooter)</div>
+                        </div>
+                    </div>
+                        }
+                        else if (obj.id == 4)
+                        { 
+                        <div class="votre_block">
+                    	<div>
+                            <div class="votre_image minimax_image txt_center"></div>
+                            <h3>@Html.Raw(obj.SubsHeading)</h3>
+                            <div class="votre_price">@Html.Raw(obj.SubsUnit) <span class="txt_pink">@Html.Raw(obj.SubsPrice)&euro;</span></div>
+                            <div>
+                                <p class="txt_pink"><strong>@Html.Raw(obj.SubssubHeading)</strong></p>
+                                <p class="votre_block_desc">@Html.Raw(obj.SubsDescription)</p>
+                            </div>
+                            <div class="button pink_btn"><a href="~/Index/FormuleMiniNMaxi?id=4">@Html.Raw(obj.SubsbtnCaption)</a></div>
+                            <div class="votre_footer">@Html.Raw(obj.SubsFooter)</div>
+                        </div>
+                    </div>
+                        }
+                    }
+                   @* <div class="votre_block">
+                    	<div>
+                            <div class="votre_image bulle_image txt_center"></div>
+                            <h3>bulle sur mesure</h3>
+                            <div class="votre_price">à partir de <span class="txt_green">17,90&euro;</span></div>
+                            <div>
+                            <p class="txt_green"><strong>Vous savez ce que vous rechercher</strong></p>
+                            <p class="votre_block_desc">Optez pour un choix de 2 BD qui sauront répondre à vos envies grâce aux conseils de notre équipe.</p>
+                            </div>
+                            <div class="button green_btn"><a href="~/Index/FormuleBSMCommon?id=2">je m’abonne</a></div>
+                            <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                        </div>
+                    </div>
+                    <div class="votre_block">
+                    	<div>
+                            <div class="votre_image mini_image txt_center"></div>
+                            <h3>mini<br>bulle</h3>
+                            <div class="votre_price">à partir de <span class="txt_orange">17,90&euro;</span></div>
+                            <div>
+                            <p class="txt_orange"><strong>Pour stimuler l’imagination</strong></p>
+                            <p class="votre_block_desc">Offrez chaque mois 2 BD enfant sélectionnées par notre équipe.</p>
+                            </div>
+                            <div class="button orange_btn"><a href="~/Index/FormuleMBCommon?id=3">je m’abonne</a></div>
+                            <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                        </div>
+                    </div>
+                    <div class="votre_block">
+                    	<div>
+                            <div class="votre_image minimax_image txt_center"></div>
+                            <h3>mini & maxi bulle</h3>
+                            <div class="votre_price">à partir de <span class="txt_pink">17,90&euro;</span></div>
+                            <div>
+                            <p class="txt_pink"><strong>Vous voulez tout partager avec vos enfants</strong></p>
+                            <p class="votre_block_desc">Recevez chaque mois une BD sélectionnée pour vous et une pour votre  enfant.</p>
+                            </div>
+                            <div class="button pink_btn"><a href="~/Index/FormuleMiniNMaxi?id=4">je m’abonne</a></div>
+                            <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--About Us Page Code End-->
+
+
+<script type="text/javascript">
+    $("#Slide1").show(1000);
+</script>
+
+

@@ -1,0 +1,239 @@
+﻿@*@model Commic.Models.Commic*@
+@{
+    ViewBag.Title = "OrderStatusManage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{ 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--About Us Page Code Start-->
+<section id="content">
+    <div class="content-wrap">
+    	<div id="slideshow" class="top_header" style="height:80px;">
+        	<div class="top_header_wrap" style="text-align:center;padding: 15px 75px 42px 250px;">
+                <h2 class="fleft" style="width:600px;">Order Status</h2>
+                @*<p class="fright"><a href="#"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></a></p>*@
+            </div>
+        </div>
+        <!--Nakache Block-->
+         <div id="nakache" class="payment_block" style="height:700px;">
+             @*<input id="orderno" name="orderno" style="height:31px;" type="text" /><button type="submit" class="btn btn-primary">Search By OrderNo</button>*@
+			@*<h2 style="margin-top:0;position:absolute;left:30px;">5 Order Details</h2>*@
+             <div class="dropdown" style="position: absolute;top: -12px;right: 171px;">
+                 <input type="text" name="orderstatus" id="orderstatus" style="height:31px;width:200px;"/>
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Options
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" id="ThinkDDL">
+      <li><a href="#" id="op1" data-op="Processing">Processing</a></li>
+      <li><a href="#" id="op2" data-op="shipped">shipped</a></li>
+      <li><a href="#" id="op3" data-op="Delivered">Delivered</a></li>
+    </ul>
+  </div>
+            <div class="container" style="position: absolute;top: -1px;right: -987px;">
+  <button type="submit" class="btn btn-primary">Update</button>
+</div>          
+              @{
+    Commic.Models.OrderStatus objorderstatus = new Commic.Models.OrderStatus();
+}
+         @{
+    var grid = new WebGrid(Model, canPage: false, rowsPerPage: 10, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+      @*grid.Pager(WebGridPagerModes.NextPrevious);}*@
+    }
+        <div id="gridContent" style="width:100%;height:570px;overflow:scroll;">
+        @grid.GetHtml(tableStyle: "webGrid",
+                headerStyle: "header",
+                alternatingRowStyle: "alt",
+                selectedRowStyle: "select",
+                columns: grid.Columns(
+        //grid.Column("Id", format: (item) => item.GetSelectLink(item.id)),
+                grid.Column("Id","OrderNo.",style:"Duedate"),
+                
+                grid.Column("FirstName", "First Name"),
+                grid.Column("Name", "Last Name"),
+                grid.Column("SubscriptionName", "Order Type"),
+                grid.Column("DelevaryType", "Delivery Type", style: "description"),
+                grid.Column("Address", "Address"),
+                grid.Column("BillingAddress", "Billing Address"),
+                grid.Column("liv3add", "Livraison Address"),
+                grid.Column("DurationType", "Duration Type"),
+                //grid.Column("TimePeriod", "TimePeriod"),
+                grid.Column("CreatedOn","Date Of Order"),
+                grid.Column("DueDate", "Due Date\nDD/MM/YYYY",style:"Duedate"),
+                //grid.Column("DueDate", "Due Date", format: (item) => String.Format("{0:yyyy-MM-dd}", item.DueDate)),
+                grid.Column("Order Status",format:  @<a href="#" class="details"  onclick='getorderstatus("@item.id");' data-id="@item.id" data-odrstatus="@item.OrderStatuss">@item.OrderStatuss</a>),
+                grid.Column("OfferCodeStatus", "Voucher Status",style: "column-action"),        
+        //grid.Column("OrderStatuss", "OrderStatuss",format: (item) => new HtmlString("<a src='#' id='test' onclick='getorderstatus(" + Json.Encode(item.OrderStatuss) + ");' data-id='"+Json.Encode(item.id)+"'>" + Html.Encode(item.OrderStatuss) + "</a>")),
+        //grid.Column("IsActive","IsActive", format: item => @<text>@if (item.IsActive == true){ <a href="#">Active</a> } else{ <a href="#">Deactive</a> }</text>)
+                grid.Column("Get Details", format: (item) => Html.ActionLink("Get Info", "OrderStatusManage", new { id = item.id,type="get"}), style: "column-action"),
+                grid.Column("Action", format: (item) => Html.ActionLink("Active", "OrderStatusManage", new { id = item.id}), style: "column-action")
+        //grid.Column("Action",format: (item) => @Html.Raw(string.Format("Active" ,@item.IsActive)), style: "")
+        //grid.Column("ReceiptURL", "Receipt", format: (item) => @Html.Raw(string.Format("<a target='_blank' class='' href='{0}'></a>" ,@item.ReceiptURL)), style: "")
+
+                //grid.Column(
+         )) 
+    @if (grid.HasSelection)
+    {
+
+        objorderstatus = (Commic.Models.OrderStatus)grid.Rows[grid.SelectedIndex].Value;
+             <b>Id</b> @objorderstatus.id<br />
+        //<b>Name</b>  @objorderstatus.FirstName<br />
+             <b>Description</b> @objorderstatus.Name<br />
+             <b>Quantity</b> @objorderstatus.DelevaryType<br />
+        
+    }
+        </div>
+        <!--Votre Block-->
+        @*<div id="votre" class="bottom_block">
+        	<div class="votre_wrap txt_center">
+            	<input type="checkbox" value="" />
+               <label>J'accepte les conditions générales de ventes.</label>
+                <div class="button"><input type="submit" value="PAYER (TOTAL AMOUNT)" onclick="return Validate();"/></div>
+            </div>
+        </div>*@
+    </div>
+
+        <div style="width:100%; display:none;margin-left: 200px;margin-top: -20px;" align="center" id="popuppdf">
+                                
+                                <div style="position: fixed;left: 50%;top: 50%;transform: translate(-50%, -50%); height: 600px; width: 800px; z-index: 1000; background-color: #586778;border:solid;">
+                                    <a href="#" onclick=" $('#popuppdf').hide();  return false;"><span style="float: right; color: white; font-weight: normal; font-size: larger; margin-right: 5px;">X</span></a>
+                                    <div style="background-color: white; height: 560px; margin: 20px;">
+                                        <object data=@Url.Content("~/param/MentionsLégales.pdf") type="application/pdf" width="760" height="560">
+                                        alt : <a href=@Url.Content("~/param/MentionsLégales.pdf")>test.pdf</a>
+                                        </object>
+                                       @* <p>@obj.PopupBody </p>*@
+                                       @* <object data=@Url.Content(String.Format("~/Uploads/{0}",obj.PopupBody)) type="application/pdf" width="760" height="460">
+                                            alt : <a href=@Url.Content(String.Format("~/Uploads/{0}",obj.PopupBody))>test.pdf</a>
+                                        </object>*@
+                                    </div>
+                                </div>
+                            </div>
+
+
+</section>
+    <input type="hidden" id="hd" name="hd" value="0" />
+<!--About Us Page Code End-->
+}
+<script>
+    $('.details').click(function () {
+        debugger;
+        var row = $(this).closest('tr'); // get the table row
+        var links = row.find('a'); // get the 3 hyperlinks
+        var orderstatus = links.eq(0).text();
+        var id = links.eq(0).attr("data-id");
+        $("#orderstatus").val(orderstatus);// adjust format as required
+        $("#hd").val(id);
+       // alert(id);
+    });
+</script>
+@*<script>
+    $(document).ready(function(){
+        $("#submitButton").on("click",function()
+        {
+            alert('Your Message');
+        });
+
+    });
+    <script>
+
+<script type="text/javascript">
+    //function getorderstatus(obj)
+    
+    //{
+    //    debugger;
+    //    $('.details').click(function () {
+    //        debugger;
+    //        var row = $(this).closest('tr'); // get the table row
+    //        var links = row.find('a'); // get the 3 hyperlinks
+    //        var orderstatus = links.eq(0).text();
+    //        var id = links.eq(0).attr("data-id");
+    //        $("#orderstatus").val(orderstatus);// adjust format as required
+    //        $("#hd").val(id);
+    //        //alert(id);
+    //    });
+    //    //$("#orderstatus").val(obj);
+    //    //alert(obj);
+    //    //alert($(obj).attr("data-odrstatus"));
+    //    //alert($("#"+obj).attr("data-odrstatus"));
+    //}
+</script>*@
+<script>
+    $("#ThinkDDL li a").click(function () {
+        debugger;
+        var el = $(this).attr("data-op");
+        //alert(el);
+        $("#orderstatus").val(el);
+        //console.log('inside');
+        //if ($(this).attr("data-flag2") === "false") {
+        //    $("#ThinkDDL li a").each(function (prop, val) {
+        //        var el = $(this).attr("data-think2");
+        //        $("#" + el).hide(1000);
+        //        $(this).attr("data-flag2", "false");
+        //    });
+
+        //    var el = $(this).attr("data-think2");
+        //    $("#" + el).show(1000);
+        //    $(this).attr("data-flag2", "true");
+        //}
+        //return false;
+
+    });
+</script>
+<script>
+    //$("tr").click(function () { $(this).css('background', 'yellow'); });
+</script>
+<script>
+    $("#webGrid tr").click(function () {
+        debugger;
+        alert("Hello");
+        $("#webGrid tr").each(function (prop, val) {
+            // var el = $(this).attr("data-think1");
+            var el2 = $(this).attr("data-id");
+            // $("#" + el).hide(1000);
+            $("#" + el2).hide();
+            // $(this).attr("data-flag1", "false");
+        });
+        var el2 = $(this).attr("data-id");
+        $("#" + el2).show();
+        return false;
+    });
+    </script>
+<script src="../../Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <style type="text/css">
+        .webGrid { margin: 4px; border-collapse: collapse; width: 95%;  background-color:#FCFCFC;top:100px;}
+        .header { background-color: #C1D4E6; font-weight: bold; color: #FFF; }
+        .webGrid th, .webGrid td { border: 1px solid #C0C0C0; padding: 5px; }
+        .alt { background-color: #E4E9F5; color: #000; }
+        .gridHead a:hover {text-decoration:underline;}
+        .description { width:auto}
+        .select{background-color: #389DF5}
+        .Duedate {font-weight:bold}
+    </style>
+  @* <script type="text/javascript">
+       function SeeRecord(obj) {
+           alert(obj);
+           debugger;
+           $.ajax({
+               type: "post",
+               url: "/Index/OrderStatusByOrderNo",
+               data: ({ "id": obj}),
+               success: (function (data) {
+                   if (data != "False") {
+                       //window.location.href = data.Url;
+                       //alert(data.Url);
+                   }
+                   else {
+                       //document.getElementById('msg').innerHTML = "Invalid User_ID or Password...!";
+                       ////alert("You can't Login");
+                       //$("#Loguid").val = '';
+                       //$("#Logpwd").val = '';
+                   }
+               }),
+               fail: (function (data) {
+
+               })
+           });
+           }
+    </script>*@

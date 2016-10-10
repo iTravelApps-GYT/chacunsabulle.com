@@ -1,0 +1,88 @@
+﻿@model Commic.Models.Commic
+
+@{
+    ViewBag.Title = "MasterPage2Section";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CHACUN SA BULLE</title>
+@*<link type="text/css" href="~/CSS/styles.css" rel="stylesheet">*@
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <style>
+        .Editor1,.Editor2,.Editor3
+        {
+            width:600px;
+            height:50px;
+        }
+        body
+        {
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+<!--Header Code Start-->
+@*<header id="header"> 
+<div class="header-wrap">
+	<span class="fleft logo"><a href="#"><img src="Images/logo.png" alt="CHACUN SA BULLE" /></a></span>
+    <div class="main-menu">
+    	<nav>
+        	<ul>
+            	<li><a class="home_icon" href="#"></a></li>
+              	<li><a href="#">S’abonner</a></li>
+ 				<li><a href="#">Offrir</a></li>
+                <li><a href="#">Comment ça marche ?</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a class="user_icon" href="#">Connexion</a></li>
+           </ul>
+        </nav>
+    </div>
+</div>
+</header>*@
+<!--Header Code End-->
+    <center><hr color="green"/><font size="6">Section 2 of Main Page</font><hr color="green"/></center>
+    @using (Html.BeginForm("MasterPage2Section", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    { 
+        <center><table width="80%" border="1">
+            <tr>
+                <td width="200px">Logo path</td>
+                <td><input id="upload1" name="upload1" type="file" /></td>
+            </tr>
+            <tr>
+                <td width="200px"><strong>Section 2 Heading </strong>
+                </td>
+                 <td>@Html.TextAreaFor(M => M.objMasterpage.Sec2Heading1, new { @class = "Editor1" })     
+                </td>
+            </tr>
+            <tr>
+                <td width="200px"><strong>Section 2 Definition</strong></td><td>@Html.TextAreaFor(M => M.objMasterpage.Sec2Def, new { @class = "Editor2" })  
+                </td>
+           </tr>
+            <tr>
+                <td width="200px"><strong>Section 2 Description</strong></td>
+                <td colspan="2">@Html.TextAreaFor(M => M.objMasterpage.Sec2Discription, new { @class="Editor3"})  
+                </td>
+            </tr>
+            <tr>
+                <td width="200px">Section 2 Botton Caption</td>
+                <td colspan="2">@Html.TextBoxFor(M => M.objMasterpage.Sec2BtnCaption)  
+                </td>
+            </tr>
+            <tr><td colspan="2" align="center"><label id="result1">@ViewBag.Message</label></td></tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <br />
+                    <tr><td colspan="6" align="center"><input type="submit" name="submit" value="Update" style="background-image:url(../Images/green_btn);width:200px;height:40px; " /></td></tr>
+                </td>
+            </tr>
+        </table></center>
+    }
+
+</body>
+</html>
+
+

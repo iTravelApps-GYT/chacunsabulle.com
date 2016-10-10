@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<script type="text/javascript">
+    function clear() {
+        //alet("rrr");
+        $("#Logmsg").val('');
+    }
+    </script>*@
+<script type="text/javascript">
+    
+    function Login() {
+        if ($("#Loguid").val().length<3 || $("#Logpwd").val().length <1)
+        {
+            if ($("#Loguid").val().length < 3) {
+                $("#Loguid").addClass("error");
+
+            }
+            if ($("#Logpwd").val().length < 1) {
+                $("#Logpwd").addClass("error");
+
+            }
+            return false;
+        }
+        else {
+            var userid = $('#Loguid').val();
+            var pwd = $('#Logpwd').val();
+            //alert(uid + pwd);
+
+            //$.ajax({
+            //    type: "post",
+            //    url: "/Index/Login",
+            //    data: ({ "uid": userid, "pwd": pwd }),
+            //    success: (function (data) {
+            //        if (data != "False") {
+            //            window.location.href = data.Url;
+            //            //alert(data.Url);
+            //        }
+            //        else {
+            //            document.getElementById('Logmsg').innerHTML = "Invalid User_ID or Password...!";
+            //            //alert("You can't Login");
+            //            $("#Loguid").val = '';
+            //            $("#Logpwd").val = '';
+            //        }
+            //    }),
+            //    fail: (function (data) {
+
+            //    })
+            //});
+            return true;
+        }
+    }
+    </script>
+   
+@using (Html.BeginForm())
+{
+
+    <div id="SectionLogin" >
+    <!--About Us Page Code Start-->
+    
+        @*<div class="content-wrapd" id="identification_detail_1" style="height:200px;width:400px;">*@
+            @*<div id="slideshows" class="top_header" style="height:100px;width:400px;">*@
+                <a href="#" onclick="$('#SectionLogin').hide(); return false;" style="float:right;font-size:x-small;color:black;">X</a>
+                <div class="top_header_wrap">
+                    <h3><center>Registration OR Login First</center></h3>
+                </div>
+            @*</div>*@
+            
+            <!--Nakache Block-->
+            <div id="nakache" class="payment_block" style="height:250px;width:400px;background-color:black">
+                <label id="Logmsg" style="color:red;width:200px;"></label>
+                <table>
+                    <tr>
+                <td width="100px"><label>UserID</label></td>
+                <td width="200px"> <input type="text" id="Loguid" name="Loguid" onblur = "RemoveClass(this);" maxlength="100" style="width:200px;"/> 
+                    </td>
+                </tr>
+                <tr>
+                <td width="200px"><label>Password</label></td>
+                <td width="200px"> <input type="password" id="Logpwd" name="Logpwd" onblur = "RemoveClass(this);" maxlength="100" size="100" style="width:200px;"/>  </td>
+                </tr>
+                    <tr><td colspan="2" align="center">
+                         @Html.ActionLink("Signup", "/RagistrationPage", "Index", new { id = 2 }, new  { @name="abc" })@*<input type="submit" name="btnsave" onclick="window.location = 'Index/RagistrationPage'" value="Signup" style="height:20px;width:100px;">                        *@
+                        <input type="submit" name="btnsave" value="Login" onclick="return Login(); " style="height:20px;width:100px;"  />
+                        </td>
+
+                    </tr>
+                    <tr><td colspan="2"></td></tr>
+                </table>
+                <label id="msg" style="color:red;width:200px;"></label>
+            </div>
+</div>
+}

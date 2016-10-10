@@ -1,0 +1,187 @@
+﻿@model Commic.Models.Commic
+
+@{
+    ViewBag.Title = "MaterPage4Section";
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CHACUN SA BULLE</title>
+@*<link type="text/css" href="~/CSS/styles.css" rel="stylesheet">*@
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <style>
+        .Editor1,.Editor2,.Editor3
+        {
+            width:600px;
+            height:80px;
+        }
+        body
+        {
+            color:white;
+        }
+    </style>
+   @* <link type="text/css" rel="stylesheet" href="~/CSSfiless/demo.css">*@
+@*<link type="text/css" rel="stylesheet" href="~/CSSfiles/jquery-te-1.4.0.css">
+<script type="text/javascript" src="~/js/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="~/js/jquery-te-1.4.0.min.js" charset="utf-8"></script>*@
+</head>
+
+<body>
+<!--Header Code Start-->
+@*<header id="header"> 
+<div class="header-wrap">
+	<span class="fleft logo"><a href="#"><img src="Images/logo.png" alt="CHACUN SA BULLE" /></a></span>
+    <div class="main-menu">
+    	<nav>
+        	<ul>
+            	<li><a class="home_icon" href="#"></a></li>
+              	<li><a href="#">S’abonner</a></li>
+ 				<li><a href="#">Offrir</a></li>
+                <li><a href="#">Comment ça marche ?</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a class="user_icon" href="#">Connexion</a></li>
+           </ul>
+        </nav>
+    </div>
+</div>
+</header>*@
+<!--Header Code End-->
+    <center><hr color="green"/><font size="6">Section 4 of Main Page</font><hr color="green"/></center>
+    @using (Html.BeginForm("MaterPage4Section", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    { 
+        <center><table width="80%" border="1" height="300px">
+            <tr>
+                <td width="200px"><strong>Main Image</strong></td><td width="200px"><input id="upload1" name="upload1" type="file" /></td>
+               <td width="200px"><strong>Icon Image URL</strong></td><td width="200px"><input id="upload1" name="upload1" type="file" /></td>
+            </tr>
+            <tr>
+                <td width="200px" colspan="1"><strong>Heading</strong></td>
+                 <td width="200px" colspan="3">@Html.TextBoxFor(M => M.objMasterPageSec4BTN.SubsHeading, new {@Style="Width:770px" })</td>
+            </tr>
+            <tr>
+                <td width="200px"><strong>Price</strong></td>
+                <td>@Html.TextBoxFor(M => M.objMasterPageSec4BTN.SubsPrice, new {@Style="Width:200px" })</td>
+                <td width="200px"><strong>Unit</strong></td>
+                <td>@Html.TextBoxFor(M => M.objMasterPageSec4BTN.SubsUnit, new {@Style="Width:200px" })</td>
+            </tr>
+            <tr>
+                <td colspan="1"><strong>Sub Heading</strong></td> 
+                <td colspan="3">@Html.TextBoxFor(M => M.objMasterPageSec4BTN.SubssubHeading, new {@Style="Width:770px" })  
+            </td>
+           </tr>
+            <tr>
+                <td colspan="1"><strong>Description</strong></td> 
+                <td colspan="3">@Html.TextBoxFor(M => M.objMasterPageSec4BTN.SubsDescription, new {@Style="Width:770px" })  
+            </td>
+           </tr>
+            <tr>
+                <td width="200px"><strong>Button Image</strong></td><td><input id="upload1" name="upload1" type="file" /></td>
+                <td width="200px"><strong>Button Caption</strong></td><td colspan="2">@Html.TextBoxFor(M => M.objMasterPageSec4BTN.SubsbtnCaption, new {@Style="Width:200px" })</td>
+            </tr>
+            <tr>
+                <td width="200px" colspan="1"><strong>Footer Description</strong></td><td colspan="3">@Html.TextBoxFor(M => M.objMasterPageSec4BTN.SubsFooter, new {@Style="Width:770px" })  
+                </td>
+           </tr>
+            <tr><td colspan="4" align="center"><label id="result1">@ViewBag.Message</label></td></tr>
+            <tr>
+                <td colspan="4" align="center">
+                    <input id="Submit1" type="submit" value="Save Home data" />
+                </td>
+            </tr>
+        </table></center>
+        <input type="hidden" id="hdd" name="hdd" value="0"/>
+        <br /><center>
+        <h3>Subscription's Table</h3>
+            <table width="70%" id="tblData1" border="1">
+            <tr>
+                
+                <th>S.No.</th>
+                <th>Heading</th>
+                <th>Sub Heading</th>
+                <th>Description</th>
+                <th>Price/Unit</th>
+                <th>Button Caption</th>
+                <th>Footer</th>
+                <th colspan="2">Action</th>
+
+            </tr>
+               @foreach (Commic.Models.MasterPageSec4BTN obj in Model.objMasterPageSec4BTNListM)
+                {
+                <tr>
+                    <td width="50" align="center">
+                        <input type="hidden" value="@obj.id" data-Heading="@obj.SubsHeading" data-SubHead="@obj.SubssubHeading" data-desc="@obj.SubsDescription" data-Footer="@obj.SubsFooter" data-Price="@obj.SubsPrice" data-unit="@obj.SubsUnit" data-btncaption="@obj.SubsbtnCaption" />
+                        @obj.id
+                    </td>
+                    <td width="200" align="center">
+                       <span>@Html.Raw(@obj.SubsHeading)</span>
+                    </td>
+                    <td width="200" align="center">
+                       <span>@Html.Raw(obj.SubssubHeading)</span>
+                    </td>
+                    <td width="200" align="center">
+                       <span>@Html.Raw(obj.SubsDescription)</span>
+                    </td>
+                    <td width="200" align="center">
+                       <span>@Html.Raw(obj.SubsPrice)@Html.Raw(obj.SubsUnit)</span>
+                    </td>
+                    <td width="200" align="center">
+                       <span>@Html.Raw(obj.SubsbtnCaption)</span>
+                    </td>
+                    <td width="200" align="center">
+                       <span>@Html.Raw(obj.SubsFooter)</span>
+                    </td>
+                    <td width="50" align="center">
+                       <span><a href="#" onclick="FillEdit(@obj.id); return false;">Edit</a></span>
+                    </td>
+                    <td width="50" align="center">
+                       <span><a href="#" onclick="Delete(@obj.id); return false;">Delete</a></span>
+                    </td>
+                </tr>
+               }
+        </table> 
+                          </center>
+    }
+    <script type="text/javascript">
+        function FillEdit(obj) {
+
+            $("#hdd").val(obj);
+            alert(obj);
+            var $ele = $("#tblData1 tr td input[value=" + obj + "]");
+            if ($ele != null) {
+                $('#objMasterPageSec4BTN_SubsHeading').val($ele.attr("data-heading"));
+                $('#objMasterPageSec4BTN_SubssubHeading').val($ele.attr("data-SubHead"));
+                $('#objMasterPageSec4BTN_SubsDescription').val($ele.attr("data-desc"));
+                $('#objMasterPageSec4BTN_SubsFooter').val($ele.attr("data-Footer"));
+                $('#objMasterPageSec4BTN_SubsPrice').val($ele.attr("data-Price"));
+                $('#objMasterPageSec4BTN_SubsUnit').val($ele.attr("data-unit"));
+                $('#objMasterPageSec4BTN_SubsbtnCaption').val($ele.attr("data-btncaption"));
+            }
+
+        }
+    </script> 
+     <script type="text/javascript" >
+         function Delete(obj) {
+             var status = confirm('Are you sure to delete');
+             if (status) {
+                 alert(obj);
+                 $.ajax({
+
+                     type: "post",
+                     url: "/Admin/DeletersSec4Subcription",
+                     data: { "id": obj },
+                     success: (function (data) {
+                         $("#divSlideShow").html(data)
+                     }),
+                     fail: (function (data) {
+                     })
+                 });
+             }
+         }
+    </script>
+</body>
+</html>
+
+
+

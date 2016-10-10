@@ -1,0 +1,107 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "OrderStatus";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{ 
+<!--About Us Page Code Start-->
+<section id="content">
+    <div class="content-wrap">
+    	<div id="slideshow" class="top_header">
+        	<div class="top_header_wrap">
+                <h2 class="fleft" style="width:600px;">Order Status</h2>
+                @*<p class="fright"><a href="#"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></a></p>*@
+            </div>
+        </div>
+        <!--Nakache Block-->
+         <div id="nakache" class="payment_block" style="height:500px;">
+			@*<h2 style="margin-top:0;position:absolute;left:30px;">5 Order Details</h2>*@
+            <table width="100%" id="tblData" border="1">
+            <tr>
+                <th>Order No.</th>
+                <th>Prenom</th>
+                <th>nom</th>
+                <th>Delivary Address</th>
+                <th>Billing Address</th>
+                <th>Total Amount</th>
+                <th>Full Details</th>
+            </tr>
+               @foreach (Commic.Models.OrderStatus obj in Model.objOrderStatusListM)
+               {
+                <tr>
+                    <td>
+                        <input type="hidden" value='@obj.id' data-Fname='@obj.FirstName' data-lname='@obj.Name' data-deladd='@obj.Address+@obj.City+@obj.PostalCode' data-billadd='@obj.BillingAddress+@obj.BillingCity+@obj.BillingPostalCode' data-tot='@obj.TotalAmt'/>
+                       @*<a href="#" onclick="FillEdit(@obj.Id); return false;">*@ @Html.Raw(@obj.id)@*</a>*@
+                    </td>
+                    <td>
+                       <span>@Html.Raw(@obj.FirstName)</span>
+                    </td>
+                    <td>
+                       <span>@Html.Raw(@obj.Name)</span>
+                    </td>
+                    <td>
+                       <span>@Html.Raw(@obj.Address+@obj.City+@obj.PostalCode)</span>
+                    </td>
+                    <td>
+                       <span>@Html.Raw(@obj.BillingAddress+@obj.BillingCity+@obj.BillingPostalCode)</span>
+                    </td>
+                    <td>
+                       <span>@Html.Raw(@obj.TotalAmt)</span>
+                    </td>
+                    @*<td>@Html.TextBoxFor(M=>M.objOrderStatusM.BillingCity)</td>*@
+                    <td>
+                        @*<input type="Submit" name="btnsave" onclick="SandOrderID(obj.id);" value="Click Here" />
+                        <input id="hddid" type="hidden" value='obj.id' name="hddid">
+                        @Html.ActionLink("Click Here", "OrderStatusByOrderNo", "Index", new { id = obj.id , data = obj.id }) *@
+                       @*<span><a href="#" onclick="SeeRecord(@obj.id); return false;">Click Here</a></span>*@
+                        <a href="OrderStatusByOrderNo?id=@obj.id" id="@obj.id">Click Here</a>
+                    </td>
+                </tr>
+               }
+        </table>
+        </div>
+        <!--Votre Block-->
+        <div id="votre" class="bottom_block">
+        	<div class="votre_wrap txt_center">
+            	<input type="checkbox" value="" />
+               <label>J'accepte les conditions générales de ventes.</label>
+                <div class="button"><input type="submit" value="PAYER (TOTAL AMOUNT)" onclick="return Validate();"/></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--About Us Page Code End-->
+     }
+<script type="text/javascript">
+    function SandOrderID(obj)
+    {
+        $("#hddid").val(obj);
+    }
+</script>
+  @* <script type="text/javascript">
+       function SeeRecord(obj) {
+           alert(obj);
+           debugger;
+           $.ajax({
+               type: "post",
+               url: "/Index/OrderStatusByOrderNo",
+               data: ({ "id": obj}),
+               success: (function (data) {
+                   if (data != "False") {
+                       //window.location.href = data.Url;
+                       //alert(data.Url);
+                   }
+                   else {
+                       //document.getElementById('msg').innerHTML = "Invalid User_ID or Password...!";
+                       ////alert("You can't Login");
+                       //$("#Loguid").val = '';
+                       //$("#Logpwd").val = '';
+                   }
+               }),
+               fail: (function (data) {
+
+               })
+           });
+           }
+    </script>*@

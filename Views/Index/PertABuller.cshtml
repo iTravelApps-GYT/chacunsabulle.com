@@ -1,0 +1,1756 @@
+﻿
+@model Commic.Models.Commic
+@{
+    ViewBag.Title = "PertABuller";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.Web.Configuration;
+<div id="Section2" class="div" @*style="display: none;*@"">
+
+    <section id="content">
+        @{
+           
+            string pageid = Request.QueryString["id"];
+            if (pageid == "1")
+            { 
+            <script type="text/javascript">
+                $(function () {
+                    debugger;
+                    document.getElementById('2').disabled = true;
+                    document.getElementById('3').disabled = true;
+                    document.getElementById('4').disabled = true;
+                    var $radios = $('input:radio[name=r1]');
+                    if ($radios.is(':checked') === false) {
+                        $radios.filter('[id=1]').prop('checked', true);
+                        $radios.filter('[id=1]').parent().addClass("selectbox");
+                        $("#hdd").val("1");
+                        $("s1").show();
+                        @*document.getElementById('nameTarget').innerHTML = @Html.Raw(Model.objSubMasterclass.FirstSubsPrice)*@
+                    }
+                });
+            </script>
+                var totalprice = @Html.Raw(Model.objSubMasterclass.FirstSubsPrice);
+
+            }
+            else if (pageid == "2")
+            {
+            <script type="text/javascript">
+
+                $(function () {
+                    debugger;
+                    var $radios = $('input:radio[name=r1]');
+                    if ($radios.is(':checked') === false) {
+                        $radios.filter('[id=2]').prop('checked', true);
+                        $("#2").parent().addClass("selectbox");
+                        $("#hdd").val("2");
+                        $("s2").show();
+                        @*document.getElementById('nameTarget').innerHTML = @Html.Raw(Model.objSubMasterclass.SecondSubsPrice);*@
+                    }
+                });
+            </script>
+                var totalprice = @Html.Raw(Model.objSubMasterclass.SecondSubsPrice);
+
+            }
+            else if (pageid == "3")
+            {
+            <script type="text/javascript">
+
+                $(function () {
+                    debugger;
+                    var $radios = $('input:radio[name=r1]');
+                    if ($radios.is(':checked') === false) {
+                        $radios.filter('[id=3]').prop('checked', true);
+                        $radios.filter('[id=3]').parent().addClass("selectbox");
+                        $("#hdd").val("3");
+                        $("s3").show();
+                        @*document.getElementById('nameTarget').innerHTML = @Html.Raw(Model.objSubMasterclass.ThirdSubsPrice)*@
+                    }
+                });
+            </script>
+                var totalprice = @Html.Raw(Model.objSubMasterclass.ThirdSubsPrice);
+            }
+            else if (pageid == "4")
+            {
+            <script type="text/javascript">
+
+                $(function () {
+                    debugger;
+                    var $radios = $('input:radio[name=r1]');
+                    if ($radios.is(':checked') === false) {
+                        $radios.filter('[id=4]').prop('checked', true);
+                        $("#4").parent().addClass("selectbox");
+                        $("#hdd").val("4");
+                        $("s4").show();
+                        @*$("#hdd").val(@Html.Raw(Model.objSubMasterclass.FourthSubsPrice));*@
+                        @*document.getElementById('nameTarget').innerHTML = @Html.Raw(Model.objSubMasterclass.FourthSubsPrice)*@
+                        //document.getElementById('nameTarget').innerHTML = document.getElementById('name').value;
+
+                    }
+                });
+
+            </script>
+        
+        
+            }
+            <script type="text/javascript">
+
+                $(function () {
+                    var $radios = $('input:radio[name=r2]');
+                    if ($radios.is(':checked') === false) {
+                        $radios.filter('[id=r21]').prop('checked', true);
+                        $("#g31").parent().addClass("selectbox");
+                    }
+                });
+                $(function () {
+                    var $radios = $('input:radio[name=r3]');
+                    if ($radios.is(':checked') === false) {
+                        $radios.filter('[id=r31]').prop('checked', true);
+                        $("#g41").parent().addClass("selectbox");
+                    }
+                });
+
+            </script>
+        
+        }
+        
+        @*}*@
+
+        <div class="content-wrap mabonne_formunate" id="identification_detail_3">
+            <!--Nakache Block-->
+            <div id="slideshow" class="top_header">
+                <div class="top_header_wrap">
+                    <h2 class="fleft" style="width:600px;">1-2-3 FORMULE, DUREE, LIVRAISON</h2>
+                    @*<p class="fright"><a href="http://www.chacunsabulle.com/"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></a></p>*@
+                    @*<p class="fright"><a href="#" onclick="$('#Section1').show(); $('#Section2').hide(); $('#Section3').hide(); $('#Section4').hide(); return false;"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></a></p>*@
+                </div>
+            </div>
+            <div id="nakache" class="payment_block">
+                <div class="fleft">
+                    <div class="block_image">
+                        <img src="../Images/mabonne1.png" alt="" />
+                        <div>
+                            <h4>1. @Html.Raw(Model.objSubMasterclass.FormuleHeading)</h4>
+                            <p style="padding: 10px;">@Html.Raw(Model.objSubMasterclass.FormuleDesc)</p>
+                        </div>
+                    </div>
+                    <div class="select_box111">
+                        <label style="width:90px">@Html.Raw(Model.objSubMasterclass.FirstSubsName)</label>
+                            <label id="s1" style="width:30px;Padding:0px"></label><label id="ss1" style="width:30px;Padding:0px;position: absolute;top: 367px;left: 147px;">@Html.Raw(Model.objSubMasterclass.FirstSubsPrice).ToString().Replace(".", ",")&euro;@*</label><label style="width:70px;Padding:0px">@Html.Raw(Model.objSubMasterclass.FirstSubsUnit)*@</label>
+                        <input type="radio" data-Price="@Html.Raw(Model.objSubMasterclass.FirstSubsPrice)" data-subname="@Html.Raw(Model.objSubMasterclass.FirstSubsName)" data-n="1" id="1" value="Male" name="r1" style="box-shadow: 0px 0 0px #808285;" />
+                    </div>
+                    <div>
+                        <label style="width:150px;">@Html.Raw(Model.objSubMasterclass.SecondSubsName)<br />à partir de</label>
+                            <label id="s2" style="width:30px;Padding:0px;"></label><label id="ss2"  style="width:30px;Padding:0px;position: absolute;top: 481px;left: 147px;">@Html.Raw(Model.objSubMasterclass.SecondSubsPrice).ToString().Replace(".", ",")&euro;@*</label><label style="width:70px;Padding:0px">@Html.Raw(Model.objSubMasterclass.SecondSubsUnit)*@</label>
+                        <input type="radio" data-Price="@Html.Raw(Model.objSubMasterclass.SecondSubsPrice)" data-subname="@Html.Raw(Model.objSubMasterclass.SecondSubsName)" data-n="2" id="2" value="" name="r1" style="box-shadow: 0px 0 0px #808285;" />
+                    </div>
+                    <div>
+                        <label style="width:150px">@Html.Raw(Model.objSubMasterclass.ThirdSubsName)<br />à partir de</label>
+                            <label id="s3" style="width:30px;Padding:0px"></label><label id="ss3" style="width:30px;Padding:0px;position: absolute;top: 586px;left: 147px;">@Html.Raw(Model.objSubMasterclass.ThirdSubsPrice).ToString().Replace(".", ",")&euro;@*</label><label style="width:70px;Padding:0px">@Html.Raw(Model.objSubMasterclass.ThirdSubsUnit)*@</label>
+                        <input type="radio" data-Price="@Html.Raw(Model.objSubMasterclass.ThirdSubsPrice)" data-subname="@Html.Raw(Model.objSubMasterclass.ThirdSubsName)" data-n="3" id="3" value="" name="r1" style="box-shadow: 0px 0 0px #808285;" />
+                    </div>
+                    <div>
+                        <label style="width:150px">@Html.Raw(Model.objSubMasterclass.FourthSubsName) <br />à partir de</label>
+                            <label id="s4" style="width:30px;Padding:0px"></label><label id="ss4" style="width:30px;Padding:0px;position: absolute;top: 691px;left: 147px;">@Html.Raw(Model.objSubMasterclass.FourthSubsPrice).ToString().Replace(".", ",")&euro;@*</label><label style="width:70px;Padding:0px">@Html.Raw(Model.objSubMasterclass.FourthSubsUnit)*@</label>
+                        <input type="radio" data-Price="@Html.Raw(Model.objSubMasterclass.FourthSubsPrice)" data-subname="@Html.Raw(Model.objSubMasterclass.FourthSubsName)" data-n="4" id="4" value="" name="r1" style="box-shadow: 0px 0 0px #808285;"/>
+                    </div>
+                </div>
+
+                <div class="fleft">
+                    <div class="border fleft"></div>
+                    <div class="block_image">
+                        <img src="../Images/mabonne2.png" alt="" />
+                        <div>
+                            <h4>2. @Html.Raw(Model.objSubMasterclass.DureeHeading)</h4>
+                            <p style="padding: 10px;">@Html.Raw(Model.objSubMasterclass.DureeDesc)</p>
+                        </div>
+                    </div>
+                    @foreach (Commic.Models.SubscriptionTimeDuration obj in Model.objSubsTimeListM)
+                    {
+                        <div class="select_box111">
+                            <label style="width:171px;height:80px">@Html.Raw(obj.SubsTimeDuration)@*(@Html.Raw(obj.SubsTimePrice)*3)&euro;/mois*@</label>
+                            <label style="width:171px;height:80px" id="@Html.Raw("sublbl" + obj.id)"></label>
+                            <input style="width:40px;height:40px;box-shadow: 0px 0 0px #808285;" type="radio" id="@Html.Raw("r2" + obj.id)" data-id="@Html.Raw(obj.id)" data-timeDuree="@Html.Raw(obj.SubsTimeDuration)" data-Price="@Html.Raw(obj.SubsTimePrice)" value="" data-Dureeprice="@Html.Raw(obj.SubsTimePrice)" name="r2" onclick="Radiobtn('r2');"/>
+                        </div>
+                        
+                       
+                    }
+                </div>
+
+                <div class="fleft">
+                    <div class="border fleft"></div>
+                    <div class="block_image">
+                        <img src="../Images/mabonne3.png" alt="" />
+                        <div>
+                            <h4>3. @Html.Raw(Model.objSubMasterclass.DeliveryHeading)</h4>
+                            <p style="padding: 10px;">@Html.Raw(Model.objSubMasterclass.DeliveryDesc)</p>
+                        </div>
+                    </div>
+                     @foreach (Commic.Models.SubscriptionDeliveryTypes obj in Model.objSubsDeliveryListM)
+                    {
+                        if (obj.id == 3)
+                        {
+                        <div class="select_box111" id="Del">
+                            <label style="width:200px;">@Html.Raw(obj.DeliveryType)<br />92110</label><img id="@Html.Raw("img" + obj.id)" style="position:absolute;Background-color:white;" class="mark" src="~/Images/i.png" width="10" height="10" onmouseover="showdiv(@Html.Raw("div" + obj.id));" onmouseout="hidediv(@Html.Raw("div" + obj.id));"/>
+                            <input type="radio" id="@Html.Raw("r3" + obj.id)" data-iid="@Html.Raw(obj.id)" value="" data-deltype="@Html.Raw(obj.DeliveryType)" data-Price="@Html.Raw(obj.DeliveryPrice)" name="r3" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('r3');"/>
+                        </div>
+                        }
+                        else 
+                        { 
+                        <div class="select_box111" id="Del">
+                            <label style="width:200px;">@Html.Raw(obj.DeliveryType)<br />@Html.Raw(obj.DeliveryPrice).ToString().Replace(".", ",")&euro;/mois</label><img id="@Html.Raw("img" + obj.id)" style="position:absolute;Background-color:white;" class="mark" src="~/Images/i.png" width="10" height="10" onmouseover="showdiv(@Html.Raw("div" + obj.id));" onmouseout="hidediv(@Html.Raw("div" + obj.id));"/>
+                            <input type="radio" id="@Html.Raw("r3" + obj.id)" data-iid="@Html.Raw(obj.id)" value="" data-deltype="@Html.Raw(obj.DeliveryType)" data-Price="@Html.Raw(obj.DeliveryPrice)" name="r3" style="box-shadow: 0px 0 0px #808285;" onclick="Radiobtn('r3');"/>
+                        </div>
+                        }
+                        <div class="select_box111" id="@Html.Raw("div" + obj.id)" style="padding: 10px;width:310px;color:white; display: none;border-style: dotted solid;background-color: #017eba;"></div>
+                    }
+                     <div class="select_box111" id="div33" style="padding: 12px; display: none;Height: 148px;width:310px;color:white;border-style: dotted solid;background-color: #017eba;">
+                            <a href="#" onclick="$('#div33').hide(); return false;" style="float:right;font-size:18px;color:black;">X</a>
+                         Reception:<br />
+                         <b style="margin-left: 75px;">Livraison à retirer soit</b><br />
+                         <input type="radio" id="livaddR1" data-address="Chez JP,BULLES EN TÊTE au 54 rue des Dames 75017, Paris. OU auprès d’une boutique de notre partenaire, LES GRANDES CAVES" name="liv3" style="float:left;margin-left: 20px;position:absolute;left:30px;top:763px;width: 15px;height: 15px;" checked/><span id="livadd1" style="float:left;margin-left: 20px;position:absolute;left:52px;top:703px;font-size:11px;width:300px;">Chez JP,<b>BULLES EN TÊTE</b> au 54 rue des Dames 75017, Paris. <b>OU</b> auprès d’une boutique de notre partenaire, <b>LES GRANDES CAVES</b></span>
+                         <input type="radio" id="livaddR2" data-address="70, rue Saint Dominique 75007" name="liv3" style="float:left;margin-left: 20px;position:absolute;left:30px;top:802px;width: 15px;height: 15px;"/><span id="livadd2" style="float:left;margin-left: 20px;position:absolute;left:53px;top:742px;font-size:12px;">70, rue Saint Dominique 75007,</span>
+                         <input type="radio" id="livaddR3" data-address="9, rue Poncelet 75017" name="liv3" style="float:left;margin-left: 20px;position:absolute;left:30px;top:822px;width: 15px;height: 15px;"/><span id="livadd3" style="float:left;margin-left: 20px;position:absolute;left:53px;top:762px;font-size:12px;">9, rue Poncelet 75017,</span>
+                         <input type="radio" id="livaddR4" data-address="63, rue Damrémont 75018" name="liv3" style="float:left;margin-left: 20px;position:absolute;left:30px;top:842px;width: 15px;height: 15px;"/><span id="livadd4" style="float:left;margin-left: 20px;position:absolute;left:53px;top:782px;font-size:12px;">63, rue Damrémont 75018,</span>
+                         <input type="radio" id="livaddR5" data-address="76, rue Jean Jaurès 92110 Clichy" name="liv3" style="float:left;margin-left: 20px;position:absolute;left:30px;top:862px;width: 15px;height: 15px;"/><span id="livadd5" style="float:left;margin-left: 20px;position:absolute;left:53px;top:802px;font-size:12px;">76, rue Jean Jaurès 92110 Clichy.</span>
+                        </div>
+                </div>
+            </div>
+
+
+
+            <!--Votre Block-->
+            <div id="votre" class="bottom_block">
+                <div class="votre_wrap txt_center">
+                    <h2>NO STRESS!!!</h2><h3 style="font-size: 21px;">@Html.Raw(Model.objSubMasterclass.FooterDescription)</h3>
+                    <div class="button pink_btn fleft">
+                        @*<label>Total de l'abonnement:</label>*@<label id="Totalamt"></label>
+                    </div>
+                    <div class="button green_btn next_btn" onclick="$('#Section1').hide(); $('#Section2').hide(); $('#Section3').show(); $('#Section4').hide();$(window).scrollTop(0); return false;" >
+                        @*<input type="submit" value="ETAPE SUIVANTE" onclick="$('#Section1').hide(); $('#Section2').hide(); $('#Section3').show(); $('#Section4').hide();$('html, body').animate({scrollTop:0}, 'fast'); return false;" />*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About Us Page Code End-->
+    <input type="hidden" id="hdd" name="hdd" value="0" />
+    <input id="price" type="hidden" value="" name="price">
+    <input id="tothdd" type="hidden" value="" name="tothdd">
+</div>
+<div id="Section3" class="div" style="display: none;">
+    <!--About Us Page Code Start-->
+    <section id="content">
+        <div class="content-wrap" id="identification_detail_2">
+            <div id="slideshow" class="top_header">
+                <div class="top_header_wrap">
+                    <h2 id="foc1" class="fleft" style="width:600px;">1-3 FORMULE, DUREE, LIVRAISON</h2>
+                    <p class="fright"><a href="#" onclick="$('#Section2').show();$('#Section3').hide(); $('#Section4').hide();$('#Section5').hide(); return false;"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></a></p>
+                </div>
+            </div>
+            <div class="banner_block">
+                <div id="uneequipe" class="banner1">
+                    <div class="uneequipe_wrap">
+                        <h2 class="txt_center">ENVOYER  L'ABONNEMENT</h2>
+                    </div>
+                </div>
+                <div id="voir" class="banner2">
+                    <h2 class="fleft" style="margin-top:-37px;margin-left: -27px;color:white;"><center>c’est pour où?</center></h2>
+                    <div class="voir_wrap">
+                        Renseignez l’adresse à laquelle vous souhaitez
+recevoir vos  BD chaque mois
+                    </div>
+                </div>
+            </div>
+            <!--Nakache Block-->
+            <div id="nakache" class="payment_block" style="font-size:18px">
+                <div class="fleft" style="margin-top:-40px;">
+                    <div class="col-sm-4">
+                        <label style="width:300px;">Prénom <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lblfname" style="color:red;width:300px;"></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.FirstName, new { @id = "Fname", name = "fName", @onblur = "RemoveClass(this);", @onkeypress = "return checkNum('t1');" })
+                    </div>
+                    <div>
+                        <label style="width:300px;">Nom <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lblname" style="color:red;width:300px;""></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.LastName, new { @id = "Lastname", @onblur = "RemoveClass(this);", @onkeypress = "return checkNum('t2');" })
+                    </div>
+                    <div>
+                        <label style="width:300px;">Société  Facultatif</label><label></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.OptionalSociety, new { @id = "Security", @onblur = "RemoveClass(this);" })
+                    </div>
+
+                </div>
+
+                <div class="fleft" style="margin-top:-40px;">
+                    <div class="border fleft" style="position: absolute;top: 40px;"></div>
+                    <div>
+                        <label style="width:300px;">Adresse <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lbladd" style="color:red;width:300px;""></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Address, new { @id = "Add", @onblur = "RemoveClass(this);", @*@onkeypress = "return checkNum('t3');"*@ })
+                    </div>
+                    <div>
+                        <label style="width:300px;">Complément Facultatif</label><label></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.OptionalSupplement, new { @id = "comFac", @onblur = "RemoveClass(this);" })
+
+                    </div>
+                    <div>
+                        <label style="width:300px;">Code Postal <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lblpostalcode" style="color:red;width:300px;""></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.PostalCode, new { @id = "PostCode", @onblur = "RemoveClass(this);", @onkeypress = "return IsNumeric(event);" })
+                        <span id="error" style="color: Red; display: none"></span>
+                    </div>
+
+                </div>
+
+                <div class="fleft" style="margin-top:-40px;">
+                    <div class="border fleft" style="position: absolute;top: 40px;"></div>
+                    <div>
+                        <label style="width:300px;">Ville <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lblvillage" style="color:red;width:300px;"></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Village, new { @id = "Ville", @onblur = "RemoveClass(this);", @onkeypress = "return checkNum('t4');" })
+
+                    </div>
+                    <div>
+                        <label>Pays</label><label></label>
+                        <select class="fleft">
+                            <option>France</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="width:300px;">Téléphone <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lblTelephone" style="color:red;width:300px;""></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Telephone, new { @id = "Telephone", @onblur = "RemoveClass(this);", @onkeypress = "return IsNumeric2(event); " })
+                        <span id="error2" style="color: Red; display: none"></span>
+                    </div>
+                </div>
+            </div>
+            <!--Votre Block-->
+            <div id="votre" class="bottom_block">
+                <div class="votre_wrap txt_center">
+                    <input type="checkbox" id="checkadd" value="" />
+                    <label>Utiliser cette adresse pour la facturation</label><br />
+                    <div class="button green_btn next_btn" onclick="return Vaidate();">
+                        @*<input type="submit" class="btn btn-primary" name="signup" value="ETAPE SUIVANTE" onclick="return Vaidate();" />*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About Us Page Code End-->
+</div>
+
+<div id="Section4" class="div" style="display: none;">
+    <!--About Us Page Code Start-->
+    <section id="content">
+        <div class="content-wrap">
+            <div id="slideshow" class="top_header">
+                <div class="top_header_wrap">
+                    <h2 class="fleft" style="width:600px;">ADRESSE DE FACTURATION</h2>
+                    
+                    <p class="fright"><a href="#" onclick="$('#Section2').hide();$('#Section3').hide(); $('#Section4').hide(); $('#Section5').show(); return false;"><img src="../Images/back_white_button.png" class="imgh" style="margin-top:-14px;" width='120' height='100';"/></a></p>
+                    @*<p class="fright"><a href="#" onclick="chkadd();"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></a></p>*@
+                </div>
+            </div>
+            <div class="banner_block">
+                <div id="uneequipe" class="banner1">
+                    <div class="uneequipe_wrap">
+                        <h2 class="txt_center">RECAPITULATIF</h2>
+                    </div>
+                </div>
+                <div id="voir" class="banner2" style="padding:78px;">
+                    <div class="voir_wrap">
+                        <p style="text-align:center;line-height: 25px">
+                            Dernière étape avant d’entrer dans la communauté des abonnés de Chacun sa Bulle : 
+vérifiez que les informations ci-dessous correspondent bien à vos souhaits
+                        </p >
+                        <p style="text-align:center;">et à vos choix précédents.</p>
+                        @*<h3>Détail de votre abonnement :</h3>
+                        <div>
+                        <span style="color:blue;font-size:24px;">Formule:</span> <label id="for" style="display:inline;"></label>
+                        </div>
+                        <div>
+                        <span style="color:green;font-size:24px;">Durée:</span> <label id="duree" style="display:inline;"></label>
+                        </div>
+                        <div>
+                        <span style="color:pink;font-size:24px;">Livraison:</span> <label id="Liv" style="display:inline;"></label>
+                        </div>*@
+                        @*<div class="button">
+                            <input type="submit" value="Formule" />
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Durée" />
+                        </div>
+                        <div class="button">
+                            <input type="submit" value="Livraison" />
+                        </div>*@
+                    </div>
+                </div>
+            </div>
+            <!--Nakache Block-->
+            @*<div id="nakache" class="payment_block" style="height:550px;">
+			<h2 style="margin-top:0;position:absolute;left:30px;">Order Details</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:110px;">Formule:</span> <label id="for" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:115px;"></label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:110px;">Durée:</span> <label id="duree" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:530px;top:115px;"></label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:750px;top:110px;">Livraison:</span> <label id="Liv" style="font-size:20px;width:362px;display:inline;color: #8b8b8b;position:absolute;left:860px;top:115px;"></label>
+             <h2 style="margin-top:0;position:absolute;left:30px;top:180px;">Details De Livraison</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:250px;">Prénom:</span><label id="Prenom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:255px;"></label><br /><br />         
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:250px;">Nom:</span><label id="nom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:518px;top:255px;"></label><br /><br />
+             <span style="font-size:24px;display:inline;width:300px;position:absolute;left:100px;top:311px">Adresse de livraison:</span><label id="Address" style="font-size:20px;width:600px;display:inline;color: #8b8b8b;position:absolute;left:333px;top:315px;"></label><br /><br />
+             <h2 style="margin-top:0;position:absolute;left:30px;top:357px;">Details de La Facturation</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:433px;">Prénom:</span><label id="Prenom1" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:437px;"></label><br /><br />         
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:433px;">Nom:</span><label id="nom1" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:516px;top:438px;"></label><br /><br />
+             <span style="font-size:24px;display:inline;width:300px;position:absolute;left:100px;top:484px;"> Adresse de facturation:</span><label id="billAddress" style="font-size:20px;width:600px;display:inline;color: #8b8b8b;position:absolute;left:354px;top:489px;"></label><br /><br />
+             <h2 style="margin-top:0;position:absolute;left:30px;top:520px;">Message de cadeau:</h2>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:590px;">Prénom:</span><label id="votreprenom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:593px;"></label><br /><br />         
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:590px;">Nom:</span><label id="votrenom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:516px;top:593px;"></label><br /><br />
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:750px;top:590px;"><b>Email id:</b></span><label id="votreemail" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:861px;top:593px;"></label><br /> <br />
+             <span style="font-size:24px;display:inline;width:300px;position:absolute;left:100px;top:645px;"><b>Votre message:</b></span><label id="votremsg" style="font-size:20px;width:400px;display:inline;color: #8b8b8b;position:absolute;left:289px;top:649px;"></label> <br /><br />
+        </div>*@
+
+            <div id="nakache" class="payment_block" style="height:450px;">
+                <h2 style="margin-top:-30px;margin-left:466px;color:black;"><center">En détail…</center></h2>
+			<h2 style="margin-top:0;position:absolute;left:-80px;top:70px;font-size:30px;">Offre</h2>
+                <div style="position: absolute;top:-64px;left:-58px;">
+                <div style="position: absolute;top: 8px;left: 0px">
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:110px;">Formule:</span> <label id="for" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:115px;"></label>
+             @*<span style="font-size:24px;display:inline;width:200px;position:absolute;left:100px;top:150px;">Adulte Univers:</span> <label id="uni" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:270px;top:154px;"></label>*@
+             @*<span style="font-size:24px;display:inline;width:200px;position:absolute;left:100px;top:200px;">Enfant Univers:</span> <label id="kiduni" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:270px;top:204px;"></label>*@
+             </div>
+                <div style="position: absolute;top: 8px;left: 190px">
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:110px;">Durée:</span> <label id="duree" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:560px;top:115px;"></label>
+             @*<span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:150px;">Adulte Genre:</span> <label id="gen" style="font-size:20px;width:425px;display:inline;color: #8b8b8b;position:absolute;left:598px;top:154px;"></label>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:200px;">Enfant Genre:</span> <label id="kidgen" style="font-size:20px;width:425px;display:inline;color: #8b8b8b;position:absolute;left:598px;top:204px;"></label>*@
+             </div>
+                    </div>
+                
+                    <div style="width: 1125px;height: 3px;background-color: white;margin-top: 100px;"></div>
+             <h2 style="margin-top:0;position:absolute;left:-80px;top:173px;font-size:30px;">Livraison</h2>
+                <div style="position: absolute;top:-183px;left:-58px;">
+                <div style="position:absolute;top:38px;left:0px;">
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:290px;">Nom:</span><label id="Prenom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:294px;"></label><br /><br />         
+                    </div>
+                <div style="position: absolute;top:38px;left:190px;">
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:290px;">Prénom:</span><label id="nom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:560px;top:294px;"></label><br /><br />
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:334px;">Livraison:</span> <label id="Liv" style="font-size:20px;width:362px;display:inline;color: #8b8b8b;position:absolute;left:560px;top:338px;"></label>
+                    </div>
+                    </div>
+                <div style="width: 1125px;height: 3px;background-color: white;margin-top: 143px;"></div>
+             <h2 style="margin-top:0;position:absolute;left:-80px;top:320px;font-size:30px;">Facturation</h2>
+                <div style="position: absolute;top:-130px;left:-58px;">
+                <div>
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:430px;">Nom:</span><label id="Prenom1" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:434px;"></label><br /><br />         
+                    <span style="font-size:24px;display:inline;width:300px;position:absolute;left:100px;top:476px;">Adresse:</span><label id="billAddress" style="font-size:20px;width:600px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:480px;"></label><br /><br />
+                    </div>
+                <div style="position: absolute;top: 0px;left:190px;">
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:450px;top:430px;">Prénom:</span><label id="nom1" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:560px;top:434px;"></label><br /><br />
+             
+                    </div>
+                    </div>
+                @*<div style="width: 1125px;height: 3px;background-color: white;margin-top: 144px;"></div>*@
+             @*<h2 style="margin-top:0;position:absolute;left:-80px;top:565px;font-size:30px;">Message de cadeau:</h2>
+                <div style="position: absolute;top:-40px;left: -58px;">
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:100px;top:590px;">Nom:</span><label id="votrenom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:200px;top:593px;"></label><br /><br />         
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:640px;top:590px;">Prénom:</span><label id="votreprenom" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:745px;top:594px;"></label><br /><br />
+             <span style="font-size:24px;display:inline;width:150px;position:absolute;left:640px;top:627px;">Email id:</span><label id="votreemail" style="font-size:20px;width:200px;display:inline;color: #8b8b8b;position:absolute;left:745px;top:631px;"></label><br /> <br />
+             <span style="font-size:24px;display:inline;width:300px;position:absolute;left:100px;top:627px;">Votre message:</span><label id="votremsg" style="font-size:20px;width:400px;display:inline;color: #8b8b8b;position:absolute;left:290px;top:631px;"></label> <br /><br />
+                    </div>*@
+                    
+        </div>
+            <!--Votre Block-->
+
+
+            <!--Nakache Block-->
+           
+            <!--Votre Block-->
+            <div id="votre" class="bottom_block">
+                <label id="msg" style="color:red;width:800px;text-align: center;margin-left: 199px;margin-top: 20px;"></label>
+                <div class="votre_wrap txt_center" style="margin-top: -24px;">
+                    <input type="checkbox" id="checkPay" value="" onclick="$('#popuppdf').show();" />
+                    <label>J'accepte les conditions générales de ventes.</label>
+                    <div class="button">
+                        <input type="submit" id="tamt" value="PAYER (TOTAL AMOUNT)" onclick="SubmitData();" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About Us Page Code End-->
+</div>
+
+<div id="Section5" class="div" style="display: none;">
+    <!--About Us Page Code Start-->
+    <section id="content">
+        <div class="content-wrap" id="identification_detail_2">
+            <div id="slideshow" class="top_header">
+                <div class="top_header_wrap">
+                    <h2 class="fleft" style="width:600px;">4 ADRESSE</h2>
+                    <p class="fright"><a href="#" onclick="$('#Section2').hide(); $('#Section1').hide(); $('#Section3').show(); $('#Section4').hide(); $('#Section5').hide(); return false;"><img src="../Images/back_white_button.png" class="imgh" style="margin-top:-14px;" width='120' height='100';"/></a></p>
+                </div>
+            </div>
+            <div class="banner_block">
+                <div id="uneequipe" class="banner1">
+                    <div class="uneequipe_wrap">
+                        <h2 class="txt_center">ENVOYER  L'ABONNEMENT</h2>
+                    </div>
+                </div>
+                <div id="voir" class="banner2">
+                    <div class="voir_wrap">
+                        Entrez votre adresse de facturation
+                    </div>
+                </div>
+            </div>
+            <!--Nakache Block-->
+            <div id="nakache" class="payment_block" style="font-size:18px">
+                <div class="fleft" style="margin-top:-40px;">
+                    <div class="col-sm-4">
+                        <label style="width:300px;">Prénom <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lblfname1" style="color:red;width:300px;"></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.FirstName, new { @id = "Fname1", name = "fName", @onblur = "RemoveClass(this);", @onkeypress = "return checkNum('t11');" })
+                    </div>
+                    <div>
+                        <label style="width:300px;">Nom <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lblname1" style="color:red;width:300px;"></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.LastName, new { @id = "Lastname1", @onblur = "RemoveClass(this);", @onkeypress = "return checkNum('t22');" })
+                    </div>
+                    <div>
+                        <label style="width:300px;">Société  Facultatif</label><label></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.OptionalSociety, new { @id = "Security1", @onblur = "RemoveClass(this);" })
+                    </div>
+
+                </div>
+
+                <div class="fleft" style="margin-top:-40px;">
+                    <div class="border fleft" style="position: absolute;top: 40px;"></div>
+                    <div>
+                        <label style="width:300px;">Adresse <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lbladd1" style="color:red;width:300px;"></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Address, new
+                   {
+                       @id = "Add1",
+                       @onblur = "RemoveClass(this);", @*@onkeypress = "return checkNum('t33');"*@ })
+                    </div>
+                    <div>
+                        <label style="width:300px;">Complément Facultatif</label><label></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.OptionalSupplement, new { @id = "comFac1", @onblur = "RemoveClass(this);" })
+
+                    </div>
+                    <div>
+                        <label style="width:300px;">Code Postal <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lblpostalcode1" style="color:red;width:300px;"></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.PostalCode, new { @id = "PostCode1", @onblur = "RemoveClass(this);", @onkeypress = "return IsNumeric(event); checkNum('t55')" })
+                        <span id="error3" style="color: Red; display: none"></span>
+                    </div>
+
+                </div>
+
+                <div class="fleft" style="margin-top:-40px;">
+                    <div class="border fleft" style="position: absolute;top: 40px;"></div>
+                    <div>
+                        <label style="width:300px;">Ville <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lblvillage1" style="color:red;width:300px;"></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Village, new { @id = "Ville1", @onblur = "RemoveClass(this);", @onkeypress = "return checkNum('t44');" })
+
+                    </div>
+                    <div>
+                        <label style="width:300px;">Pays</label><label></label>
+                        <select class="fleft">
+                            <option>France</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="width:300px;">Téléphone <font color="red" size="4"><b>*</b></font></label>
+                        <label id="lblTelephone1" style="color:red;width:300px;"></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Telephone, new { @id = "Telephone1", @onblur = "RemoveClass(this);", @onkeypress = "return IsNumeric2(event);" })
+                        <span id="error4" style="color: Red; display: none"></span>
+                    </div>
+                </div>
+            </div>
+            <!--Votre Block-->
+            <div id="votre" class="bottom_block">
+                <div class="votre_wrap txt_center">
+                    
+                    <div class="button next_btn" onclick="return Validatebilladd();">
+                        @*<input type="submit" class="btn btn-primary" name="signup" value="ETAPE SUIVANTE" onclick="return Validatebilladd();" />*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About Us Page Code End-->
+</div>
+
+
+@* Script Functions for Div Section 1 *@
+<script>
+    function FillBillingAdd()
+    {
+        $("#Fname1").val($("#Fname").val());
+        $("#Lastname1").val($("#Lastname").val());
+        $("#Security1").val($("#Security").val());
+        $("#Add1").val($("#Add").val());
+        $("#comFac1").val($("#comFac").val());
+        $("#PostCode1").val($("#PostCode").val());
+        $("#Ville1").val($("#Ville").val());
+        $("#Telephone1").val($("#Telephone").val());
+    }
+</script>
+<style type="text/css">
+    .selectbox
+    {
+        background-color: #3c414d !important;
+        color: #fff !important;
+    }
+</style>
+<script>
+    function Radiobtn(obj) {
+        debugger;
+        var el = 0;
+        $("#1").checked = true;
+        var inputElems = document.getElementsByName(obj)
+
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+                //alert($(inputElems[i]).attr("data-Price"));
+                //el = parseInt(el) + parseInt( $(inputElems[i]).attr("data-Price"));
+                //alert(el);
+                //document.getElementById('nameTarget').innerHTML = el
+                //tot1();
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+            tot1();
+        }
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(window).scrollTop(0);
+        debugger;
+        var inputElems = document.getElementsByTagName("input");
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+        }
+        tot1();
+    })
+
+</script>
+<script type="text/javascript">
+    $(function () {
+        debugger;
+        var inputElems = document.getElementsByTagName("input");
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+        }
+        tot1();
+    })
+
+</script>
+<script type="text/javascript">
+    function show() {
+        debugger;
+        var CatName = '';
+        var ComicName = '';
+        cat = 0;
+        com = 0;
+        var inputElems = document.getElementsByName("r1")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+                if ($(inputElems[i]).attr("data-n") == 1) {
+                    document.getElementById('for').innerHTML = "Prêt à Buller";
+                }
+                else if ($(inputElems[i]).attr("data-n") == 2) {
+                    document.getElementById('for').innerHTML = "Bulle Sur Mesure";
+                }
+                else if ($(inputElems[i]).attr("data-n") == 3) {
+                    document.getElementById('for').innerHTML = "Mini Bulle";
+                }
+                else if ($(inputElems[i]).attr("data-n") == 4) {
+                    document.getElementById('for').innerHTML = "Mini & Maxi Buller";
+                }
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+        }
+        //alert(CatPrice);
+        var inputElems = document.getElementsByName("r2")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+                if ($(inputElems[i]).attr("data-id") == 1) {
+
+                    document.getElementById('duree').innerHTML = "Prélévement mensuel";
+                }
+                else if ($(inputElems[i]).attr("data-id") == 2) {
+
+                    document.getElementById('duree').innerHTML = "3 Mois";
+                }
+                else if ($(inputElems[i]).attr("data-id") == 3) {
+
+                    document.getElementById('duree').innerHTML = "6 Mois";
+                }
+                else if ($(inputElems[i]).attr("data-id") == 4) {
+
+                    document.getElementById('duree').innerHTML = "12 Mois";
+                }
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+        }
+        //alert(SubPrice);
+        var inputElems = document.getElementsByName("r3")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+                if ($(inputElems[i]).attr("data-iid") == 1) {
+                    document.getElementById('Liv').innerHTML = "Livraison suivie";
+                }
+                else if ($(inputElems[i]).attr("data-iid") == 2) {
+                    document.getElementById('Liv').innerHTML = "Retrait en Point Relay";
+                }
+                else if ($(inputElems[i]).attr("data-iid") == 3) {
+                    document.getElementById('Liv').innerHTML = "Retrait aupres de nos pertenaires Gratuit, Paris 17/18/7 et Chichy";
+                }
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+        }
+        var inputElems = document.getElementsByName("c1")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+                //if (cat == 0) {
+                //    CatName = CatName + ($(inputElems[i])).attr("data-catname");
+                //    document.getElementById('commicName').innerHTML = CatName;
+                //}
+                //else {
+                //    CatName = CatName + ", " + ($(inputElems[i])).attr("data-catname");
+                //    document.getElementById('commicName').innerHTML = CatName;
+                //}
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+            cat++;
+        }
+        var inputElems = document.getElementsByName("c2")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+                //if (com == 0) {
+                //    ComicName = ComicName + ($(inputElems[i])).attr("data-comicname");
+                //    document.getElementById('CattName').innerHTML = ComicName;
+                //}
+                //else {
+                //    ComicName = ComicName + ", " + ($(inputElems[i])).attr("data-comicname");
+                //    document.getElementById('CattName').innerHTML = ComicName;
+                //}
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+            cat++;
+        }
+        document.getElementById('Prenom').innerHTML = $("#Fname").val();
+        document.getElementById('nom').innerHTML = $("#Lastname").val();
+        ////document.getElementById('Address').innerHTML = $("#Add").val() + " , " + $("#Ville").val() + " , " + $("#PostCode").val();
+        if (document.getElementById('checkadd').checked) {
+            document.getElementById('billAddress').innerHTML = $("#Add").val() + " , " + $("#Ville").val() + " , " + $("#PostCode").val();
+            document.getElementById('Prenom1').innerHTML = $("#Fname").val();
+            document.getElementById('nom1').innerHTML = $("#Lastname").val();
+        }
+        else {
+            document.getElementById('billAddress').innerHTML = $("#Add1").val() + " , " + $("#Ville1").val() + " , " + $("#PostCode1").val();
+            document.getElementById('Prenom1').innerHTML = $("#Fname1").val();
+            document.getElementById('nom1').innerHTML = $("#Lastname1").val();
+        }
+        //document.getElementById('votreprenom').innerHTML = $("#votreFirstname").val();
+        //document.getElementById('votrenom').innerHTML = $("#votrelname").val();
+        //document.getElementById('votreemail').innerHTML = $("#email").val();
+        //document.getElementById('votremsg').innerHTML = $("#Msg").val();
+        $(window).scrollTop(0);
+    }
+    
+</script>
+<script type="text/javascript">
+    function tot1() {
+        debugger;
+        var tot;
+        var CatPrice = 0;
+        var SubPrice = 0;
+        var DelPrice = 0;
+        $("#ss1").show();
+        $("#ss1").show();
+        $("#ss1").show();
+        $("#ss1").show();
+        $("#adp2").show();
+        $("#adp3").show();
+        $("#adp4").show();
+        //document.getElementById('sublbl1').innerHTML = '';
+        //document.getElementById('sublbl2').innerHTML = '';
+        //document.getElementById('sublbl3').innerHTML = '';
+        //document.getElementById('sublbl4').innerHTML = '';
+        var inputElems = document.getElementsByName("r1")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+                if ($(inputElems[i]).attr("data-n") == 1) {
+                    $("#s1").hide(); show
+                    $("#ss1").show();
+                    $("#s2").hide();
+                    $("#s3").hide();
+                    $("#s4").hide();
+                    CatPrice = parseFloat($("#ss1").text().replace(",", "."));
+                    document.getElementById("2").disabled = true;
+                    document.getElementById("3").disabled = true;
+                    document.getElementById("4").disabled = true;
+                }
+                else if ($(inputElems[i]).attr("data-n") == 2) {
+                    $("#s1").hide();
+                    $("#s2").show();
+                    $("#ss2").hide();
+                    $("#s3").hide();
+                    $("#s4").hide();
+                    CatPrice = parseFloat($("#s2").text().replace(",", "."));
+                    document.getElementById("1").disabled = true;
+                    document.getElementById("3").disabled = true;
+                    document.getElementById("4").disabled = true;
+                }
+                else if ($(inputElems[i]).attr("data-n") == 3) {
+                    $("#s1").hide();
+                    $("#s2").hide();
+                    $("#ss3").hide();
+                    $("#s3").show();
+                    $("#s4").hide();
+                    CatPrice = parseFloat($("#s3").text().replace(",", "."));
+                    document.getElementById("1").disabled = true;
+                    document.getElementById("2").disabled = true;
+                    document.getElementById("4").disabled = true;
+                }
+                else if ($(inputElems[i]).attr("data-n") == 4) {
+                    $("#s1").hide();
+                    $("#s2").hide();
+                    $("#s3").hide();
+                    $("#s4").show();
+                    $("#ss4").hide();
+                    CatPrice = parseFloat($("#s4").text().replace(",", "."));
+                    document.getElementById("1").disabled = true;
+                    document.getElementById("2").disabled = true;
+                    document.getElementById("3").disabled = true;
+                }
+                //if ($(inputElems[i]).attr("data-n") == 1) {
+                //    CatPrice = parseFloat($(inputElems[i]).attr("data-Price"));
+                //}
+                //else if ($(inputElems[i]).attr("data-n") == 2) {
+                //    CatPrice = parseFloat($(inputElems[i]).attr("data-Price"));
+                //}
+                //else if ($(inputElems[i]).attr("data-n") == 3) {
+                //    CatPrice = parseFloat($(inputElems[i]).attr("data-Price"));
+                //}
+                //else if ($(inputElems[i]).attr("data-n") == 4) {
+                //    CatPrice = parseFloat($(inputElems[i]).attr("data-Price"));
+                //}
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+        }
+        //alert(CatPrice);
+        var inputElems = document.getElementsByName("r2")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+                if ($(inputElems[i]).attr("data-id") == 1) {
+                    SubPrice = 1;
+                    document.getElementById('sublbl1').innerHTML = (CatPrice * SubPrice).toFixed(2).replace(".", ",") + "&euro;";
+                }
+                else if ($(inputElems[i]).attr("data-id") == 2) {
+                    SubPrice = 3;
+                    document.getElementById('sublbl2').innerHTML = (CatPrice * SubPrice).toFixed(2).replace(".", ",") + "&euro;";
+                    $("#adp2").hide();
+                }
+                else if ($(inputElems[i]).attr("data-id") == 3) {
+                    SubPrice = 6;
+                    document.getElementById('sublbl3').innerHTML = (CatPrice * SubPrice).toFixed(2).replace(".", ",") + "&euro;";
+                    $("#adp3").hide();
+                }
+                else if ($(inputElems[i]).attr("data-id") == 4) {
+                    SubPrice = 12;
+                    document.getElementById('sublbl4').innerHTML = (CatPrice * SubPrice).toFixed(2).replace(".", ",") + "&euro;";
+                    $("#adp4").hide();
+                }
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+        }
+        document.getElementById('sublbl1').innerHTML = (CatPrice * 1).toFixed(2).replace(".", ",") + "&euro;";
+        document.getElementById('sublbl2').innerHTML = (CatPrice * 3).toFixed(2).replace(".", ",") + "&euro;";
+        document.getElementById('sublbl3').innerHTML = (CatPrice * 6).toFixed(2).replace(".", ",") + "&euro;";
+        document.getElementById('sublbl4').innerHTML = (CatPrice * 12).toFixed(2).replace(".", ",") + "&euro;";
+        //alert(SubPrice);
+        var inputElems = document.getElementsByName("r3")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                $(inputElems[i]).parent().addClass("selectbox");
+                if ($(inputElems[i]).attr("data-iid") == 1) {
+                    DelPrice = parseFloat($(inputElems[i]).attr("data-Price"));
+                }
+                else if ($(inputElems[i]).attr("data-iid") == 2) {
+                    DelPrice = parseFloat($(inputElems[i]).attr("data-Price"));
+                }
+                else if ($(inputElems[i]).attr("data-iid") == 3) {
+                    DelPrice = parseFloat($(inputElems[i]).attr("data-Price"));
+                }
+            }
+            else {
+                $(inputElems[i]).parent().removeClass("selectbox");
+            }
+        }
+        //alert(DelPrice);
+        tot = ((CatPrice * SubPrice) + (DelPrice * SubPrice));
+        document.getElementById('Totalamt').innerHTML = "Total de l'abonnement = " + (tot).toFixed(2).replace(".", ",") + "&euro;";
+        document.getElementById('tothdd').innerHTML = (tot).toFixed(2).replace(".", ",") + "&euro;";
+        $("#tamt").val("PAYER " + tot.toFixed(2).replace(".", ",") + "€");
+    }
+</script>
+@* Script Functions for Div Section 2 *@
+<script type="text/javascript">
+    function checkboxes2() {
+        $("#pri1").removeClass("selectbox");
+        $("#pri2").removeClass("selectbox");
+        $("#pri3").removeClass("selectbox");
+        $("#pri4").removeClass("selectbox");
+        $("#pri5").removeClass("selectbox");
+        $("#pri6").removeClass("selectbox");
+        document.getElementById('nameTarget1').innerHTML = " ";
+        document.getElementById('nameTarget2').innerHTML = " ";
+        document.getElementById('nameTarget3').innerHTML = " ";
+        document.getElementById('nameTarget4').innerHTML = " ";
+        document.getElementById('nameTarget5').innerHTML = " ";
+        document.getElementById('nameTarget6').innerHTML = " ";
+        var inputElems = document.getElementsByName("c1")
+        count = 0;
+        uni = '<b>Univers:-</b>';
+        str = '';
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                count++;
+                str = str + ($(inputElems[i])).attr("data-catname");
+            }
+        }
+        //alert(str);
+        if (str == "Manga") {
+            $("#pri1").addClass("selectbox");
+            document.getElementById('s1').innerHTML = $("#pri1").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s2').innerHTML = $("#pri1").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s3').innerHTML = $("#pri1").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s4').innerHTML = $("#pri1").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('nameTarget1').innerHTML = uni+"2 Mangas soit:";
+            //document.getElementById('lbl1').innerHTML = "Manga";
+        }
+        //else{$("#pri1").removeClass("HighLight");}
+        if (str == "Franco/Belge") {
+            $("#pri3").addClass("selectbox");
+            document.getElementById('s1').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s2').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s3').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s4').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('nameTarget3').innerHTML = uni+ "2 Franco/Belge soit:";
+        }
+        //else{$("#pri3").removeClass("HighLight");}
+        if (str == "Comics") {
+            $("#pri6").addClass("selectbox");
+            document.getElementById('s1').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s2').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s3').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s4').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('nameTarget6').innerHTML =uni+ "2 Comics soit :";
+        }
+        //else{$("#pri6").removeClass("HighLight");}
+        if (str == "Roman Graphique") {
+            $("#pri6").addClass("selectbox");
+            document.getElementById('s1').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s2').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s3').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s4').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('nameTarget6').innerHTML =uni+ "2 Roman Graphique soit :";
+        }
+        //else{$("#pri6").removeClass("HighLight");}
+        if (str == "MangaComics" || str == "ComicsManga") {
+            $("#pri3").addClass("selectbox");
+            document.getElementById('s1').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s2').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s3').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s4').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('nameTarget3').innerHTML = uni+"1 Manga et, 1 Comics soit :";
+        }
+        //else{$("#pri3").removeClass("HighLight");}
+        if (str == "MangaFranco/Belge" || str == "Franco/BelgeManga") {
+            $("#pri2").addClass("selectbox");
+            document.getElementById('s1').innerHTML = $("#pri2").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s2').innerHTML = $("#pri2").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s3').innerHTML = $("#pri2").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s4').innerHTML = $("#pri2").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('nameTarget2').innerHTML = uni+"1 Manga et, 1 Franco/Belge soit :";
+
+        }
+        // else{$("#pri2").removeClass("HighLight");}
+        if (str == "MangaRoman Graphique" || str == "Roman GraphiqueManga") {
+            $("#pri3").addClass("selectbox");
+            document.getElementById('s1').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s2').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s3').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s4').innerHTML = $("#pri3").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('nameTarget3').innerHTML = uni+"1 Manga et, 1 Roman Graphique soit :";
+
+        }
+        //else{$("#pri3").removeClass("HighLight");}
+        if (str == "ComicsFranco/Belge" || str == "Franco/BelgeComics") {
+            $("#pri4").addClass("selectbox");
+            document.getElementById('s1').innerHTML = $("#pri4").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s2').innerHTML = $("#pri4").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s3').innerHTML = $("#pri4").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s4').innerHTML = $("#pri4").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('nameTarget4').innerHTML = uni+"1 Comics et, 1 Franco/Belge soit :";
+
+        }
+        //else{$("#pri4").removeClass("HighLight");}
+        if (str == "ComicsRoman Graphique" || str == "Roman GraphiqueComics") {
+            $("#pri6").addClass("selectbox");
+            document.getElementById('s1').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s2').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s3').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s4').innerHTML = $("#pri6").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('nameTarget6').innerHTML = uni+"1 Comics et, 1 Roman Graphique soit :";
+
+        }
+        //else{$("#pri6").removeClass("HighLight");}
+        if (str == "Franco/BelgeRoman Graphique" || str == "Roman GraphiqueFranco/Belge") {
+            $("#pri5").addClass("selectbox");
+            document.getElementById('s1').innerHTML = $("#pri5").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s2').innerHTML = $("#pri5").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s3').innerHTML = $("#pri5").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('s4').innerHTML = $("#pri5").attr('data-p').replace(".", ",") + "&euro;";
+            document.getElementById('nameTarget5').innerHTML = uni+"1 Roman Graphique et, 1 Franco/Belge soit :";
+
+        }
+        //else { $("#pri5").removeClass("HighLight"); }
+    }
+</script>
+<script type="text/javascript">
+
+    function checkboxes() {
+        //debugger;
+        //alert("ghg");
+        document.getElementById('comicname1').innerHTML = "";
+        document.getElementById('comicname2').innerHTML = "";
+        document.getElementById('comicname3').innerHTML = "";
+        document.getElementById('comicname4').innerHTML = "";
+        document.getElementById('comicname5').innerHTML = "";
+        document.getElementById('comicname6').innerHTML = "";
+        var inputElems = document.getElementsByName("c1")
+        count = 0;
+        str1 = '';
+        str2 = '<b>Genre:-</b>';
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                count++;
+                str1 = str1 + ($(inputElems[i])).attr("data-catname");
+            }
+        }
+        if (str1 == "Manga") {
+            var inputElems = document.getElementsByName("c2")
+            count = 0;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                    str2 = str2 + ", " + ($(inputElems[i])).attr("data-comicname");
+                    //alert(str2);
+                }
+            }
+            document.getElementById('comicname1').innerHTML = str2;
+        }
+        if (str1 == "Franco/Belge") {
+            var inputElems = document.getElementsByName("c2")
+            count = 0;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                    str2 = str2 + ", " + ($(inputElems[i])).attr("data-comicname");
+                    //alert(str2);
+                }
+            }
+            document.getElementById('comicname3').innerHTML = str2;
+        }
+        if (str1 == "Comics") {
+            var inputElems = document.getElementsByName("c2")
+            count = 0;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                    str2 = str2 + ", " + ($(inputElems[i])).attr("data-comicname");
+                    //alert(str2);
+                }
+            }
+            document.getElementById('comicname6').innerHTML = str2;
+        }
+        if (str1 == "Roman Graphique") {
+            var inputElems = document.getElementsByName("c2")
+            count = 0;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                    str2 = str2 + ", " + ($(inputElems[i])).attr("data-comicname");
+                    //alert(str2);
+                }
+            }
+            document.getElementById('comicname6').innerHTML = str2;
+        }
+        if (str1 == "MangaComics" || str1 == "ComicsManga") {
+            var inputElems = document.getElementsByName("c2")
+            count = 0;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                    str2 = str2 + ", " + ($(inputElems[i])).attr("data-comicname");
+                    //alert(str2);
+                }
+            }
+            document.getElementById('comicname3').innerHTML = str2;
+        }
+        if (str1 == "MangaFranco/Belge" || str1 == "Franco/BelgeManga") {
+            var inputElems = document.getElementsByName("c2")
+            count = 0;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                    str2 = str2 + ", " + ($(inputElems[i])).attr("data-comicname");
+                    //alert(str2);
+                }
+            }
+            document.getElementById('comicname2').innerHTML = str2;
+        }
+        if (str1 == "MangaRoman Graphique" || str1 == "Roman GraphiqueManga") {
+            var inputElems = document.getElementsByName("c2")
+            count = 0;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                    str2 = str2 + ", " + ($(inputElems[i])).attr("data-comicname");
+                    //alert(str2);
+                }
+            }
+            document.getElementById('comicname3').innerHTML = str2;
+        }
+        if (str1 == "ComicsFranco/Belge" || str1 == "Franco/BelgeComics") {
+            var inputElems = document.getElementsByName("c2")
+            count = 0;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                    str2 = str2 + ", " + ($(inputElems[i])).attr("data-comicname");
+                    //alert(str2);
+                }
+            }
+            document.getElementById('comicname4').innerHTML = str2;
+        }
+        if (str1 == "ComicsRoman Graphique" || str1 == "Roman GraphiqueComics") {
+            var inputElems = document.getElementsByName("c2")
+            count = 0;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                    str2 = str2 + ", " + ($(inputElems[i])).attr("data-comicname");
+                    //alert(str2);
+                }
+            }
+            document.getElementById('comicname6').innerHTML = str2;
+        }
+        if (str1 == "Franco/BelgeRoman Graphique" || str1 == "Roman GraphiqueFranco/Belge") {
+            var inputElems = document.getElementsByName("c2")
+            count = 0;
+            for (var i = 0; i < inputElems.length; i++) {
+                if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                    str2 = str2 + ", " + ($(inputElems[i])).attr("data-comicname");
+                    //alert(str2);
+                }
+            }
+            document.getElementById('comicname5').innerHTML = str2;
+        }
+        if (count > 3)
+        { $("#lbl2").hide(); }
+        else
+        { return true; }
+    }
+</script>
+<script type="text/javascript">
+
+    function checkboxes1() {
+        $("#lblmax").hide();
+        debugger;
+        var inputElems = document.getElementsByName("c1")
+        count = 0;
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                count++;
+            }
+        }
+        if (count > 0)
+        { $("#lbl1").hide(); }
+        //else
+        //{ return true; }
+        if (count > 2) {
+            $("#lblmax").show();
+            return false;
+        }
+        else {
+            $("#lblmax").hide();
+            checkboxes2();
+            checkboxes();
+            return true;
+        }
+    }
+</script>
+@* Script Functions for Div Section 3 *@
+<style type="text/css">
+    body
+    {
+        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+    }
+    h2, h3, h4 {
+            font-family: 'Bangers', cursive;
+    }
+</style>
+<script type="text/javascript">
+    var specialKeys = new Array();
+    specialKeys.push(8); //Backspace
+    function IsNumeric(e) {
+
+        var keyCode = e.which ? e.which : e.keyCode
+        var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+        document.getElementById("error").style.display = ret ? "none" : "inline";
+        document.getElementById("error3").style.display = ret ? "none" : "inline";
+        return ret;
+    }
+</script>
+<script type="text/javascript">
+    var specialKeys = new Array();
+    specialKeys.push(8); //Backspace
+    function IsNumeric2(e) {
+
+        var keyCode = e.which ? e.which : e.keyCode
+        var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+        document.getElementById("error2").style.display = ret ? "none" : "inline";
+        document.getElementById("error4").style.display = ret ? "none" : "inline";
+        return ret;
+    }
+</script>
+<script type="text/javascript">
+    function checkNum(obj) {
+        debugger;
+        if (obj == "t1")
+        { document.getElementById('lblfname').innerHTML = ''; }
+        else if (obj == "t2")
+        { document.getElementById('lblname').innerHTML = ''; }
+        else if (obj == "t4")
+        { document.getElementById('lblvillage').innerHTML = ''; }
+        else if (obj == "t3")
+        { document.getElementById('lbladd').innerHTML = ''; }
+        else if (obj == "t5")
+        { document.getElementById('lblTelephone').innerHTML = ''; }
+        else if (obj == "t7")
+        { document.getElementById('lblPostCode').innerHTML = ''; }
+        else if (obj == "t11")
+        { document.getElementById('lblfname1').innerHTML = ''; }
+        else if (obj == "t22")
+        { document.getElementById('lblname1').innerHTML = ''; }
+        else if (obj == "t44")
+        { document.getElementById('lblvillage1').innerHTML = ''; }
+        else if (obj == "t33")
+        { document.getElementById('lbladd1').innerHTML = ''; }
+        else if (obj == "t55")
+        { document.getElementById('lblTelephone1').innerHTML = ''; }
+        if ((event.keyCode > 64 && event.keyCode < 91) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)
+            return true;
+        else {
+            if (obj == "t1") {
+                document.getElementById('lblfname').innerHTML = "@WebConfigurationManager.AppSettings["FNamechar"]";
+            }
+            else if (obj == "t2") {
+                document.getElementById('lblname').innerHTML = "@WebConfigurationManager.AppSettings["LNamechar"]";
+            }
+            else if (obj == "t4") {
+                document.getElementById('lblvillage').innerHTML = "@WebConfigurationManager.AppSettings["citychar"]";
+            }
+            else if (obj == "t11") {
+                document.getElementById('lblfname1').innerHTML = "@WebConfigurationManager.AppSettings["FNamechar"]";
+            }
+            else if (obj == "t22") {
+                document.getElementById('lblname1').innerHTML = "@WebConfigurationManager.AppSettings["LNamechar"]";
+            }
+            else if (obj == "t44") {
+                document.getElementById('lblvillage1').innerHTML = "@WebConfigurationManager.AppSettings["citychar"]";
+            }
+            return false;
+        }
+    }
+</script>
+<script>
+    function Vaidate() {
+        //alert("fgfd");
+        debugger;
+        if (($("#Fname").val().length < 3) || ($("#Lastname").val().length < 1) || ($("#Add").val().length < 1) || ($("#PostCode").val().length < 1) || ($("#Ville").val().length < 1) || ($("#Telephone").val().length < 1)) {
+            if ($("#Fname").val().length < 3) {
+                $("#Fname").addClass("error");
+                document.getElementById('lblfname').innerHTML = "@WebConfigurationManager.AppSettings["enterFName"]";
+
+            }
+            else { document.getElementById('lblfname').innerHTML = ' '; }
+            if ($("#Lastname").val().length < 1) {
+                $("#Lastname").addClass("error");
+                document.getElementById('lblname').innerHTML = "@WebConfigurationManager.AppSettings["enterLName"]";
+            }
+            else { document.getElementById('lblfname').innerHTML = ' '; }
+            if ($("#Security").val().length < 1) {
+                //$("#Security").addClass("error");
+
+            }
+            //else { document.getElementById('lblfname').innerHTML = ' '; }
+            if ($("#Add").val().length < 1) {
+                $("#Add").addClass("error");
+                document.getElementById('lbladd').innerHTML = "@WebConfigurationManager.AppSettings["add"]";
+            }
+            else { document.getElementById('lbladd').innerHTML = ' '; }
+            if ($("#comFac").val().length < 1) {
+                //$("#comFac").addClass("error");
+
+            }
+            if ($("#PostCode").val().length < 1) {
+                $("#PostCode").addClass("error");
+                document.getElementById('lblpostalcode').innerHTML = "@WebConfigurationManager.AppSettings["postalcode"]";
+            }
+            else { document.getElementById('lblpostalcode').innerHTML = ' '; }
+            if ($("#Ville").val().length < 1) {
+                $("#Ville").addClass("error");
+                document.getElementById('lblvillage').innerHTML = "@WebConfigurationManager.AppSettings["city"]";
+
+            }
+            else { document.getElementById('lblvillage').innerHTML = ' '; }
+            if ($("#Telephone").val().length < 1) {
+                $("#Telephone").addClass("error");
+                document.getElementById('lblTelephone').innerHTML = "@WebConfigurationManager.AppSettings["telephone"]";
+            }
+            else { document.getElementById('lblTelephone').innerHTML = ' '; }
+            return false;
+            //alert("false");
+        }
+        else if (document.getElementById('checkadd').checked) {
+            FillBillingAdd();
+            //return true;
+            $('#Section2').hide();
+            $('#Section1').hide();
+            $('#Section3').hide();
+            $('#Section4').show();
+            $('#Section5').hide();
+            show();
+        }
+        else {
+            //return true;
+            $('#Section2').hide();
+            $('#Section1').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').show();
+            show();
+        }
+    }
+</script>
+
+@* Script Functions For Div Section 4 *@
+<script>
+    function RemoveClass(obj) {
+        $(obj).removeClass("error");
+        document.getElementById('lblTelephone').innerHTML = ' ';
+        document.getElementById('lblpostalcode').innerHTML = ' ';
+        document.getElementById('lblTelephone1').innerHTML = ' ';
+        document.getElementById('lblpostalcode1').innerHTML = ' ';
+        document.getElementById('lbladd').innerHTML = ' ';
+        document.getElementById('lbladd1').innerHTML = ' ';
+    }
+
+    function Validate1() {
+        if (($("#TotalSubscriber").val().length < 1) || ($("#Number").val().length < 1) || ($("#Holder").val().length < 1) || ($("#ExpDate").val().length < 1) || ($("#SecurityCode").val().length < 1)) {
+            if ($("#TotalSubscriber").val().length < 5) {
+                $("#TotalSubscriber").addClass("error");
+            }
+            if ($("#Number").val().length < 5) {
+                $("#Number").addClass("error");
+            }
+            if ($("#Holder").val().length < 5) {
+                $("#Holder").addClass("error");
+            }
+            if ($("#ExpDate").val().length < 5) {
+                $("#ExpDate").addClass("error");
+            }
+            if ($("#SecurityCode").val().length < 5) {
+                $("#SecurityCode").addClass("error");
+            }
+            // document.getElementById("txtRecap").className = "error";
+            //document.getElementById("txtRecap").style.borderColor = 'red!important';
+            //document.getElementById("txtRecap").style.border = 'solid';
+            return false;
+        }
+        else {
+            SubmitData();
+            //return true;
+            //$('#Section2').hide(); $('#Section1').hide(); $('#Section3').hide(); $('#Section4').hide(); return false;
+        }
+    }
+
+    function validateStep2() {
+        var inputElems = document.getElementsByName("c1")
+        count = 0;
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                count++;
+            }
+        }
+        var inputElems = document.getElementsByName("c2")
+        count1 = 0;
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "checkbox" && inputElems[i].checked == true) {
+                count1++;
+            }
+        }
+        if (count < 1 || count1 < 4) {
+            if (count < 1) {
+                $("#lbl1").show();
+                //return false;
+            }
+            else { $("#lbl1").hide(); }
+            if (count1 < 4) {
+                $("#lbl2").show();
+                //return false;
+            }
+            else { $("#lbl2").hide(); }
+            return false;
+        }
+        else { $("#lbl2").hide(); $('#Section2').show(); $('#Section1').hide(); $('#Section3').hide(); $('#Section4').hide(); tot1(); return false; }
+
+    }
+
+</script>
+<style type="text/css">
+    .HighLight
+    {
+        border: solid!important;
+        border-color: red!important;
+        border-width: 1px!important;
+    }
+    .mabonne_formunate#identification_detail_3 .payment_block input[type="checkbox"], 
+.mabonne_formunate#identification_detail_3 .payment_block #img1,#img2,#img3
+    {
+        height: 15px;
+    margin: -46px 227px;
+    width: 15px;
+    }
+    .adp
+    {
+        display: table-cell;
+        padding: 0 20px;
+        vertical-align: middle;
+        width: 170px;
+    }
+    .pricealign {
+        position: absolute;
+    top: 366px;
+    left: 226px;
+    }
+</style>
+<script type ="text/javascript">
+    $(document).ready(function () {
+        $('#div1').hide();
+        $('#div2').hide();
+        $('#div33').hide();
+
+        $('#img1').mouseover(function () {
+            $('#div1').text("Livraison a domicile avec suivi(en cas de probleme");
+            $('#div1').show(1000);$('#div33').hide();
+        });
+
+        $('#img2').mouseover(function () {
+            $('#div2').text("Livraison a retirer dans l'un des 4300 points Relais du reseau Mondial Relay");
+            $('#div2').show(1000);$('#div33').hide();
+        });
+
+        $('#img3').mouseover(function () {
+            //var cbh = document.getElementById('div3');
+            //var val = '1';
+            //var cap = 'Jan';
+
+            //var div3 = document.createElement('input');
+            //div3.type = 'checkbox';
+            //cbh.appendChild(div3);
+            //div3.name = val;
+            //div3.value = cap;
+            //div3.appendChild(document.createTextNode(cap));
+            $('#div33').show();
+        });
+        //When the Image is hovered away from, hide the div using Mouseout
+        $('#img1').mouseout(function () {
+            $('#div1').hide(1000);
+        });
+
+        $('#img2').mouseout(function () {
+            $('#div2').hide(1000);
+        });
+
+        //$('#img3').mouseout(function () {
+        //    $('#div33').hide(1000);
+        //});
+    });
+</script>
+<script>
+    function Validatebilladd() {
+        debugger;
+        if (($("#Fname1").val().length < 3) || ($("#Lastname1").val().length < 1) || ($("#Add1").val().length < 1) || ($("#PostCode1").val().length < 1) || ($("#Ville1").val().length < 1) || ($("#Telephone1").val().length < 1)) {
+            if ($("#Fname1").val().length < 3) {
+                $("#Fname1").addClass("error");
+                document.getElementById('lblfname1').innerHTML = "@WebConfigurationManager.AppSettings["enterFName"]";
+
+            }
+            else { document.getElementById('lblfname1').innerHTML = ' '; }
+            if ($("#Lastname1").val().length < 1) {
+                $("#Lastname1").addClass("error");
+                document.getElementById('lblname1').innerHTML = "@WebConfigurationManager.AppSettings["enterLName"]";
+            }
+            else { document.getElementById('lblname1').innerHTML = ' '; }
+            if ($("#Security1").val().length < 1) {
+                //$("#Security").addClass("error");
+
+            }
+            //else { document.getElementById('lblfname').innerHTML = ' '; }
+            if ($("#Add1").val().length < 1) {
+                $("#Add1").addClass("error");
+                document.getElementById('lbladd1').innerHTML = "@WebConfigurationManager.AppSettings["add"]";
+            }
+            else { document.getElementById('lbladd1').innerHTML = ' '; }
+            if ($("#comFac1").val().length < 1) {
+                //$("#comFac").addClass("error");
+
+            }
+            if ($("#PostCode1").val().length < 1) {
+                $("#PostCode1").addClass("error");
+                document.getElementById('lblpostalcode1').innerHTML = "@WebConfigurationManager.AppSettings["postalcode"]";
+            }
+            else { document.getElementById('lblpostalcode1').innerHTML = ' '; }
+            if ($("#Ville1").val().length < 1) {
+                $("#Ville1").addClass("error");
+                document.getElementById('lblvillage1').innerHTML = "@WebConfigurationManager.AppSettings["city"]";
+
+            }
+            else { document.getElementById('lblvillage1').innerHTML = ' '; }
+            if ($("#Telephone1").val().length < 1) {
+                $("#Telephone1").addClass("error");
+                document.getElementById('lblTelephone1').innerHTML = "@WebConfigurationManager.AppSettings["telephone"]";
+            }
+            else { document.getElementById('lblTelephone1').innerHTML = ' '; }
+            return false;
+            //alert("false");
+        }
+        else {
+            //return true;
+            $('#Section2').hide();
+            $('#Section1').hide();
+            $('#Section3').hide();
+            $('#Section4').show();
+            $('#Section5').hide();
+            show();
+        }
+    }
+</script>
+<script type="text/javascript">
+    function chkadd() {
+        if (document.getElementById('checkadd').checked) {
+
+            $('#Section2').hide(); $('#Section1').hide(); $('#Section3').show(); $('#Section5').hide(); $('#Section4').hide();
+        }
+        else {
+            $('#Section2').hide(); $('#Section1').hide(); $('#Section3').hide(); $('#Section5').show(); $('#Section4').hide();
+        }
+    }
+</script>
+<script>
+    $(document).ready(function () {
+        $('.imgh')
+            .mouseover(function () {
+                $(this).attr("src", "../Images/back_black_button.png");
+            })
+            .mouseout(function () {
+                $(this).attr("src", "../Images/back_white_button.png");
+            });
+    });
+</script>
+<div style="width:100%; display:none;margin-left: 200px;margin-top: -20px;" align="center" id="popuppdf">
+                                
+                                <div style="position: fixed;left: 50%;top: 50%;transform: translate(-50%, -50%); height: 600px; width: 800px; z-index: 1000; background-color: #586778;border:solid;">
+                                    <a href="#" onclick=" $('#popuppdf').hide();  return false;"><span style="float: right; color: white; font-weight: normal; font-size: larger; margin-right: 5px;">X</span></a>
+                                    <div style="background-color: white; height: 560px; margin: 20px;">
+                                        <object data=@Url.Content("~/param/MentionsLégales.pdf") type="application/pdf" width="760" height="560">
+                                        alt : <a href=@Url.Content("~/param/MentionsLégales.pdf")>test.pdf</a>
+                                        </object>
+                                       @* <p>@obj.PopupBody </p>*@
+                                       @* <object data=@Url.Content(String.Format("~/Uploads/{0}",obj.PopupBody)) type="application/pdf" width="760" height="460">
+                                            alt : <a href=@Url.Content(String.Format("~/Uploads/{0}",obj.PopupBody))>test.pdf</a>
+                                        </object>*@
+                                    </div>
+                                </div>
+                            </div>
+<script type="text/javascript">
+    function SubmitData() {
+        debugger;
+        if (document.getElementById('checkPay').checked) {
+            var chk = true;
+            //$("#popuppdf").show();
+        var subName = $('#1').attr('data-subname');
+        var Subprice = $('#ss1').text();
+        var Duree = '';
+        var deltype = '';
+        var delPrice = '';
+        var TotalAmt = $('#tothdd').text();
+        var Prenom = '';
+        var nom = '';
+        var Security = '';
+        var Add = '';
+        var comFac = '';
+        var PostCode = '';
+        var Ville = '';
+        var Telephone = '';
+        var billPrenom = '';
+        var billnom = '';
+        var billSecurity = '';
+        var billAdd = '';
+        var billcomFac = '';
+        var billPostCode = '';
+        var billVille = '';
+        var billTelephone = '';
+        var livaddress = '';
+        var inputElems = document.getElementsByName("r2")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                Duree = $(inputElems[i]).attr('data-timeDuree');
+            }
+        }
+        var inputElems = document.getElementsByName("r3")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                deltype = $(inputElems[i]).attr('data-deltype');
+                delPrice = $(inputElems[i]).attr('data-Price');
+            }
+        }
+        var inputElems = document.getElementsByName("liv3")
+        for (var i = 0; i < inputElems.length; i++) {
+            if (inputElems[i].type == "radio" && inputElems[i].checked == true) {
+                livaddress = $(inputElems[i]).attr('data-address');
+            }
+        }
+        Prenom = $('#Fname').val();
+        nom = $('#Lastname').val();
+        Security = $('#Security').val();
+        Add = $('#Add').val();
+        comFac = $('#comFac').val();
+        PostCode = $('#PostCode').val();
+        Ville = $('#Ville').val();
+        Telephone = $('#Telephone').val();
+        if (document.getElementById('checkadd').checked) {
+
+            billPrenom = $('#Fname').val();
+            billnom = $('#Lastname').val();
+            billSecurity = $('#Security').val();
+            billAdd = $('#Add').val();
+            billcomFac = $('#comFac').val();
+            billPostCode = $('#PostCode').val();
+            billVille = $('#Ville').val();
+            billTelephone = $('#Telephone').val();
+        }
+        else {
+            billPrenom = $('#Fname1').val();
+            billnom = $('#Lastname1').val();
+            billSecurity = $('#Security1').val();
+            billAdd = $('#Add1').val();
+            billcomFac = $('#comFac1').val();
+            billPostCode = $('#PostCode1').val();
+            billVille = $('#Ville1').val();
+            billTelephone = $('#Telephone1').val();
+        }
+
+
+        var data = { "livaddress": livaddress, "sb": subName, "sp": Subprice, "duree": Duree, "deltype": deltype, "delprice": delPrice, "totamt": TotalAmt, "fn": Prenom, "ln": nom, "sec": Security, "add": Add, "comfac": comFac, "postcode": PostCode, "Ville": Ville, "Telephone": Telephone, "fn1": billPrenom, "ln1": billnom, "sec1": billSecurity, "add1": billAdd, "comfac1": billcomFac, "postcode1": billPostCode, "Ville1": billVille, "Telephone1": billTelephone };
+
+        $.ajax({
+            type: "post",
+            url: "/Index/PertABuller",
+            //data: ({ "livadd": livaddress, "sb": subName, "sp": Subprice, "duree": Duree, "deltype": deltype, "delprice": delPrice, "totamt": TotalAmt, "fn": Prenom, "ln": nom, "sec": Security, "add": Add, "comfac": comFac, "postcode": PostCode, "Ville": Ville, "Telephone": Telephone, "fn1": billPrenom, "ln1": billnom, "sec1": billSecurity, "add1": billAdd, "comfac1": billcomFac, "postcode1": billPostCode, "Ville1": billVille, "Telephone1": billTelephone }),
+            data: JSON.stringify(data),
+            contentType: "application/json;charset=utf-8",
+
+            success: (function (data) {
+                if (data != "False") {
+                    //window.location.href = "http://localhost:33285/Index/CallPaymentGatweyApi?RequestType=Request";
+                    window.location.href = "http://www.chacunsabulle.com/index/CallPaymentGatweyApi?RequestType=Request";
+                    //window.location.href = "http://test.chacunsabulle.com/index/CallPaymentGatweyApi?RequestType=Request";
+                }
+                else {
+                    //window.location.href = "http://localhost:33285/Index/CallPaymentGatweyApi?RequestType=Request";
+                    window.location.href = "http://www.chacunsabulle.com/index/CallPaymentGatweyApi?RequestType=Request";
+                    //window.location.href = "http://test.chacunsabulle.com/index/CallPaymentGatweyApi?RequestType=Request";
+                }
+            }),
+            fail: (function (data) {
+
+            })
+        });
+            //window.location.href = "http://localhost:33285/Index/CallPaymentGatweyApi?RequestType=Request";
+            //window.location.href = "http://www.chacunsabulle.com/index/CallPaymentGatweyApi?RequestType=Request";
+    }
+    else { document.getElementById('msg').innerHTML = "Please Select The Below Check box...!"; }
+}
+</script>
+<script> 
+    $(document).ready(function() {
+        function SetFocus(element) {
+            window.scrollTo(0, document.body.scrollHeight);
+            document.getElementById(element).focus();
+            return true;
+        }
+    })
+</script>
+<style type="text/css">
+#Library {
+   background-image: url("../Images/back_white_button.png");
+    height: 98px;
+    width: 105px;
+    background-size: 100%;
+    position: absolute;
+    right: 82px;
+    top: 30px;
+}
+
+#Library:hover {
+   background-image: url("../Images/back_black_button.png");
+    height: 98px;
+    width: 105px;
+    background-size: 100%;
+    position: absolute;
+    right: 82px;
+    top: 30px;
+}
+</style>

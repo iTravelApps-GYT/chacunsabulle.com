@@ -1,0 +1,275 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "MailingAndBillingAddress";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Payment", "Index", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "defaultForm" }))
+{ 
+    <!--About Us Page Code Start-->
+    <section id="content">
+        <div class="content-wrap" id="identification_detail_2">
+            <div id="slideshow" class="top_header">
+                <div class="top_header_wrap">
+                    <h2 class="fleft" style="width:600px;">5 PRECISION SUR SES GOÛTS	</h2>
+                    <p class="fright"><a href="#"><img src="../Images/back_white_button.png" style="margin-top:-14px;" width='120' height='100' onmouseover="src='../Images/back_black_button.png';" onmouseout="src='../Images/back_white_button.png';" /></a></p>
+                </div>
+            </div>
+            <div class="banner_block">
+                <div id="uneequipe" class="banner1">
+                    <div class="uneequipe_wrap">
+                        <h2 class="txt_center">ENVOYER  L'ABONNEMENT</h2>
+                    </div>
+                </div>
+                <div id="voir" class="banner2">
+                    <div class="voir_wrap">
+                        Renseignez l’adresse à laquelle vous souhaitez
+recevoir vos  BD chaque mois
+                    </div>
+                </div>
+            </div>
+            <!--Nakache Block-->
+            <div id="nakache" class="payment_block">
+                <div class="fleft">
+                    <div class="col-sm-4">
+                        <label>Prénom</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.LastName, new { @id = "LastName", name="lstName", @onblur = "RemoveClass(this);" })
+                    </div>
+                    <div>
+                        <label>Nom</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.FirstName, new { @id = "Firstname", @onblur = "RemoveClass(this);", @onkeypress = "return checkNum();" })
+                    </div>
+                    <div>
+                        <label>Société  Facultatif</label><label></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.OptionalSociety, new { @id = "Security", @onblur = "RemoveClass(this);" })
+                    </div>
+
+                </div>
+
+                <div class="fleft">
+                    <div class="border fleft"></div>
+                    <div>
+                        <label>Adresse</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Address, new { @id = "Add", @onblur = "RemoveClass(this);" })
+                    </div>
+                    <div>
+                        <label style="width:300px;">Complément Facultatif</label><label></label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.OptionalSupplement, new { @id = "comFac", @onblur = "RemoveClass(this);" })
+
+                    </div>
+                    <div>
+                        <label>Code Postal</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.PostalCode, new { @id = "PostCode", @onblur = "RemoveClass(this);", @onkeypress = "return IsNumeric(event);" })
+                        <span id="error" style="color: Red; display: none"></span>
+                    </div>
+
+                </div>
+
+                <div class="fleft">
+                    <div class="border fleft"></div>
+                    <div>
+                        <label>Ville</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Village, new { @id = "Ville", @onblur = "RemoveClass(this);" })
+
+                    </div>
+                    <div>
+                        <label>Pays</label><label></label>
+                        <select class="fleft">
+                            <option>France</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Téléphone</label>
+                        @Html.TextBoxFor(M => M.objIdenDetail.Telephone, new { @id = "Telephone", @onblur = "RemoveClass(this);", @onkeypress = "return IsNumeric(event);" })
+                        @*<span id="error1" style="color: Red; display: none"></span>*@
+                    </div>
+                </div>
+            </div>
+            <!--Votre Block-->
+            <div id="votre" class="bottom_block">
+                <div class="votre_wrap txt_center">
+                    <input type="checkbox" value="" />
+                    <label>Utiliser cette adresse pour la facturation</label>
+                    <div class="button">
+                        <input type="submit" class="btn btn-primary" name="signup" value="ETAPE SUIVANTE" onclick="return Validate();" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About Us Page Code End-->
+}
+<style type="text/css">
+    body
+    {
+        font-size: 12pt;
+        font-family: 'Lato', sans-serif;
+    }
+</style>
+<script type="text/javascript">
+    var specialKeys = new Array();
+    specialKeys.push(8); //Backspace
+    function IsNumeric(e) {
+        var keyCode = e.which ? e.which : e.keyCode
+        var ret = ((keyCode >= 48 && keyCode <= 57) || specialKeys.indexOf(keyCode) != -1);
+        document.getElementById("error").style.display = ret ? "none" : "inline";
+        return ret;
+    }
+</script>
+<script type="text/javascript">
+    function checkNum() {
+
+        if ((event.keyCode > 64 && event.keyCode < 91) || (event.keyCode > 96 && event.keyCode < 123) || event.keyCode == 8)
+            return true;
+        else {
+            alert("Please enter only char");
+            return false;
+        }
+
+    }
+</script>
+<script>
+    
+
+    function Validate() 
+    {
+        if (($("#Firstname").val().length < 3) || ($("#LastName").val().length < 1) || ($("#Security").val().length < 1) || ($("#Add").val().length < 1) || ($("#comFac").val().length < 1) || ($("#PostCode").val().length < 1) || ($("#Ville").val().length < 1) || ($("#Telephone").val().length < 1))
+        {
+            if ($("#Firstname").val().length < 3) {
+                $("#Firstname").addClass("error");
+               
+            }
+            if ($("#LastName").val().length < 1) {
+                $("#LastName").addClass("error");
+               
+            }
+            if ($("#Security").val().length < 1) {
+                $("#Security").addClass("error");
+                
+            }
+            if ($("#Add").val().length < 1) {
+                $("#Add").addClass("error");
+                
+            }
+            if ($("#comFac").val().length < 1) {
+                $("#comFac").addClass("error");
+                
+            }
+            if ($("#PostCode").val().length < 1) {
+                $("#PostCode").addClass("error");
+                
+            }
+            if ($("#Ville").val().length < 1) {
+                $("#Ville").addClass("error");
+                
+            }
+            if ($("#Telephone").val().length < 1) {
+                $("#Telephone").addClass("error");
+                
+            }
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+</script>
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        // Generate a simple captcha
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        };
+        $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+
+        $('#defaultForm').formValidation({
+            message: 'This value is not valid',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                firstName: {
+            row: '.col-sm-4',
+                    validators: {
+                        notEmpty: {
+                            message: 'The first name is required'
+                        }
+                    }
+                },
+                Lastname: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The last name is required'
+                        }
+                    }
+                },
+                username: {
+                    message: 'The username is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'The username is required'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: 'The username must be more than 6 and less than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: 'The username can only consist of alphabetical, number, dot and underscore'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The email address is required'
+                        },
+                        emailAddress: {
+                            message: 'The input is not a valid email address'
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The password is required'
+                        },
+                        different: {
+                            field: 'username',
+                            message: 'The password cannot be the same as username'
+                        }
+                    }
+                },
+                gender: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The gender is required'
+                        }
+                    }
+                },
+                captcha: {
+                    validators: {
+                        callback: {
+                            message: 'Wrong answer',
+                            callback: function (value, validator, $field) {
+                                var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
+                                return value == sum;
+                            }
+                        }
+                    }
+                },
+                agree: {
+                    validators: {
+                        notEmpty: {
+                            message: 'You must agree with the terms and conditions'
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>*@

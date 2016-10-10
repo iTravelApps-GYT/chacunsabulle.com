@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+   
+<link href="@Url.Content("~/Content/css/bootstrap.min.css")" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="@Url.Content("~/Content/css/crm.css")"  rel="stylesheet">
+    <link href="@Url.Content("~/Content/css/top-nav.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css/commentBox.css")" rel="stylesheet">
+    <link href="@Url.Content("~/Content/css/dataTables.bootstrap.css")" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="@Url.Content("~/font-awesome-4.1.0/css/font-awesome.min.css")" rel="stylesheet" type="text/css">
+
+@*    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css">
+*@
+
+    @*<script src="../../Scripts/jquery.validate.min.js"></script>
+    <script src="../../Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+</head>
+<body>
+
+
+ @using (Html.BeginForm())
+    {
+
+<div class="container">
+
+<div class="row" style="margin-top:20px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 login">
+		<form role="form">
+			<fieldset>
+                
+				<h2>Sign In</h2>
+                <span class="msgRed"> @ViewBag.Error</span>
+				<hr class="colorgraph">
+				<div class="form-group">
+                    @*@Html.TextBoxFor(x => x.UserId, new { @class="form-control input-lg", placeholder="User id" })*@
+                    <input type="text" name="userId" id="email" class="form-control input-lg" placeholder="User Id">
+				</div>
+				<div class="form-group">
+                    @*@Html.PasswordFor(x => x.Password, new { @class="form-control input-lg", placeholder="Password" })*@
+                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+				</div>
+				@*<span class="button-checkbox">
+					<button type="button" class="btn" data-color="info">Remember Me</button>
+                    <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden">
+					<a href="" class="btn btn-link pull-right">Forgot Password?</a>
+				</span>*@
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6">
+                        <input type="submit" value="Sign In" class="btn btn-lg btn-success btn-block"/>
+                        @*<input type="submit" class="btn btn-lg btn-success btn-block" value="Sign In">*@
+					</div>
+					@*<div class="col-xs-6 col-sm-6 col-md-6">
+						<a href="" class="btn btn-lg btn-primary btn-block">Register</a>
+					</div>*@
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+</div>	
+
+
+ }
+
+</body>
+</html>
+    

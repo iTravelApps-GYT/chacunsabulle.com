@@ -1,0 +1,141 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "Sabboner";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("sabboner", "Index", FormMethod.Post, new { @enctype = "multipart/form-data", @id = "defaultForm" }))
+{ 
+    <!--About Us Page Code Start-->
+    <section id="content">
+        <div class="content-wrap less_offer" id="identification_detail_3 ">
+
+            <!--Banner1-->
+            <div class="banner_block">
+                <div id="voir" class="banner2">
+                    @*<h3 style="letter-spacing: 2px;">Vous avez un rythme quotidien soutenu, vous jonglez avec le boulot, 
+les obligations familiales, les tâches administratives, 
+les planifications en tout genre..... </h3>*@
+                    <h3 style="letter-spacing: 2px;">vous avez un rythme quotidien soutenu, vous jonglez avec le boulot, les obligations familiales, les tâches administratives......</h3>
+                </div>
+            </div>
+            <!--description Block-->
+            <div id="slideshow">
+                <div class="slideshow_wrap">
+                    <div class="txt_center">
+                        <div class="slideshow_content">
+                            <p><center><strong class="Heading">Stop !</strong> </center><center>C'est le moment de vous offrir une pause en solo ou en famille</center></p>
+                            <p><strong class="Heading">En solo </strong> : Avec la formule Prêt à Buller ou la formule Bulle sur Mesure</p>
+                            <p><strong class="Heading">En Famille </strong>: Avec la formule Mini & Maxi Bulle</p>
+                            @*<p class="slideshow_desc">
+                                Et dans toutes vos formules, bénéficiez d'une fiche de lecture ,d'un ex libris (gravure dédicacée), 
+d'invitations premium pour rencontrer vos auteurs préférés et même des albums dédicacés
+                            </p>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Votre Block-->
+            <div id="votre">
+                <div class="votre_wrap">
+                    <h2 class="txt_center">Faites vous plaisir une fois par mois avec l’abonnement Chacun sa Bulle !</h2>
+                    <div class="txt_center votre_desc">
+                        <p><strong>Au moins 2 BD sélectionnées pour vous  +  Une fiche sur l’auteur et le dessinateur  + Un ex-libris</strong></p>
+                        <p>Plus des surprises pouvant aller jusqu’à des albums dédicacés, des invitations premium pour rencontrer les auteurs et les dessinateurs.</p>
+                    </div>
+                    <div class="txt_center">
+                        @foreach (Commic.Models.MasterPageSec4BTN obj in Model.objMasterPageSec4BTNListM)
+                        {
+                            if (obj.id == 1)
+                            {
+                            <a href="~/Index/PertABuller?id=1" style="text-decoration: none">
+                            <div class="votre_block">
+                                <div>
+                                    <div class="votre_image txt_center"></div>
+                                    <h3>prêt<br />
+                                        à buller</h3>
+                                    <div class="votre_price"><span class="txt_blue">34,90&euro;</span> par mois</div>
+                                    <div>
+                                        <p class="txt_blue"><strong>Vous aimez la nouveauté</strong></p>
+                                        <p class="votre_block_desc">Signez pour les 2 BD incontournables du mois sélectionnées par notre expert.</p>
+                                    </div>
+                                    @*<div class="button"><input type="submit" name="abonne" value="prêt à buller" /></div>*@
+                                    <div class="button blue_btn"><a href="~/Index/PertABuller?id=1">@Html.Raw(obj.SubsbtnCaption)</a></div>
+                                    <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                                </div>
+                            </div></a>
+                            }
+                            else if (obj.id == 2)
+                            { 
+                            <a href="~/Index/FormuleBSMCommon?id=2" style="text-decoration: none">
+                            <div class="votre_block">
+                                <div>
+                                    <div class="votre_image bulle_image txt_center"></div>
+                                    <h3>bulle sur mesure</h3>
+                                    <div class="votre_price">à partir de <span class="txt_green">17,90&euro;</span></div>
+                                    <div>
+                                        <p class="txt_green"><strong>Vous savez ce que vous rechercher</strong></p>
+                                        <p class="votre_block_desc">Optez pour un choix de 2 BD qui sauront répondre à vos envies grâce aux conseils de notre équipe.</p>
+                                    </div>
+                                    @*<div class="button green_btn"><input type="submit" name="abonne" value="bulle sur mesure" /></div>*@
+                                    <div class="button green_btn"><a href="~/Index/FormuleBSMCommon?id=2">@Html.Raw(obj.SubsbtnCaption)</a></div>
+                                    <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                                </div>
+                            </div></a>
+                            }
+                            else if (obj.id == 3)
+                            { 
+                           <a href="~/Index/FormuleMBCommon?id=3" style="text-decoration: none">
+                            <div class="votre_block">
+                                <div>
+                                    <div class="votre_image mini_image txt_center"></div>
+                                    <h3>mini<br>
+                                        bulle</h3>
+                                    <div class="votre_price">à partir de <span class="txt_orange">17,90&euro;</span></div>
+                                    <div>
+                                        <p class="txt_orange"><strong>Pour stimuler l’imagination</strong></p>
+                                        <p class="votre_block_desc">Offrez chaque mois 2 BD enfant sélectionnées par notre équipe.</p>
+                                    </div>
+                                    @*<div class="button orange_btn"><input type="submit" name="abonne" value="mini" /></div>*@
+                                    <div class="button orange_btn"><a href="~/Index/FormuleMBCommon?id=3">@Html.Raw(obj.SubsbtnCaption)</a></div>
+                                    <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                                </div>
+                            </div></a>
+                            }
+                            else if (obj.id == 4)
+                            { 
+                            <a href="~/Index/FormuleMiniNMaxi?id=4" style="text-decoration: none">
+                            <div class="votre_block">
+                                <div>
+                                    <div class="votre_image minimax_image txt_center"></div>
+                                    <h3>mini & maxi bulle</h3>
+                                    <div class="votre_price">à partir de <span class="txt_pink">17,90&euro;</span></div>
+                                    <div>
+                                        <p class="txt_pink"><strong>Vous voulez tout partager avec vos enfants</strong></p>
+                                        <p class="votre_block_desc">Recevez chaque mois une BD sélectionnée pour vous et une pour votre  enfant.</p>
+                                    </div>
+                                    @*<div class="button pink_btn"><input type="submit" name="abonne" value="mini&maxibulle"/></div>*@
+                                    <div class="button pink_btn"><a href="~/Index/FormuleMiniNMaxi?id=4">@Html.Raw(obj.SubsbtnCaption)</a></div>
+                                    <div class="votre_footer">Sans engagement - Paiement sécurisé Frais de port de 0 à 4€</div>
+                                </div>
+                            </div></a>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--About Us Page Code End-->
+}
+<style>
+    .Heading {
+        line-height: 65px;
+        font-family: 'Bangers', cursive;
+        font-size: 33px;
+        font-weight: normal;
+        margin: 0 auto;
+        padding: 10px 0;
+        width: 66%;
+    }
+</style>
