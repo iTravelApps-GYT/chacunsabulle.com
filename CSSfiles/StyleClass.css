@@ -1,0 +1,16 @@
+﻿ .error
+    {
+        border: solid!important;
+        border-color: red!important;
+        border-width:1px!important;
+
+    }
+ .selectbox {
+    background-color: #3c414d !important;
+    color: #fff !important;
+}
+  #result
+{
+	font-size: 24px;
+	color:maroon;
+}
