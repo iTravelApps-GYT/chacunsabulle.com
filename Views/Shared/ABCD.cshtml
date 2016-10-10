@@ -1,0 +1,27 @@
+﻿@model Commic.Models.Commic
+@{
+    ViewBag.Title = "ABCD";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{ 
+    @*<input type="hidden" value="@HttpContext.Current.Session["id"].ToString();" name="hdd" />*@
+    <div id="SectionLogin">
+        <!--About Us Page Code Start-->
+<section id="content">
+   
+        
+        <!--Votre Block-->
+        <div id="votre" class="bottom_block">
+        	<div class="votre_wrap txt_center" >
+                <label href="#" style="color:white;position:absolute;top:-50px;left:300px;font-size:16pt;"><input type="checkbox" style="color:white;position:absolute;top:9px;left:-19px;font-size:16pt;width:15px;height:15px;"/>souviens-toi de moi</label> <sapn id="link">@Html.ActionLink("Mot de passe oublié", "/ForgotPassword", "Index")</sapn>
+               <div class="button"><input type="submit" value="S'inscrire" onclick="return Login();"/></div>
+                <a href="#" style="color:white;position:absolute;top:50px;left:430px;font-size:16pt;">Pas encore inscrit?</a> <a href="#" style="color:white;position:absolute;top:50px;right:480px;font-size:16pt;"><u>signer</u> </a>
+          </div>
+        </div>
+    
+</section>
+<!--About Us Page Code End-->
+       
+    </div>
+}
