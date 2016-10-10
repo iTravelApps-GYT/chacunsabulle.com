@@ -1,0 +1,367 @@
+/*!
+ * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #444;
+	background: #ebf3f6;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 35px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+
+.navbar-custom {
+    border-top-color: #38acd0;
+    border-top-style: solid;
+    border-top-width: 2px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    position: relative;
+	background: #fff;
+	border-radius: 0;
+}
+
+.form-container{
+    background-color: #fff;
+	border: 1px solid #d6d6d6;
+	margin: 0 auto;
+    padding: 10px;
+}
+
+.fixed-btn-cont{
+	border-top: 2px solid #ccc;
+	background: #f0f9ff; /* Old browsers */
+	background: -moz-linear-gradient(top, #f0f9ff 0%, #cbebff 47%, #a1dbff 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f9ff), color-stop(47%,#cbebff), color-stop(100%,#a1dbff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f0f9ff 0%,#cbebff 47%,#a1dbff 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+	margin: 0 auto;
+    padding: 10px 0;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 9999;
+}
+
+.form-content{
+    background: #e6f0ef; /* Old browsers */
+	background: -moz-linear-gradient(left,  #e6f0ef 0%, #ffffff 34%, #f3f9f9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#e6f0ef), color-stop(34%,#ffffff), color-stop(100%,#f3f9f9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #e6f0ef 0%,#ffffff 34%,#f3f9f9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #e6f0ef 0%,#ffffff 34%,#f3f9f9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #e6f0ef 0%,#ffffff 34%,#f3f9f9 100%); /* IE10+ */
+	background: linear-gradient(to right,  #e6f0ef 0%,#ffffff 34%,#f3f9f9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0ef', endColorstr='#f3f9f9',GradientType=1 ); /* IE6-9 */
+	
+    float: left;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.form-horizontal{
+	padding: 10px;
+}
+
+* {
+  .border-radius(0) !important;
+}
+
+.form-horizontal h3{
+	font-weight: 100;
+	border-bottom: 1px solid #ccc;
+	padding: 0 0 10px 0;
+	width: 97%;
+	margin-left: 2%;
+}
+.form-horizontal .row {
+    margin: 0;
+}
+
+.form-horizontal label {
+    font-weight: 100;
+}
+
+.form-horizontal fieldset{
+	margin: 30px 0;
+}
+.form-horizontal legend{
+	color: #007fa9;
+	font-size: 30px;
+}
+
+.toggle-btn{
+	background: url(../img/toggle_collapse_alt.png) no-repeat;
+	width: 40px;
+	height: 60px;
+	float: right;
+	text-indent: -999999px;
+	cursor: pointer;
+}
+.toggle-btn.collapsed{
+	background: url(../img/toggle_alt.png) no-repeat;
+}
+.billing{ display: none;}
+#field .form-control{
+    margin-right: -34px;
+	float: left;
+	
+}
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+#field .add-more{
+    background-color: #f5f5f5;
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;    
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;    
+    text-align: center;
+	padding: 6px 12px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+
+ } 
+
+
+ 
+#field .add-more, #field .remove-me {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 4px;
+	border: 1px solid #ccc;
+	
+	cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;    
+    text-align: center;
+	padding: 6px 12px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	width: 34px;
+}
+#field .remove-me {
+	background-color: #d43f3a;
+    background-image: linear-gradient(to bottom, #ffffff, #f5a6a6);
+    background-repeat: repeat-x;    
+
+	color: #000;
+}
+   
+   
+	
+
+footer{
+	padding: 15px 0;
+	margin-bottom: 50px;
+}
+/***** bootstrap override ****/
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 5px 15px;
+}
+
+.dataTables_filter,
+.dataTables_paginate{ text-align: right;}
+
+.file-list.nav>li>a {
+border-bottom: 1px solid #ccc;
+}
+.file-list.nav>li>a  i{color: #f00;}
+
+@media( max-width : 585px ){
+	.form-horizontal h3{
+		font-size: 18px;
+	}
+	.billing{ display: block;}
+}
+
+.modify {
+    list-style: none;
+    padding: 0;
+}
+
+.modify li {
+    display: inline-block;
+    padding: 0;
+    margin: 0 10px;
+}
+
+
+
+
+
+/********** login *****/
+.login{
+border-radius: 4px;
+background: #fff;
+padding: 10px 20px 30px;
+border: 1px solid #ccc;
+margin-top: 100px;
+}
+/* Credit to bootsnipp.com for the css for the color graph */
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+.invventory{margin-bottom: 20px; background: #e1e1e1;}
+.invventory:first-of-type{margin-bottom: 0; padding-bottom: 0;}
+
+.bg-green:last-of-type{padding-bottom: 15px;}
+
+.bg-gray{background: #e1e1e1; padding-bottom: 10px;}
+.bg-green{background: #FFE8E9;}
+
+.nav-tabs > li a{margin-bottom: 40px !important;}
+.nav-txt{
+	font-size: 17px;
+	position: absolute;
+	top: 65px;
+	width: 100%;
+	text-align: center;
+	left: 0;
+	line-height: 20px;
+	}
+
+.msgRed {
+color:red!important;
+}
+
+
+.table-header,
+.table-footer{
+	background: #e1e1e1;
+
+	background: -webkit-linear-gradient(top, #ffffff 0%,#e1e1e1 89%,#e0e0e0 100%); /* Chrome10+,Safari5.1+ */
+	background:    -moz-linear-gradient(top, #ffffff 0%,#e1e1e1 89%,#e0e0e0 100%); /* FF3.6+ */
+	background:     -ms-linear-gradient(top, #ffffff 0%,#e1e1e1 89%,#e0e0e0 100%); /* IE10+ */
+	background:      -o-linear-gradient(top, #ffffff 0%,#e1e1e1 89%,#e0e0e0 100%); /* Opera 11.10+ */
+	background:         linear-gradient(top, #ffffff 0%,#e1e1e1 89%,#e0e0e0 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f9f9f9',GradientType=0 ); /* IE6-9 */
+	
+	margin-bottom: -35px;
+	padding: 0 5px;
+	border: 1px solid #e1e1e1; 
+}
+.table.dataTable thead > tr > th {
+    background-image: -webkit-linear-gradient(top,#d4edf7,#b5e1f1);
+background-image: -moz-linear-gradient(top,#d4edf7,#b5e1f1);
+background-image: -ms-linear-gradient(top,#d4edf7,#b5e1f1);
+background-image: -o-linear-gradient(top,#d4edf7,#b5e1f1);
+background-image: linear-gradient(to bottom,#d4edf7,#b5e1f1);
+border: 0;
+color: #41474f;
+font-size: 14px;
+text-shadow: 0 1px #fff;
+}
+
+.alpha-sorting {
+    padding:0;
+    margin: 0;
+    list-style: none;
+}
+.alpha-sorting li{
+    display:inline-block;
+    padding: 5px 6px;
+}
+.filter-option select {
+    margin-bottom: 10px;
+}
+.filter-tbl .btn.btn-success {
+    margin-right:10px;
+}
+.pagination {
+    margin:0;
+}
+
+
+
+
+.ui-autocomplete ul {
+   
+}
+
+.block-level {
+    float: left;
+    width: 100% !important;
+}
+.w20p {
+    width: 20%;
+}
+.w15p, .w12p, .w14p, .w10p
+ {
+    float: left;
+    padding: 0 10px;
+}
+.w12p {
+    width: 12.75%;
+}
+.w14p {
+    width: 14%;
+}
+
+.w15p {
+    width: 15%;
+}
+.w10p {
+    width: 10%;
+}
+.datePicker-container {
+    width: 435px;
+}
+.datePicker-container .controls {
+    width: 145px;
+    float: left;
+}
+.datepickerLabel {
+  float: left;
+  margin: 5px 5px 0 0;
+}
+.pdr {
+    padding-right: 0;
+}
+.pdl {
+    padding-left: 0;
+}
+.pdr5 {
+    padding-right: 5px;
+}
