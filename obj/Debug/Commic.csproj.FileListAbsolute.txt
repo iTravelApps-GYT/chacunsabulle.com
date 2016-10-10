@@ -1,0 +1,186 @@
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\Commic.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\Commic.pdb
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\Antlr3.Runtime.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\EntityFramework.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\Microsoft.Web.Infrastructure.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\Newtonsoft.Json.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.Mvc.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.Optimization.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.Providers.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.Razor.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.WebPages.Deployment.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.WebPages.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.WebPages.Razor.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\WebGrease.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\EntityFramework.xml
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\Newtonsoft.Json.xml
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.Mvc.xml
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.Razor.xml
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.WebPages.xml
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.WebPages.Deployment.xml
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\bin\System.Web.WebPages.Razor.xml
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\obj\Debug\Commic.dll
+c:\users\jai_mata_di\documents\visual studio 2012\Projects\Commic\Commic\obj\Debug\Commic.pdb
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\obj\Debug\Commic.csprojResolveAssemblyReference.cache
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\ApiPayment.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\br\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\cs\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\da\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\de\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\en\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\es\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\fi\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\fr\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\it\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\ja\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\ko\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\nl\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\no\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\pl\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\pt\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\sv\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\zh-CN\ApiPayment.resources.dll
+C:\Users\Jai_Mata_Di\documents\visual studio 2012\Projects\Commic\Commic\bin\zh-TW\ApiPayment.resources.dll
+G:\DATA\Projects\Commic\Commic\obj\Debug\Commic.dll
+G:\DATA\Projects\Commic\Commic\bin\Commic.dll
+G:\DATA\Projects\Commic\Commic\bin\Commic.pdb
+G:\DATA\Projects\Commic\Commic\bin\Antlr3.Runtime.dll
+G:\DATA\Projects\Commic\Commic\bin\EntityFramework.dll
+G:\DATA\Projects\Commic\Commic\bin\Microsoft.Web.Infrastructure.dll
+G:\DATA\Projects\Commic\Commic\bin\Newtonsoft.Json.dll
+G:\DATA\Projects\Commic\Commic\bin\System.Net.Http.Formatting.dll
+G:\DATA\Projects\Commic\Commic\bin\System.Web.Http.dll
+G:\DATA\Projects\Commic\Commic\bin\System.Web.Http.WebHost.dll
+G:\DATA\Projects\Commic\Commic\bin\System.Web.Mvc.dll
+G:\DATA\Projects\Commic\Commic\bin\System.Web.Optimization.dll
+G:\DATA\Projects\Commic\Commic\bin\System.Web.Providers.dll
+G:\DATA\Projects\Commic\Commic\bin\System.Web.Razor.dll
+G:\DATA\Projects\Commic\Commic\bin\System.Web.WebPages.Deployment.dll
+G:\DATA\Projects\Commic\Commic\bin\System.Web.WebPages.dll
+G:\DATA\Projects\Commic\Commic\bin\System.Web.WebPages.Razor.dll
+G:\DATA\Projects\Commic\Commic\bin\WebGrease.dll
+G:\DATA\Projects\Commic\Commic\bin\EntityFramework.xml
+G:\DATA\Projects\Commic\Commic\bin\Newtonsoft.Json.xml
+G:\DATA\Projects\Commic\Commic\bin\System.Net.Http.Formatting.xml
+G:\DATA\Projects\Commic\Commic\bin\System.Web.Http.xml
+G:\DATA\Projects\Commic\Commic\bin\System.Web.Http.WebHost.xml
+G:\DATA\Projects\Commic\Commic\bin\System.Web.Mvc.xml
+G:\DATA\Projects\Commic\Commic\bin\System.Web.Razor.xml
+G:\DATA\Projects\Commic\Commic\bin\System.Web.WebPages.xml
+G:\DATA\Projects\Commic\Commic\bin\System.Web.WebPages.Deployment.xml
+G:\DATA\Projects\Commic\Commic\bin\System.Web.WebPages.Razor.xml
+G:\DATA\Projects\Commic\Commic\obj\Debug\Commic.pdb
+C:\Users\maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\Commic.dll
+C:\Users\maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\Commic.pdb
+C:\Users\maa\Documents\Visual Studio 2012\Projects\Commic\Commic\obj\Debug\Commic.dll
+C:\Users\maa\Documents\Visual Studio 2012\Projects\Commic\Commic\obj\Debug\Commic.pdb
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\br\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\cs\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\da\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\de\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\en\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\es\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\fi\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\fr\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\it\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\ja\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\ko\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\nl\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\no\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\pl\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\pt\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\sv\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\zh-CN\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\bin\zh-TW\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\Commic.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\Commic.pdb
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\EntityFramework.xml
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\Newtonsoft.Json.xml
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\System.Web.Mvc.xml
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\System.Web.Razor.xml
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\System.Web.WebPages.xml
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\br\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\cs\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\da\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\de\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\en\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\es\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\fi\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\fr\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\it\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\ja\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\ko\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\nl\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\no\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\pl\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\pt\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\sv\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\zh-CN\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\bin\zh-TW\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\obj\Debug\Commic.csprojResolveAssemblyReference.cache
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\obj\Debug\Commic.dll
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic2\obj\Debug\Commic.pdb
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\Commic.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\Commic.pdb
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\Microsoft.Web.Infrastructure.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\System.Web.Razor.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\System.Web.WebPages.Deployment.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\System.Web.WebPages.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\System.Web.WebPages.Razor.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\EntityFramework.xml
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\Microsoft.Web.Infrastructure.xml
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\Newtonsoft.Json.xml
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\System.Web.Mvc.xml
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\System.Web.Razor.xml
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\System.Web.WebPages.xml
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\System.Web.WebPages.Deployment.xml
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\System.Web.WebPages.Razor.xml
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\br\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\cs\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\da\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\de\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\en\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\es\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\fi\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\fr\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\it\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\ja\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\ko\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\nl\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\no\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\pl\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\pt\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\sv\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\zh-CN\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\bin\zh-TW\ApiPayment.resources.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\obj\Debug\Commic.csprojResolveAssemblyReference.cache
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\obj\Debug\Commic.dll
+D:\Backup of Dowload Folder 28 Nov 2015\New folder (2)\Commic2\obj\Debug\Commic.pdb
+C:\Users\Maa\Documents\Visual Studio 2012\Projects\Commic\Commic\obj\Debug\Commic.csprojResolveAssemblyReference.cache
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\Commic.dll.config
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\Commic.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\Commic.pdb
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\br\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\cs\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\da\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\de\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\en\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\es\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\fi\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\fr\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\it\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\ja\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\ko\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\nl\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\no\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\pl\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\pt\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\sv\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\zh-CN\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\bin\zh-TW\ApiPayment.resources.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\obj\Debug\Commic.csprojResolveAssemblyReference.cache
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\obj\Debug\Commic.dll
+C:\Users\Maa\Documents\Visual Studio 2015\Projects\Commic\Commic\obj\Debug\Commic.pdb
